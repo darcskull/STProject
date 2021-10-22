@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace STProject
 {
-    public partial class FormMainPage : Form
+    public partial class FormMainPageStudent : Form
     {
-        public FormMainPage()
+        public FormMainPageStudent()
         {
             InitializeComponent();
         }

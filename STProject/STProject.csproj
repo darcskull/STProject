@@ -76,11 +76,17 @@
     <Compile Include="FormAddNews.Designer.cs">
       <DependentUpon>FormAddNews.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMainPage.cs">
+    <Compile Include="FormMainPageStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMainPage.Designer.cs">
-      <DependentUpon>FormMainPage.cs</DependentUpon>
+    <Compile Include="FormMainPageStudent.Designer.cs">
+      <DependentUpon>FormMainPageStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMainPageTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainPageTeacher.Designer.cs">
+      <DependentUpon>FormMainPageTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMaterials.cs">
       <SubType>Form</SubType>
@@ -123,8 +129,11 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMainPage.resx">
-      <DependentUpon>FormMainPage.cs</DependentUpon>
+    <EmbeddedResource Include="FormMainPageStudent.resx">
+      <DependentUpon>FormMainPageStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMainPageTeacher.resx">
+      <DependentUpon>FormMainPageTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMaterials.resx">
       <DependentUpon>FormMaterials.cs</DependentUpon>
