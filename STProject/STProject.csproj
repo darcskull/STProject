@@ -157,6 +157,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Materials\Проект №4.docx" />
+    <None Include="Materials\Проект№4-Архитектурен проект.docx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -71,6 +71,7 @@ namespace STProject
             this.buttonAddMaterials.TabIndex = 3;
             this.buttonAddMaterials.Text = "Добавяне на материали";
             this.buttonAddMaterials.UseVisualStyleBackColor = true;
+            this.buttonAddMaterials.Click += new System.EventHandler(this.buttonAddMaterials_Click);
             // 
             // label2
             // 
