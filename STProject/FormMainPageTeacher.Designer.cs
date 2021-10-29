@@ -47,6 +47,7 @@ namespace STProject
             this.buttonAddTest.TabIndex = 0;
             this.buttonAddTest.Text = "Добавяне на тестови въпрос";
             this.buttonAddTest.UseVisualStyleBackColor = true;
+            this.buttonAddTest.Click += new System.EventHandler(this.buttonAddTest_Click);
             // 
             // buttonAddNews
             // 
@@ -56,6 +57,7 @@ namespace STProject
             this.buttonAddNews.TabIndex = 1;
             this.buttonAddNews.Text = "Добавяне на новини";
             this.buttonAddNews.UseVisualStyleBackColor = true;
+            this.buttonAddNews.Click += new System.EventHandler(this.buttonAddNews_Click);
             // 
             // buttonAddMaterials
             // 
@@ -65,6 +67,7 @@ namespace STProject
             this.buttonAddMaterials.TabIndex = 2;
             this.buttonAddMaterials.Text = "Създаване на материали";
             this.buttonAddMaterials.UseVisualStyleBackColor = true;
+            this.buttonAddMaterials.Click += new System.EventHandler(this.buttonAddMaterials_Click);
             // 
             // buttonMaterials
             // 
@@ -74,6 +77,7 @@ namespace STProject
             this.buttonMaterials.TabIndex = 3;
             this.buttonMaterials.Text = "Материали";
             this.buttonMaterials.UseVisualStyleBackColor = true;
+            this.buttonMaterials.Click += new System.EventHandler(this.buttonMaterials_Click);
             // 
             // buttonLogOut
             // 
@@ -83,6 +87,7 @@ namespace STProject
             this.buttonLogOut.TabIndex = 4;
             this.buttonLogOut.Text = "Излизане от профила";
             this.buttonLogOut.UseVisualStyleBackColor = true;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
             // buttonInformation
             // 
@@ -92,6 +97,7 @@ namespace STProject
             this.buttonInformation.TabIndex = 5;
             this.buttonInformation.Text = "Списък със студенти";
             this.buttonInformation.UseVisualStyleBackColor = true;
+            this.buttonInformation.Click += new System.EventHandler(this.buttonInformation_Click);
             // 
             // label1
             // 
