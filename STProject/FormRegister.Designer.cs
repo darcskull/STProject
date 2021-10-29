@@ -95,6 +95,7 @@ namespace STProject
             this.buttonBack.TabIndex = 4;
             this.buttonBack.Text = "Назад";
             this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonRegister
             // 

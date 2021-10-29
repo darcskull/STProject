@@ -55,6 +55,7 @@ namespace STProject
             this.buttonExit.TabIndex = 1;
             this.buttonExit.Text = "Изход от профил";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonInformation
             // 
@@ -64,6 +65,7 @@ namespace STProject
             this.buttonInformation.TabIndex = 3;
             this.buttonInformation.Text = "Списък с преподаватели";
             this.buttonInformation.UseVisualStyleBackColor = true;
+            this.buttonInformation.Click += new System.EventHandler(this.buttonInformation_Click);
             // 
             // buttonReviewTest
             // 
@@ -73,6 +75,7 @@ namespace STProject
             this.buttonReviewTest.TabIndex = 4;
             this.buttonReviewTest.Text = "Преглед на тест";
             this.buttonReviewTest.UseVisualStyleBackColor = true;
+            this.buttonReviewTest.Click += new System.EventHandler(this.buttonReviewTest_Click);
             // 
             // buttonTest
             // 
@@ -82,6 +85,7 @@ namespace STProject
             this.buttonTest.TabIndex = 5;
             this.buttonTest.Text = "Тест";
             this.buttonTest.UseVisualStyleBackColor = true;
+            this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
             // 
             // buttonMaterials
             // 
@@ -91,6 +95,7 @@ namespace STProject
             this.buttonMaterials.TabIndex = 6;
             this.buttonMaterials.Text = "Материали";
             this.buttonMaterials.UseVisualStyleBackColor = true;
+            this.buttonMaterials.Click += new System.EventHandler(this.buttonMaterials_Click);
             // 
             // label2
             // 
