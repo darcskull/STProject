@@ -101,6 +101,7 @@ namespace STProject
             this.buttonLogin.TabIndex = 6;
             this.buttonLogin.Text = "Влизане";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonCreate
             // 
@@ -110,6 +111,7 @@ namespace STProject
             this.buttonCreate.TabIndex = 7;
             this.buttonCreate.Text = "Регистрация";
             this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // Form1
             // 

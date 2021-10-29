@@ -16,5 +16,14 @@ namespace STProject
         {
             InitializeComponent();
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            //Todo забраняване при стартиран тест
+            FormMainPageStudent formStudent = new FormMainPageStudent();
+            this.Hide();
+            formStudent.ShowDialog();
+            this.Close();
+        }
     }
 }

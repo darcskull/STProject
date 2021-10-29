@@ -16,5 +16,13 @@ namespace STProject
         {
             InitializeComponent();
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            FormMainPageTeacher formUser = new FormMainPageTeacher();
+            this.Hide();
+            formUser.ShowDialog();
+            this.Close();
+        }
     }
 }
