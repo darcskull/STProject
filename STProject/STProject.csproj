@@ -199,12 +199,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBase\DbOnlineTrainingSystem.mdf">
+    <Content Include="DataBase\DBOnlineTrainingSystem.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DataBase\DbOnlineTrainingSystem_log.ldf">
+    <Content Include="DataBase\DBOnlineTrainingSystem_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DbOnlineTrainingSystem.mdf</DependentUpon>
+      <DependentUpon>DBOnlineTrainingSystem.mdf</DependentUpon>
     </Content>
     <Content Include="Materials\Система за управление на задачите..txt" />
   </ItemGroup>
