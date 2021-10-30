@@ -49,7 +49,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +63,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\News.cs" />
+    <Compile Include="Core\Question.cs" />
+    <Compile Include="Core\Student.cs" />
+    <Compile Include="Core\Teacher.cs" />
     <Compile Include="FormAddTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,9 @@
       <DependentUpon>DBOnlineTrainingSystem.mdf</DependentUpon>
     </Content>
     <Content Include="Materials\Система за управление на задачите..txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UnitTest\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
