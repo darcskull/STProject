@@ -1,13 +1,15 @@
 ﻿using STProject.Core;
+using STProject.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace STProject.Classes
 {
-    class ReviewTest
+    public class ReviewTest: Data, ITest
     {
         private int grade;
         private int points;
@@ -43,6 +45,19 @@ namespace STProject.Classes
             }
 
             return result;
+        }
+
+        public void InsertTest(ReviewTest review)
+        {
+            conn.Open();
+            string x = "";
+            for (int i=0; i<review.questions.Length;++i)
+            {
+              x += $"'{review.questions[i].Question}','{review.questions[i].AnswerTrue}','{review.GivenAnswers[i]}',";
+            }
+            SqlCommand cmd = new SqlCommand($"insert into Test values('{review.Email}','{review.Grade}','{review.Subject}','{review.Points}','{x}');", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

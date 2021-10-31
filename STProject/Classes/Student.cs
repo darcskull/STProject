@@ -1,8 +1,11 @@
-﻿using System;
+﻿using STProject.Classes;
+using STProject.Interfaces;
+using System;
+using System.Data.SqlClient;
 
 namespace STProject.Core
 {
-    public  class Student
+    public  class Student: Data, IStudent
     {
         const byte ConstMin_SymbolsForPassword = 6;
         private string firstName;
@@ -151,6 +154,15 @@ namespace STProject.Core
                 Evaluation = grade;
             else
                 Evaluation = (Evaluation + grade) / 2;
+        }
+
+        public void InsertStudent(Student student)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand($"insert into Student values('{student.FirstName}','{student.LastName}','{student.PhoneNumber}','{student.Email}'," +
+                $"'{student.Evaluation}','{student.Departament}','{student.FacultyNumber}','{student.Password}');", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }
