@@ -64,8 +64,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Materials.cs" />
     <Compile Include="Classes\News.cs" />
     <Compile Include="Classes\Question.cs" />
+    <Compile Include="Classes\ReviewTest.cs" />
     <Compile Include="Classes\Student.cs" />
     <Compile Include="Classes\Teacher.cs" />
     <Compile Include="FormAddTest.cs">

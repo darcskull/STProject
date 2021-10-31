@@ -1,8 +1,7 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+
 namespace STProject.Core
 {
-    [Table("Student")]
     public  class Student
     {
         const byte ConstMin_SymbolsForPassword = 6;
@@ -16,7 +15,6 @@ namespace STProject.Core
         private int facultyNumber;
         private float evaluation;
 
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int ID 
         {
             get
@@ -32,7 +30,6 @@ namespace STProject.Core
                 this.id = value;
             }
         }
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public string Password
         {
             get
@@ -52,7 +49,7 @@ namespace STProject.Core
                 this.password = value;
             }
         }
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
+
         public string LastName
         {
             get
@@ -68,7 +65,7 @@ namespace STProject.Core
                 this.lastname = value;
             }
          }
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
+
         public string PhoneNumber
         {
             get
@@ -81,7 +78,7 @@ namespace STProject.Core
                 this.lastname = value;
             }
         }
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
+
         public float Evaluation
         {
             get
@@ -94,7 +91,7 @@ namespace STProject.Core
                 this.evaluation = value;
             }
         }
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
+
         public string FirstName
         {
             get
@@ -110,7 +107,7 @@ namespace STProject.Core
                 this.firstName = value;
             }
         }
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
+
         public string Email
         {
             get
@@ -123,7 +120,7 @@ namespace STProject.Core
                 this.email = value;
             }
         }
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
+
         public string Departament
         {
             get
@@ -139,7 +136,7 @@ namespace STProject.Core
                 this.departament = value;
             }
         }
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
+
         public int FacultyNumber
         {
             get
@@ -153,5 +150,24 @@ namespace STProject.Core
             }
         }
         
+        public Student ( string fn, string ln, string e, string p, int fnumber, string d, string pn, float ev)
+        {
+            FirstName = fn;
+            LastName = ln;
+            Email = e;
+            Password = p;
+            FacultyNumber = fnumber;
+            Departament = d;
+            PhoneNumber = pn;
+            Evaluation = ev;
+        }
+
+        public void Evaluate(int grade)
+        {
+            if (Evaluation == 0)
+                Evaluation = grade;
+            else
+                Evaluation = (Evaluation + grade) / 2;
+        }
     }
 }

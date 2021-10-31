@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Linq.Mapping;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace STProject.Core
 {
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    [Table("News")]
     public class News
     {
         private string name;
@@ -25,21 +16,6 @@ namespace STProject.Core
             
         }
 
-        [System.Data.Linq.Mapping.Column(IsPrimaryKey = true, IsDbGenerated = true)]
-        [Column]
-        public int ID 
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-            }
-        }
-
-        [Column]
         public string Information
         {
             get
@@ -56,7 +32,6 @@ namespace STProject.Core
             }
         }
 
-        [Column]
         public string Name
         {
             get
