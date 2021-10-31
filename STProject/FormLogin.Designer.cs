@@ -41,24 +41,27 @@ namespace STProject
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(206, 156);
+            this.textBoxEmail.Location = new System.Drawing.Point(275, 192);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(157, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(208, 22);
             this.textBoxEmail.TabIndex = 0;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(206, 238);
+            this.textBoxPassword.Location = new System.Drawing.Point(275, 293);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(157, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(208, 22);
             this.textBoxPassword.TabIndex = 1;
             // 
             // radioButtonTeacher
             // 
             this.radioButtonTeacher.AutoSize = true;
-            this.radioButtonTeacher.Location = new System.Drawing.Point(188, 69);
+            this.radioButtonTeacher.Location = new System.Drawing.Point(251, 85);
+            this.radioButtonTeacher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonTeacher.Name = "radioButtonTeacher";
-            this.radioButtonTeacher.Size = new System.Drawing.Size(98, 17);
+            this.radioButtonTeacher.Size = new System.Drawing.Size(125, 21);
             this.radioButtonTeacher.TabIndex = 2;
             this.radioButtonTeacher.TabStop = true;
             this.radioButtonTeacher.Text = "Преподавател";
@@ -67,9 +70,10 @@ namespace STProject
             // radioButtonStudent
             // 
             this.radioButtonStudent.AutoSize = true;
-            this.radioButtonStudent.Location = new System.Drawing.Point(298, 69);
+            this.radioButtonStudent.Location = new System.Drawing.Point(397, 85);
+            this.radioButtonStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonStudent.Name = "radioButtonStudent";
-            this.radioButtonStudent.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonStudent.Size = new System.Drawing.Size(83, 21);
             this.radioButtonStudent.TabIndex = 3;
             this.radioButtonStudent.TabStop = true;
             this.radioButtonStudent.Text = "Студент";
@@ -78,26 +82,29 @@ namespace STProject
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(203, 122);
+            this.label1.Location = new System.Drawing.Point(271, 150);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(42, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Email";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(203, 204);
+            this.label2.Location = new System.Drawing.Point(271, 251);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Парола";
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(206, 296);
+            this.buttonLogin.Location = new System.Drawing.Point(275, 364);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogin.Size = new System.Drawing.Size(100, 28);
             this.buttonLogin.TabIndex = 6;
             this.buttonLogin.Text = "Влизане";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -105,9 +112,10 @@ namespace STProject
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(298, 296);
+            this.buttonCreate.Location = new System.Drawing.Point(397, 364);
+            this.buttonCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(75, 23);
+            this.buttonCreate.Size = new System.Drawing.Size(100, 28);
             this.buttonCreate.TabIndex = 7;
             this.buttonCreate.Text = "Регистрация";
             this.buttonCreate.UseVisualStyleBackColor = true;
@@ -115,9 +123,9 @@ namespace STProject
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.label2);
@@ -126,6 +134,7 @@ namespace STProject
             this.Controls.Add(this.radioButtonTeacher);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxEmail);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Влизане";
             this.Load += new System.EventHandler(this.Form1_Load);
