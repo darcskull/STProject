@@ -64,10 +64,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\News.cs" />
-    <Compile Include="Core\Question.cs" />
-    <Compile Include="Core\Student.cs" />
-    <Compile Include="Core\Teacher.cs" />
+    <Compile Include="Classes\News.cs" />
+    <Compile Include="Classes\Question.cs" />
+    <Compile Include="Classes\Student.cs" />
+    <Compile Include="Classes\Teacher.cs" />
     <Compile Include="FormAddTest.cs">
       <SubType>Form</SubType>
     </Compile>
