@@ -1,9 +1,11 @@
-﻿using System;
-
+﻿using STProject.Classes;
+using STProject.Interfaces;
+using System;
+using System.Data.SqlClient;
 
 namespace STProject.Core
 {
-    public class Teacher
+    public class Teacher: Data, ITeacher
     {
         const byte ConstMin_SymbolsForPassword = 6;
         private string firstName;
@@ -132,5 +134,13 @@ namespace STProject.Core
             PhoneNumber = pn;
         }
 
+        public void InsertTeacher(Teacher teacher)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand($"insert into Teacher values('{teacher.Email}','{teacher.Password}','{teacher.FirstName}','{teacher.LastName}'," +
+                $"'{teacher.Departament}','{teacher.PhoneNumber}','{teacher.AdminNumber}');", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

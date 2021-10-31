@@ -1,9 +1,11 @@
-﻿using System;
-
+﻿using STProject.Classes;
+using STProject.Interfaces;
+using System;
+using System.Data.SqlClient;
 
 namespace STProject.Core
 {
-    public class News
+    public class News: Data,INews
     {
         private string name;
         private string information;
@@ -46,7 +48,14 @@ namespace STProject.Core
                 name = value;
             }
         }
-
+    
+        public void InsertNews(News news)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand($"insert into News values('{news.Name}','{news.Information}');", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 
 }
