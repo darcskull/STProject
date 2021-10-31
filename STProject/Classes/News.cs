@@ -7,7 +7,6 @@ namespace STProject.Core
     {
         private string name;
         private string information;
-        private int id;
 
         public News(  string name, string information)
         {

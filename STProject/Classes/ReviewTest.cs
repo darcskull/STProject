@@ -14,7 +14,7 @@ namespace STProject.Classes
         private string email;
         private string subject;
         private Questions [] questions;
-        private string[] givenAnswers;
+        private string [] givenAnswers;
 
         public int Grade { get { return grade; } set { grade = value; } }
         public int Points { get { return points; } set { points = value; } }
@@ -36,7 +36,7 @@ namespace STProject.Classes
         public int GradeTest(Questions [] questions, string [] answers)
         {
             int result = 0;
-            for (int i =0; i<answers.Length; ++i)
+            for (int i = 0; i<answers.Length; ++i)
             {
                 if (questions[i].AnswerTrue == answers[i])
                     result++;

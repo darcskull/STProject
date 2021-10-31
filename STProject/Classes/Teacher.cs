@@ -7,7 +7,6 @@ namespace STProject.Core
     {
         const byte ConstMin_SymbolsForPassword = 6;
         private string firstName;
-        private int id;
         private string password;
         private string lastname;
         private string phoneNumber;

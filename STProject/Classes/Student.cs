@@ -6,7 +6,6 @@ namespace STProject.Core
     {
         const byte ConstMin_SymbolsForPassword = 6;
         private string firstName;
-        private int id;
         private string password;
         private string lastname;
         private string phoneNumber;
@@ -14,22 +13,6 @@ namespace STProject.Core
         private string departament;
         private int facultyNumber;
         private float evaluation;
-
-        public int ID 
-        {
-            get
-            {
-                return this.id;
-            }
-            set
-            {
-                if (value<=0)
-                {
-                    throw new ArgumentException("Id cannot be zero or negative!");
-                }
-                this.id = value;
-            }
-        }
         public string Password
         {
             get
