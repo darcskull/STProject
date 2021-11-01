@@ -17,12 +17,12 @@ namespace STProject
     public partial class FormRegister : Form
     {
         DropDownValues vvalues = new DropDownValues();
+        List<string> dropValyes = new List<string>();
         string phone = "-";
         int number;
         public FormRegister()
         {
             InitializeComponent();
-            List<string> dropValyes = new List<string>();
             vvalues.getDepartments(dropValyes);
             foreach(string value in dropValyes)
             {
@@ -67,12 +67,24 @@ namespace STProject
                                     student.PhoneNumber = textBoxTelNumber.Text;
                                 try
                                 {
+                                    //TODO check why can't make records in data base
                                     student.InsertStudent(student);
                                     MessageBox.Show("Регистрацията ви беше успешна");
                                 }
                                 catch (Exception exce)
                                 {
                                     MessageBox.Show("Заявката не може да бъде изпълнена поради следната грешка: " + exce.Message);
+                                }
+                                finally
+                                {
+                                    textBoxEmail.Text = string.Empty;
+                                    textBoxName.Text = string.Empty;
+                                    textBoxNumber.Text = string.Empty;
+                                    textBoxPassword.Text = string.Empty;
+                                    textBoxSecondName.Text = string.Empty;
+                                    textBoxTelNumber.Text = string.Empty;
+                                    textBoxVerifyPass.Text = string.Empty;
+                                    comboBox1.SelectedIndex = -1;
                                 }
                             }
                             else
@@ -101,8 +113,7 @@ namespace STProject
 
                                 teacher.FirstName = textBoxName.Text;
                                 teacher.LastName = textBoxSecondName.Text;
-                                //TODO check why in data base is set as ???
-                                teacher.Departament = comboBox1.GetItemText(this.comboBox1.SelectedItem).ToString();
+                                teacher.Departament = dropValyes[comboBox1.SelectedIndex].ToLower();
 
                                 if (textBoxTelNumber.Text == "" || textBoxTelNumber.Text.Length > 10)
                                     teacher.PhoneNumber = phone;
@@ -110,13 +121,23 @@ namespace STProject
                                     teacher.PhoneNumber = textBoxTelNumber.Text;
                                 try
                                 {
-                                    //TODO check why can't make records in data base
                                     teacher.InsertTeacher(teacher);
                                     MessageBox.Show("Регистрацията ви беше направена успешно");
                                 }
                                 catch (Exception exce)
                                 {
                                     MessageBox.Show("Заявката не може да бъде изпълнена поради следната грешка: " + exce.Message);
+                                }
+                                finally
+                                {
+                                    textBoxEmail.Text = string.Empty;
+                                    textBoxName.Text = string.Empty;
+                                    textBoxNumber.Text = string.Empty;
+                                    textBoxPassword.Text = string.Empty;
+                                    textBoxSecondName.Text = string.Empty;
+                                    textBoxTelNumber.Text = string.Empty;
+                                    textBoxVerifyPass.Text = string.Empty;
+                                    comboBox1.SelectedIndex = -1;
                                 }
                             }
                             else

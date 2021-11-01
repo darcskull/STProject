@@ -35,7 +35,7 @@ namespace STProject
             this.buttonAddMaterials = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxSubject = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -92,21 +92,21 @@ namespace STProject
             this.label3.TabIndex = 5;
             this.label3.Text = "Файл";
             // 
-            // label4
+            // comboBoxSubject
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(233, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "TODO";
+            this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSubject.FormattingEnabled = true;
+            this.comboBoxSubject.Location = new System.Drawing.Point(236, 87);
+            this.comboBoxSubject.Name = "comboBoxSubject";
+            this.comboBoxSubject.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSubject.TabIndex = 6;
             // 
             // FormAddMaterials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAddMaterials);
@@ -129,6 +129,6 @@ namespace STProject
         private System.Windows.Forms.Button buttonAddMaterials;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxSubject;
     }
 }

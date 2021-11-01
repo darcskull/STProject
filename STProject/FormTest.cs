@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STProject.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace STProject
 {
     public partial class FormTest : Form
     {
+        DropDownValues vvalues = new DropDownValues();
+        List<string> dropValyes = new List<string>();
         public FormTest()
         {
             InitializeComponent();
+            vvalues.getSubjects(dropValyes);
+            foreach (string value in dropValyes)
+            {
+                comboBoxSubject.Items.Add(value);
+            }
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -24,6 +32,11 @@ namespace STProject
             this.Hide();
             formStudent.ShowDialog();
             this.Close();
+        }
+
+        private void FormTest_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

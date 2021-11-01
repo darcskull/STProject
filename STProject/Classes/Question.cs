@@ -26,7 +26,7 @@ namespace STProject.Core
         public string AnswerTrue { get { return answertrue; } set { answertrue = value; } }
         public string Subject { get { return subject; } set { subject = value;  } }
 
-        public Questions (string q, string a1, string a2, string a3, string a4, string at)
+        public Questions (string q, string a1, string a2, string a3, string a4, string at, string subject)
         {
             Question = q;
             Answer1 = a1;
@@ -34,13 +34,42 @@ namespace STProject.Core
             Answer3 = a3;
             Answer4 = a4;
             AnswerTrue = at;
+            Subject = subject;
+        }
+
+        public void setAnswer(Questions q)
+        {
+            switch (q.AnswerTrue)
+            {
+                case "a":
+                    q.AnswerTrue = q.Answer1;
+                    break;
+                case "б":
+                    q.AnswerTrue = q.Answer2;
+                    break;
+                case "в":
+                    q.AnswerTrue = q.Answer3;
+                    break;
+                case "г":
+                    q.AnswerTrue = q.Answer4;
+                    break;
+                default:
+                    Console.WriteLine("В записът няма отбелязана буква на отговор");
+                    break;
+            }
+        }
+        public bool checkValidQuestion(Questions q)
+        {
+            if (q.AnswerTrue == q.Answer1 || q.AnswerTrue == q.Answer2 || q.AnswerTrue == q.Answer3 || q.Answer4 == q.AnswerTrue)
+                return true;
+            return false;
         }
 
         public void InsertQuestion(Questions question)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand($"insert into Question values('{question.Question}','{question.Answer1}','{question.Answer2}','{question.Answer3}'," +
-                $"'{question.Answer4}','{question.AnswerTrue}','{question.Subject}');", conn);
+            SqlCommand cmd = new SqlCommand($"insert into Question values(N'{question.Question}',N'{question.Answer1}',N'{question.Answer2}',N'{question.Answer3}'," +
+                $"N'{question.Answer4}',N'{question.AnswerTrue}',N'{question.Subject}');", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }

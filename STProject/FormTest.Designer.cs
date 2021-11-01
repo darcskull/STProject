@@ -44,10 +44,10 @@ namespace STProject
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonGenerate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonEndTest = new System.Windows.Forms.Button();
+            this.comboBoxSubject = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -185,15 +185,6 @@ namespace STProject
             this.label2.TabIndex = 18;
             this.label2.Text = "Предмет";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(695, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "TODO";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -221,15 +212,24 @@ namespace STProject
             this.buttonEndTest.Text = "Предаване на теста";
             this.buttonEndTest.UseVisualStyleBackColor = true;
             // 
+            // comboBoxSubject
+            // 
+            this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSubject.FormattingEnabled = true;
+            this.comboBoxSubject.Location = new System.Drawing.Point(675, 51);
+            this.comboBoxSubject.Name = "comboBoxSubject";
+            this.comboBoxSubject.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSubject.TabIndex = 23;
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.buttonEndTest);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonGenerate);
             this.Controls.Add(this.buttonPrevious);
@@ -247,6 +247,7 @@ namespace STProject
             this.Controls.Add(this.buttonBack);
             this.Name = "FormTest";
             this.Text = "Тест";
+            this.Load += new System.EventHandler(this.FormTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,9 +270,9 @@ namespace STProject
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.Button buttonGenerate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonEndTest;
+        private System.Windows.Forms.ComboBox comboBoxSubject;
     }
 }

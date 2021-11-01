@@ -32,7 +32,6 @@ namespace STProject
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonAddTest = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBoxQuestion = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,7 +43,8 @@ namespace STProject
             this.textBoxB = new System.Windows.Forms.TextBox();
             this.textBoxV = new System.Windows.Forms.TextBox();
             this.textBoxTrue = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxSubjects = new System.Windows.Forms.ComboBox();
+            this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -65,23 +65,16 @@ namespace STProject
             this.buttonAddTest.TabIndex = 2;
             this.buttonAddTest.Text = "Добавяне на въпрос";
             this.buttonAddTest.UseVisualStyleBackColor = true;
+            this.buttonAddTest.Click += new System.EventHandler(this.buttonAddTest_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(184, 40);
+            this.label1.Location = new System.Drawing.Point(26, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Предмет";
-            // 
-            // listBoxQuestion
-            // 
-            this.listBoxQuestion.FormattingEnabled = true;
-            this.listBoxQuestion.Location = new System.Drawing.Point(187, 89);
-            this.listBoxQuestion.Name = "listBoxQuestion";
-            this.listBoxQuestion.Size = new System.Drawing.Size(399, 95);
-            this.listBoxQuestion.TabIndex = 4;
             // 
             // label2
             // 
@@ -172,21 +165,30 @@ namespace STProject
             this.textBoxTrue.Size = new System.Drawing.Size(174, 20);
             this.textBoxTrue.TabIndex = 15;
             // 
-            // label8
+            // comboBoxSubjects
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(184, 53);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "TODO";
+            this.comboBoxSubjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSubjects.FormattingEnabled = true;
+            this.comboBoxSubjects.Location = new System.Drawing.Point(12, 50);
+            this.comboBoxSubjects.Name = "comboBoxSubjects";
+            this.comboBoxSubjects.Size = new System.Drawing.Size(132, 21);
+            this.comboBoxSubjects.TabIndex = 16;
+            // 
+            // textBoxQuestion
+            // 
+            this.textBoxQuestion.Location = new System.Drawing.Point(187, 89);
+            this.textBoxQuestion.Multiline = true;
+            this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.Size = new System.Drawing.Size(428, 102);
+            this.textBoxQuestion.TabIndex = 17;
             // 
             // FormAddTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBoxQuestion);
+            this.Controls.Add(this.comboBoxSubjects);
             this.Controls.Add(this.textBoxTrue);
             this.Controls.Add(this.textBoxV);
             this.Controls.Add(this.textBoxB);
@@ -198,12 +200,12 @@ namespace STProject
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBoxQuestion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAddTest);
             this.Controls.Add(this.buttonBack);
             this.Name = "FormAddTest";
             this.Text = "Добавяне на въпрос";
+            this.Load += new System.EventHandler(this.FormAddTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +216,6 @@ namespace STProject
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonAddTest;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBoxQuestion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -226,6 +227,7 @@ namespace STProject
         private System.Windows.Forms.TextBox textBoxB;
         private System.Windows.Forms.TextBox textBoxV;
         private System.Windows.Forms.TextBox textBoxTrue;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBoxSubjects;
+        private System.Windows.Forms.TextBox textBoxQuestion;
     }
 }

@@ -146,8 +146,8 @@ namespace STProject.Core
         public void InsertStudent(Student student)
           {
               conn.Open();
-              SqlCommand cmd = new SqlCommand($"insert into Student values('{student.FirstName}','{student.LastName}','{student.PhoneNumber}','{student.Email}'," +
-                  $"'{student.Evaluation}','{student.Departament}','{student.FacultyNumber}','{student.Password}');", conn);
+              SqlCommand cmd = new SqlCommand($"insert into Student values(N'{student.FirstName}',N'{student.LastName}','{student.PhoneNumber}','{student.Email}'," +
+                  $"'{student.Evaluation}',N'{student.Departament}','{student.FacultyNumber}','{student.Password}');", conn);
               cmd.ExecuteNonQuery();
               conn.Close();
           }

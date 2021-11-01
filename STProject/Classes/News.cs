@@ -27,7 +27,7 @@ namespace STProject.Core
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Information cannot be null or empty!");
+                    throw new ArgumentException("Информацията не може да бъде празна!");
                 }
                 information = value;
             }
@@ -43,7 +43,7 @@ namespace STProject.Core
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("News Name cannot be null or empty!");
+                    throw new ArgumentException("Заглавието не може да бъде празно!");
                 }
                 name = value;
             }
@@ -52,7 +52,7 @@ namespace STProject.Core
         public void InsertNews(News news)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand($"insert into News values('{news.Name}','{news.Information}');", conn);
+            SqlCommand cmd = new SqlCommand($"insert into News values(N'{news.Name}',N'{news.Information}');", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }

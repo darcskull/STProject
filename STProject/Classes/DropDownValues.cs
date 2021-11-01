@@ -14,5 +14,13 @@ namespace STProject.Classes
             arr.Add("КСИ");
             arr.Add("ФТ");
         }
+
+        public void getSubjects(List<string> arr)
+        {
+            arr.Add("ИСН");
+            arr.Add("ПМИ");
+            arr.Add("КСИ");
+            arr.Add("Телекомуникации");
+        }
     }
 }

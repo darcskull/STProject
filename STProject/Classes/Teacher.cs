@@ -126,8 +126,8 @@ namespace STProject.Core
         public void InsertTeacher(Teacher teacher)
            {
                conn.Open();
-               SqlCommand cmd = new SqlCommand($"insert into Teacher values('{teacher.Email}','{teacher.Password}','{teacher.FirstName}','{teacher.LastName}'," +
-                   $"'{teacher.Departament}','{teacher.PhoneNumber}','{teacher.AdminNumber}');", conn);
+               SqlCommand cmd = new SqlCommand($"insert into Teacher values('{teacher.Email}','{teacher.Password}',N'{teacher.FirstName}',N'{teacher.LastName}'," +
+                   $"N'{teacher.Departament}','{teacher.PhoneNumber}','{teacher.AdminNumber}');", conn);
                cmd.ExecuteNonQuery();
                conn.Close();
            }

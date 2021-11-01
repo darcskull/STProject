@@ -28,7 +28,7 @@ namespace STProject
             try
             {
                 CreateNews().InsertNews(CreateNews());
-                MessageBox.Show("Inserting News Successfully", "Successfully");
+                MessageBox.Show("Новината беше записана успешно");
             }
             catch (Exception ex)
             {
