@@ -15,7 +15,7 @@ namespace STProject.Core
         private string email;
         private string departament;
         private int facultyNumber;
-        private float evaluation;
+        private int evaluation;
         public string Password
         {
             get
@@ -56,16 +56,16 @@ namespace STProject.Core
         {
             get
             {
-                return this.lastname;
+                return this.phoneNumber;
             }
             set
             {
-                
-                this.lastname = value;
+
+                this.phoneNumber = value ;
             }
         }
 
-        public float Evaluation
+        public int Evaluation
         {
             get
             {
@@ -135,18 +135,6 @@ namespace STProject.Core
                 this.facultyNumber = value;
             }
         }
-        
-        public Student ( string fn, string ln, string e, string p, int fnumber, string d, string pn, float ev)
-        {
-            FirstName = fn;
-            LastName = ln;
-            Email = e;
-            Password = p;
-            FacultyNumber = fnumber;
-            Departament = d;
-            PhoneNumber = pn;
-            Evaluation = ev;
-        }
 
         public void Evaluate(int grade)
         {
@@ -155,14 +143,13 @@ namespace STProject.Core
             else
                 Evaluation = (Evaluation + grade) / 2;
         }
-
         public void InsertStudent(Student student)
-        {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand($"insert into Student values('{student.FirstName}','{student.LastName}','{student.PhoneNumber}','{student.Email}'," +
-                $"'{student.Evaluation}','{student.Departament}','{student.FacultyNumber}','{student.Password}');", conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-        }
+          {
+              conn.Open();
+              SqlCommand cmd = new SqlCommand($"insert into Student values('{student.FirstName}','{student.LastName}','{student.PhoneNumber}','{student.Email}'," +
+                  $"'{student.Evaluation}','{student.Departament}','{student.FacultyNumber}','{student.Password}');", conn);
+              cmd.ExecuteNonQuery();
+              conn.Close();
+          }
     }
 }

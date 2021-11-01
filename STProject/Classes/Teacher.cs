@@ -56,12 +56,12 @@ namespace STProject.Core
         {
             get
             {
-                return this.lastname;
+                return this.phoneNumber;
             }
             set
             {
 
-                this.lastname = value;
+                this.phoneNumber = value;
             }
         }
 
@@ -123,24 +123,13 @@ namespace STProject.Core
             }
         }
 
-        public Teacher(string fn, string ln, string e, string p, int anumber, string d, string pn)
-        {
-            FirstName = fn;
-            LastName = ln;
-            Email = e;
-            Password = p;
-            AdminNumber = anumber;
-            Departament = d;
-            PhoneNumber = pn;
-        }
-
         public void InsertTeacher(Teacher teacher)
-        {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand($"insert into Teacher values('{teacher.Email}','{teacher.Password}','{teacher.FirstName}','{teacher.LastName}'," +
-                $"'{teacher.Departament}','{teacher.PhoneNumber}','{teacher.AdminNumber}');", conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-        }
+           {
+               conn.Open();
+               SqlCommand cmd = new SqlCommand($"insert into Teacher values('{teacher.Email}','{teacher.Password}','{teacher.FirstName}','{teacher.LastName}'," +
+                   $"'{teacher.Departament}','{teacher.PhoneNumber}','{teacher.AdminNumber}');", conn);
+               cmd.ExecuteNonQuery();
+               conn.Close();
+           }
     }
 }

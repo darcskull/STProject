@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Data.cs" />
+    <Compile Include="Classes\DropDownValues.cs" />
     <Compile Include="Classes\Materials.cs" />
     <Compile Include="Classes\News.cs" />
     <Compile Include="Classes\Question.cs" />
