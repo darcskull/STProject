@@ -67,10 +67,9 @@ namespace STProject
             teacher.AdminNumber = int.Parse(textBoxNumber.Text);
             teacher.PhoneNumber = textBoxTelNumber.Text;
             teacher.Password = textBoxPassword.Text;
-            teacher.Evaluation = Const_defautEvaluation;
             teacher.VerifyPassword = textBoxVerifyPass.Text;
             teacher.Departament = comboBox1.GetItemText(this.comboBox1.SelectedItem).ToString();
-            teacher.InsertStudent(teacher);
+            teacher.InsertTeacher(teacher);
           
 
         }
@@ -87,6 +86,7 @@ namespace STProject
                 {
                     RegistrationTeacher();
                 }
+                MessageBox.Show("Регистрацията ви беше успешна");
             }
             catch (ArgumentException ex)
             {
@@ -98,7 +98,7 @@ namespace STProject
             }
             finally
             {
-                MessageBox.Show("Регистрацията ви беше успешна");
+               
                 textBoxEmail.Text = string.Empty;
                 textBoxName.Text = string.Empty;
                 textBoxNumber.Text = string.Empty;

@@ -83,6 +83,10 @@ namespace STProject.Core
             }
             set
             {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Телефонният номер е празен или не пълен!");
+                }
                 if (!Regex.Match(value, @"[0-9]{10}").Success)
                 {
                     throw new ArgumentException("Телефонният номер е невалиден");
