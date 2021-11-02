@@ -36,5 +36,39 @@ namespace STProject.Core
                cmd.ExecuteNonQuery();
                conn.Close();
            }
+        public Teacher ReadFromData(string email, string password)
+        {
+            conn.Open();
+            string sql = "SELECT * FROM Teacher";
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            var teacher = new Teacher();
+            while (rdr.Read())
+            {
+                string emailTEST = rdr.GetValue(3).ToString();
+                string passTEST = rdr.GetValue(6).ToString();
+                ;
+                if (rdr.GetValue(3).ToString() == email && rdr.GetValue(6).ToString() == password)
+                {
+                    teacher.FirstName = rdr.GetValue(1).ToString();
+                    teacher.LastName = rdr.GetValue(2).ToString();
+                    teacher.Email = rdr.GetValue(3).ToString();
+                    teacher.Departament = rdr.GetValue(4).ToString();
+                    teacher.Evaluation = int.Parse(rdr.GetValue(5).ToString());
+                    teacher.Password = rdr.GetValue(6).ToString();
+                    teacher.AdminNumber = int.Parse(rdr.GetValue(7).ToString());
+                    teacher.PhoneNumber = rdr.GetValue(8).ToString();
+                    break;
+                }
+                else
+                {
+                    teacher = null;
+                }
+
+            }
+
+            conn.Close();
+            return teacher;
+        }
     }
 }

@@ -36,22 +36,25 @@ namespace STProject
             this.buttonTest = new System.Windows.Forms.Button();
             this.buttonMaterials = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblIInformation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 178);
+            this.label1.Location = new System.Drawing.Point(119, 219);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Новини";
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(3, 12);
+            this.buttonExit.Location = new System.Drawing.Point(4, 15);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(131, 23);
+            this.buttonExit.Size = new System.Drawing.Size(175, 28);
             this.buttonExit.TabIndex = 1;
             this.buttonExit.Text = "Изход от профил";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -59,9 +62,10 @@ namespace STProject
             // 
             // buttonInformation
             // 
-            this.buttonInformation.Location = new System.Drawing.Point(606, 267);
+            this.buttonInformation.Location = new System.Drawing.Point(808, 329);
+            this.buttonInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonInformation.Name = "buttonInformation";
-            this.buttonInformation.Size = new System.Drawing.Size(182, 23);
+            this.buttonInformation.Size = new System.Drawing.Size(243, 28);
             this.buttonInformation.TabIndex = 3;
             this.buttonInformation.Text = "Списък с преподаватели";
             this.buttonInformation.UseVisualStyleBackColor = true;
@@ -69,9 +73,10 @@ namespace STProject
             // 
             // buttonReviewTest
             // 
-            this.buttonReviewTest.Location = new System.Drawing.Point(606, 178);
+            this.buttonReviewTest.Location = new System.Drawing.Point(808, 219);
+            this.buttonReviewTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonReviewTest.Name = "buttonReviewTest";
-            this.buttonReviewTest.Size = new System.Drawing.Size(182, 23);
+            this.buttonReviewTest.Size = new System.Drawing.Size(243, 28);
             this.buttonReviewTest.TabIndex = 4;
             this.buttonReviewTest.Text = "Преглед на тест";
             this.buttonReviewTest.UseVisualStyleBackColor = true;
@@ -79,9 +84,10 @@ namespace STProject
             // 
             // buttonTest
             // 
-            this.buttonTest.Location = new System.Drawing.Point(606, 98);
+            this.buttonTest.Location = new System.Drawing.Point(808, 121);
+            this.buttonTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonTest.Name = "buttonTest";
-            this.buttonTest.Size = new System.Drawing.Size(182, 23);
+            this.buttonTest.Size = new System.Drawing.Size(243, 28);
             this.buttonTest.TabIndex = 5;
             this.buttonTest.Text = "Тест";
             this.buttonTest.UseVisualStyleBackColor = true;
@@ -89,9 +95,10 @@ namespace STProject
             // 
             // buttonMaterials
             // 
-            this.buttonMaterials.Location = new System.Drawing.Point(606, 22);
+            this.buttonMaterials.Location = new System.Drawing.Point(808, 27);
+            this.buttonMaterials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMaterials.Name = "buttonMaterials";
-            this.buttonMaterials.Size = new System.Drawing.Size(182, 23);
+            this.buttonMaterials.Size = new System.Drawing.Size(243, 28);
             this.buttonMaterials.TabIndex = 6;
             this.buttonMaterials.Text = "Материали";
             this.buttonMaterials.UseVisualStyleBackColor = true;
@@ -100,17 +107,30 @@ namespace STProject
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 212);
+            this.label2.Location = new System.Drawing.Point(119, 261);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "TODO";
             // 
+            // lblIInformation
+            // 
+            this.lblIInformation.AutoSize = true;
+            this.lblIInformation.Location = new System.Drawing.Point(234, 21);
+            this.lblIInformation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIInformation.Name = "lblIInformation";
+            this.lblIInformation.Size = new System.Drawing.Size(57, 17);
+            this.lblIInformation.TabIndex = 8;
+            this.lblIInformation.Text = "Новини";
+            this.lblIInformation.Click += new System.EventHandler(this.lblIInformation_Click);
+            // 
             // FormMainPageStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.lblIInformation);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonMaterials);
             this.Controls.Add(this.buttonTest);
@@ -118,8 +138,10 @@ namespace STProject
             this.Controls.Add(this.buttonInformation);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMainPageStudent";
             this.Text = "Начало";
+            this.Load += new System.EventHandler(this.FormMainPageStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +156,6 @@ namespace STProject
         private System.Windows.Forms.Button buttonTest;
         private System.Windows.Forms.Button buttonMaterials;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblIInformation;
     }
 }

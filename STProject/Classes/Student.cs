@@ -223,6 +223,10 @@ namespace STProject.Core
 
                     break;
                 }
+                else
+                {
+                    student = null;
+                }
 
             }
 

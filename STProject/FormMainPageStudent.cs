@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using STProject.Classes;
+using STProject.Core;
 
 namespace STProject
 {
+    
     public partial class FormMainPageStudent : Form
     {
+        private Form1 formLogin;
         public FormMainPageStudent()
         {
             InitializeComponent();
@@ -60,6 +64,16 @@ namespace STProject
             this.Hide();
             information.ShowDialog();
             this.Close();
+        }
+
+        private void FormMainPageStudent_Load(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void lblIInformation_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

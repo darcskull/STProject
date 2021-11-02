@@ -14,6 +14,7 @@ namespace STProject
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -26,9 +27,7 @@ namespace STProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var student = new Student();
-          
-            student = student.ReadFromData(textBoxEmail.Text, textBoxPassword.Text);
+            
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
@@ -39,29 +38,38 @@ namespace STProject
             this.Close();
           
         }
-       
-        private void buttonLogin_Click(object sender, EventArgs e)
+        public Student VerifyLoginAsStudent()
         {
             var student = new Student();
-           
-           
-            textBox1.Text = student.ReadFromData(textBoxEmail.Text, textBoxPassword.Text).FirstName + "   " + student.ReadFromData(textBoxEmail.Text, textBoxPassword.Text).LastName;
+            return student.ReadFromData(textBoxEmail.Text, textBoxPassword.Text);
+        }
+        private Teacher VerifyLoginAsTeacher()
+        {
+            var teacher = new Teacher();
+            return teacher.ReadFromData(textBoxEmail.Text, textBoxPassword.Text);
+        }
 
-            if (radioButtonStudent.Checked)
-            {
-                //TODO Проверка за валидни име и парола + падаване на данни за потребител
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+
+           
+            if (radioButtonStudent.Checked && VerifyLoginAsStudent()!=null)
+            {              
                 FormMainPageStudent formStudent = new FormMainPageStudent();
                 this.Hide();
                 formStudent.ShowDialog();
                 this.Close();
             }
-            if (radioButtonTeacher.Checked)
+            else if (radioButtonTeacher.Checked && VerifyLoginAsTeacher()!=null)
             {
-                //TODO Проверка за валидни име и парола + падаване на данни за потребител
                 FormMainPageTeacher formTeacher = new FormMainPageTeacher();
                 this.Hide();
                 formTeacher.ShowDialog();
                 this.Close();
+            }
+            else
+            {
+                lblInformation.Text = "Въвели сте грешни данни!";
             }
         }
 
