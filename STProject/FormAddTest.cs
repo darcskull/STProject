@@ -24,5 +24,10 @@ namespace STProject
             formUser.ShowDialog();
             this.Close();
         }
+
+        private void FormAddTest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
