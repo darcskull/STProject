@@ -17,10 +17,10 @@ namespace STProject.Classes
 
         public void getSubjects(List<string> arr)
         {
-            arr.Add("ИСН");
-            arr.Add("ПМИ");
-            arr.Add("КСИ");
-            arr.Add("Телекомуникации");
+            arr.Add("СТ");
+            arr.Add("САА");
+            arr.Add("СА");
+            arr.Add("Математика");
         }
     }
 }
