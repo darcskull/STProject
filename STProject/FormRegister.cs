@@ -86,6 +86,7 @@ namespace STProject
                 {
                     RegistrationTeacher();
                 }
+                MessageBox.Show("Регистрацията ви беше успешна");
             }
             catch (ArgumentException ex)
             {
@@ -97,7 +98,7 @@ namespace STProject
             }
             finally
             {
-                MessageBox.Show("Регистрацията ви беше успешна");
+               
                 textBoxEmail.Text = string.Empty;
                 textBoxName.Text = string.Empty;
                 textBoxNumber.Text = string.Empty;

@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace STProject.Core
 {
-    public class Teacher: User, ITeacher
+    public class Teacher: Student, ITeacher
     {
         const int ConstFackNumberbettwenFirst = 1000;
         const int ConstFackNumberbettwenSecond = 2000;
@@ -47,16 +47,16 @@ namespace STProject.Core
             {
                 string emailTEST = rdr.GetValue(3).ToString();
                 string passTEST = rdr.GetValue(6).ToString();
-                ;
-                if (rdr.GetValue(3).ToString() == email && rdr.GetValue(6).ToString() == password)
+                
+                if (rdr.GetValue(1).ToString() == email && rdr.GetValue(2).ToString() == password)
                 {
-                    teacher.FirstName = rdr.GetValue(1).ToString();
-                    teacher.LastName = rdr.GetValue(2).ToString();
-                    teacher.Email = rdr.GetValue(3).ToString();
-                    teacher.Departament = rdr.GetValue(4).ToString();
-                    teacher.Password = rdr.GetValue(6).ToString();
+                    teacher.FirstName = rdr.GetValue(3).ToString();
+                    teacher.LastName = rdr.GetValue(4).ToString();
+                    teacher.Email = rdr.GetValue(1).ToString();
+                    teacher.Departament = rdr.GetValue(5).ToString();
+                    teacher.Password = rdr.GetValue(2).ToString();
                     teacher.AdminNumber = int.Parse(rdr.GetValue(7).ToString());
-                    teacher.PhoneNumber = rdr.GetValue(8).ToString();
+                    teacher.PhoneNumber = rdr.GetValue(6).ToString();
                     break;
                 }
                 else
