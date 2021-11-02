@@ -42,34 +42,40 @@ namespace STProject
                 if (textBoxA.Text != textBoxB.Text && textBoxA.Text != textBoxG.Text && textBoxV.Text != textBoxA.Text &&
                     textBoxB.Text != textBoxG.Text && textBoxV.Text != textBoxB.Text && textBoxV.Text != textBoxG.Text)
                 {
-                    //TODO check if exist
-                    Questions qu = new Questions(textBoxQuestion.Text, textBoxA.Text, textBoxB.Text, textBoxV.Text,
-                        textBoxG.Text, textBoxTrue.Text, comboBoxSubjects.SelectedItem.ToString());
-                    qu.setAnswer(qu);
-                    if (qu.checkValidQuestion(qu))
+                    Questions questionCheck = null;
+                       questionCheck = questionCheck.checkForQuestion(textBoxQuestion.Text, comboBoxSubjects.GetItemText(this.comboBoxSubjects.SelectedItem).ToString());
+                    if (questionCheck == null)
                     {
-                        try
+                        Questions qu = new Questions(textBoxQuestion.Text, textBoxA.Text, textBoxB.Text, textBoxV.Text,
+                            textBoxG.Text, textBoxTrue.Text, comboBoxSubjects.SelectedItem.ToString());
+                        qu.setAnswer(qu);
+                        if (qu.checkValidQuestion(qu))
                         {
-                            qu.InsertQuestion(qu);
-                            MessageBox.Show("Въпросът беше записан успешно");
+                            try
+                            {
+                                qu.InsertQuestion(qu);
+                                MessageBox.Show("Въпросът беше записан успешно");
+                            }
+                            catch (Exception exc)
+                            {
+                                MessageBox.Show("Заявката не беше изпълнена поради следната грешка: " + exc.Message);
+                            }
+                            finally
+                            {
+                                textBoxQuestion.Text = string.Empty;
+                                textBoxA.Text = string.Empty;
+                                textBoxB.Text = string.Empty;
+                                textBoxG.Text = string.Empty;
+                                textBoxTrue.Text = string.Empty;
+                                textBoxV.Text = string.Empty;
+                                comboBoxSubjects.SelectedIndex = -1;
+                            }
                         }
-                        catch (Exception exc)
-                        {
-                            MessageBox.Show("Заявката не беше изпълнена поради следната грешка: " + exc.Message);
-                        }
-                        finally
-                        {
-                            textBoxQuestion.Text = string.Empty;
-                            textBoxA.Text = string.Empty;
-                            textBoxB.Text = string.Empty;
-                            textBoxG.Text = string.Empty;
-                            textBoxTrue.Text = string.Empty;
-                            textBoxV.Text = string.Empty;
-                            comboBoxSubjects.SelectedIndex = -1;
-                        }
+                        else
+                            MessageBox.Show("Въпросът не е валиден, моля задайте въпрос с 4 отговора, от които 1 е верен");
                     }
                     else
-                        MessageBox.Show("Въпросът не е валиден, моля задайте въпрос с 4 отговора, от които 1 е верен");
+                        MessageBox.Show("Въпросът вече съществува");
                 }
                 else
                     MessageBox.Show("Въпросът трябва да има 4 различни отговора");
