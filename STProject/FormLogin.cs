@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STProject.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using STProject.Core;
 
 namespace STProject
 {
@@ -24,7 +26,9 @@ namespace STProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            var student = new Student();
+          
+            student = student.ReadFromData(textBoxEmail.Text, textBoxPassword.Text);
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
@@ -35,9 +39,14 @@ namespace STProject
             this.Close();
           
         }
-
+       
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            var student = new Student();
+           
+           
+            textBox1.Text = student.ReadFromData(textBoxEmail.Text, textBoxPassword.Text).FirstName + "   " + student.ReadFromData(textBoxEmail.Text, textBoxPassword.Text).LastName;
+
             if (radioButtonStudent.Checked)
             {
                 //TODO Проверка за валидни име и парола + падаване на данни за потребител
@@ -54,6 +63,11 @@ namespace STProject
                 formTeacher.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

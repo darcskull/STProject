@@ -10,5 +10,6 @@ namespace STProject.Interfaces
     public interface IStudent
     {
         void InsertStudent(Student student);
+       
     }
 }

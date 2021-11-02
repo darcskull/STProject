@@ -2,6 +2,7 @@
 using STProject.Interfaces;
 using System;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace STProject.Core
 {
@@ -9,12 +10,12 @@ namespace STProject.Core
     {
         private string name;
         private string information;
-
-        public News(  string name, string information)
+        private Image image;
+        public News(  string name, string information,Image image)
         {
             Name = name;
             Information = information;
-            
+            Image = image;
         }
 
         public string Information
@@ -23,7 +24,7 @@ namespace STProject.Core
             {
                 return information;
             }
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -32,6 +33,11 @@ namespace STProject.Core
                 information = value;
             }
         }
+        public Image Image
+        {
+            get => image;
+            private set => image = value;
+        }
 
         public string Name
         {
@@ -39,7 +45,7 @@ namespace STProject.Core
             {
                 return name;
             }
-            set
+           private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -52,7 +58,7 @@ namespace STProject.Core
         public void InsertNews(News news)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand($"insert into News values(N'{news.Name}',N'{news.Information}');", conn);
+            SqlCommand cmd = new SqlCommand($"insert into News values(N'{news.Name}',N'{news.Information}','{news.Image}');", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
