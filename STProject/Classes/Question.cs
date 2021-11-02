@@ -26,6 +26,7 @@ namespace STProject.Core
         public string AnswerTrue { get { return answertrue; } set { answertrue = value; } }
         public string Subject { get { return subject; } set { subject = value;  } }
 
+
         public Questions (string q, string a1, string a2, string a3, string a4, string at, string subject)
         {
             Question = q;
@@ -72,6 +73,31 @@ namespace STProject.Core
                 $"N'{question.Answer4}',N'{question.AnswerTrue}',N'{question.Subject}');", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+
+        public Questions checkForQuestion(string q, string st)
+        {
+            Questions question = null;
+            try
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Question where Question='" + q.Trim() + "'AND Subject='" + st.Trim() + "'";
+                var cmd = new SqlCommand(sql, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    question = new Questions(rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(),
+                        rdr.GetValue(4).ToString(), rdr.GetValue(5).ToString(), rdr.GetValue(6).ToString(),rdr.GetValue(7).ToString());
+
+                }
+            }
+            catch(Exception exc)
+            {
+                Console.WriteLine("Грешка при търсене на въпрос: " + exc.Message);
+            }
+
+            conn.Close();
+            return question;
         }
     }
 }
