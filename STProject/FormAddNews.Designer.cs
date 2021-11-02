@@ -35,11 +35,14 @@ namespace STProject
             this.buttonAddNews = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNews = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnImage = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(29, 403);
+            this.buttonBack.Location = new System.Drawing.Point(22, 487);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(100, 28);
@@ -68,7 +71,7 @@ namespace STProject
             // 
             // buttonAddNews
             // 
-            this.buttonAddNews.Location = new System.Drawing.Point(137, 403);
+            this.buttonAddNews.Location = new System.Drawing.Point(137, 487);
             this.buttonAddNews.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddNews.Name = "buttonAddNews";
             this.buttonAddNews.Size = new System.Drawing.Size(176, 28);
@@ -93,14 +96,36 @@ namespace STProject
             this.txtNews.Margin = new System.Windows.Forms.Padding(4);
             this.txtNews.Multiline = true;
             this.txtNews.Name = "txtNews";
-            this.txtNews.Size = new System.Drawing.Size(245, 219);
+            this.txtNews.Size = new System.Drawing.Size(245, 124);
             this.txtNews.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 293);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(245, 145);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnImage
+            // 
+            this.btnImage.Location = new System.Drawing.Point(267, 338);
+            this.btnImage.Margin = new System.Windows.Forms.Padding(4);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(100, 58);
+            this.btnImage.TabIndex = 7;
+            this.btnImage.Text = "Добави снимка";
+            this.btnImage.UseVisualStyleBackColor = true;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // FormAddNews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 467);
+            this.ClientSize = new System.Drawing.Size(384, 584);
+            this.Controls.Add(this.btnImage);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtNews);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAddNews);
@@ -112,6 +137,7 @@ namespace STProject
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавяне на Новини";
             this.Load += new System.EventHandler(this.FormAddNews_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +151,7 @@ namespace STProject
         private System.Windows.Forms.Button buttonAddNews;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNews;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnImage;
     }
 }
