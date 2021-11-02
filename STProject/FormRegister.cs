@@ -53,21 +53,40 @@ namespace STProject
             student.VerifyPassword = textBoxVerifyPass.Text;
             student.Departament = comboBox1.GetItemText(this.comboBox1.SelectedItem).ToString();
             student.InsertStudent(student);
-            MessageBox.Show("Регистрацията ви беше успешна");
+          
 
 
         }
         private void RegistrationTeacher()
         {
-           //TODO: For TEACHER AS STUDENT
+            //TODO: For TEACHER AS STUDENT
+            Teacher teacher = new Teacher();
+            teacher.Email = textBoxEmail.Text;
+            teacher.FirstName = textBoxName.Text;
+            teacher.LastName = textBoxSecondName.Text;
+            teacher.AdminNumber = int.Parse(textBoxNumber.Text);
+            teacher.PhoneNumber = textBoxTelNumber.Text;
+            teacher.Password = textBoxPassword.Text;
+            teacher.Evaluation = Const_defautEvaluation;
+            teacher.VerifyPassword = textBoxVerifyPass.Text;
+            teacher.Departament = comboBox1.GetItemText(this.comboBox1.SelectedItem).ToString();
+            teacher.InsertStudent(teacher);
+          
+
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             try
             {
-                RegistrationStudent();
-                RegistrationTeacher();
+                if (radioButtonStudent.Checked)
+                {
+                    RegistrationStudent();
+                }
+                else if (radioButtonTeacher.Checked)
+                {
+                    RegistrationTeacher();
+                }
             }
             catch (ArgumentException ex)
             {
@@ -79,6 +98,7 @@ namespace STProject
             }
             finally
             {
+                MessageBox.Show("Регистрацията ви беше успешна");
                 textBoxEmail.Text = string.Empty;
                 textBoxName.Text = string.Empty;
                 textBoxNumber.Text = string.Empty;
@@ -87,6 +107,7 @@ namespace STProject
                 textBoxTelNumber.Text = string.Empty;
                 textBoxVerifyPass.Text = string.Empty;
                 comboBox1.SelectedIndex = Const_defautSelectItemInComboBox;
+
             }
 
         }

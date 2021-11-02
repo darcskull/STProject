@@ -5,110 +5,11 @@ using System.Data.SqlClient;
 
 namespace STProject.Core
 {
-    public class Teacher: Data, ITeacher
+    public class Teacher: Student, ITeacher
     {
-        const byte ConstMin_SymbolsForPassword = 6;
-        private string firstName;
-        private string password;
-        private string lastname;
-        private string phoneNumber;
-        private string email;
-        private string departament;
+        const int ConstFackNumberbettwenFirst = 1000;
+        const int ConstFackNumberbettwenSecond = 2000;
         private int adminNumber;
-
-        public string Password
-        {
-            get
-            {
-                return this.password;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Password cannot be null or empty!");
-                }
-                if (value.Length < ConstMin_SymbolsForPassword)
-                {
-                    throw new ArgumentException("Password cannot be less than six symbols");
-                }
-                this.password = value;
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                return this.lastname;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Last name cannot be null or empty!");
-                }
-                this.lastname = value;
-            }
-        }
-
-        public string PhoneNumber
-        {
-            get
-            {
-                return this.phoneNumber;
-            }
-            set
-            {
-
-                this.phoneNumber = value;
-            }
-        }
-
-        public string FirstName
-        {
-            get
-            {
-                return this.firstName;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("First name cannot be null or empty!");
-                }
-                this.firstName = value;
-            }
-        }
-
-        public string Email
-        {
-            get
-            {
-                return this.email;
-            }
-            set
-            {
-
-                this.email = value;
-            }
-        }
-
-        public string Departament
-        {
-            get
-            {
-                return this.departament;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Departament cannot be null or empty!");
-                }
-                this.departament = value;
-            }
-        }
 
         public int AdminNumber
         {
@@ -118,7 +19,11 @@ namespace STProject.Core
             }
             set
             {
-
+                if (value < ConstFackNumberbettwenFirst || value > ConstFackNumberbettwenSecond)
+                {
+                    throw new ArgumentException("Факултетният номер трябва да е между 1000 и 2000");
+                }
+                
                 this.adminNumber = value;
             }
         }
