@@ -59,11 +59,6 @@ namespace STProject.Core
                     teacher.PhoneNumber = rdr.GetValue(6).ToString();
                     break;
                 }
-              /*  else
-                {
-                    teacher = null;
-                }*/
-
             }
 
             conn.Close();
