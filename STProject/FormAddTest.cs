@@ -42,12 +42,16 @@ namespace STProject
                 if (textBoxA.Text != textBoxB.Text && textBoxA.Text != textBoxG.Text && textBoxV.Text != textBoxA.Text &&
                     textBoxB.Text != textBoxG.Text && textBoxV.Text != textBoxB.Text && textBoxV.Text != textBoxG.Text)
                 {
-                    Questions questionCheck = null;
-                       questionCheck = questionCheck.checkForQuestion(textBoxQuestion.Text, comboBoxSubjects.GetItemText(this.comboBoxSubjects.SelectedItem).ToString());
-                    if (questionCheck == null)
+                    Questions qu = new Questions();
+                    if (qu.checkForQuestion(textBoxQuestion.Text, comboBoxSubjects.SelectedItem.ToString()))
                     {
-                        Questions qu = new Questions(textBoxQuestion.Text, textBoxA.Text, textBoxB.Text, textBoxV.Text,
-                            textBoxG.Text, textBoxTrue.Text, comboBoxSubjects.SelectedItem.ToString());
+                        qu.Question = textBoxQuestion.Text;
+                        qu.Answer1 = textBoxA.Text;
+                        qu.Answer2 = textBoxB.Text;
+                        qu.Answer3 = textBoxV.Text;
+                        qu.Answer4 = textBoxG.Text;
+                        qu.AnswerTrue = textBoxTrue.Text;
+                        qu.Subject = comboBoxSubjects.SelectedItem.ToString();
                         qu.setAnswer(qu);
                         if (qu.checkValidQuestion(qu))
                         {

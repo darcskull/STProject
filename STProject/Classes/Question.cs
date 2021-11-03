@@ -26,23 +26,11 @@ namespace STProject.Core
         public string AnswerTrue { get { return answertrue; } set { answertrue = value; } }
         public string Subject { get { return subject; } set { subject = value;  } }
 
-
-        public Questions (string q, string a1, string a2, string a3, string a4, string at, string subject)
-        {
-            Question = q;
-            Answer1 = a1;
-            Answer2 = a2;
-            Answer3 = a3;
-            Answer4 = a4;
-            AnswerTrue = at;
-            Subject = subject;
-        }
-
         public void setAnswer(Questions q)
         {
             switch (q.AnswerTrue)
             {
-                case "a":
+                case "а":
                     q.AnswerTrue = q.Answer1;
                     break;
                 case "б":
@@ -75,20 +63,29 @@ namespace STProject.Core
             conn.Close();
         }
 
-        public Questions checkForQuestion(string q, string st)
+        public bool checkForQuestion(string q, string st)
         {
-            Questions question = null;
+            Questions question = new Questions();
+            bool bol = true;
             try
             {
                 conn.Open();
-                string sql = "SELECT * FROM Question where Question='" + q.Trim() + "'AND Subject='" + st.Trim() + "'";
+                string sql = "SELECT * FROM Question";
                 var cmd = new SqlCommand(sql, conn);
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    question = new Questions(rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(),
-                        rdr.GetValue(4).ToString(), rdr.GetValue(5).ToString(), rdr.GetValue(6).ToString(),rdr.GetValue(7).ToString());
-
+                    if (rdr.GetValue(1).ToString() == q && st == rdr.GetValue(7).ToString())
+                    {
+                        question.Question = rdr.GetValue(1).ToString();
+                        question.Answer1 = rdr.GetValue(2).ToString();
+                        question.Answer2 = rdr.GetValue(3).ToString();
+                        question.Answer3 = rdr.GetValue(4).ToString();
+                        question.Answer4 = rdr.GetValue(5).ToString();
+                        question.AnswerTrue = rdr.GetValue(6).ToString();
+                        question.Subject = rdr.GetValue(7).ToString();
+                        bol = false;
+                    }
                 }
             }
             catch(Exception exc)
@@ -97,7 +94,7 @@ namespace STProject.Core
             }
 
             conn.Close();
-            return question;
+            return bol;
         }
     }
 }
