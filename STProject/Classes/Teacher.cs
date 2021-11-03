@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace STProject.Core
 {
-    public class Teacher: Student, ITeacher
+    public class Teacher: User, ITeacher
     {
         const int ConstFackNumberbettwenFirst = 1000;
         const int ConstFackNumberbettwenSecond = 2000;
