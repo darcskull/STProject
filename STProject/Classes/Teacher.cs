@@ -22,7 +22,7 @@ namespace STProject.Core
                
                 if (value < ConstFackNumberbettwenFirst || value > ConstFackNumberbettwenSecond)
                 {
-                    throw new ArgumentException("Факултетният номер трябва да е между 1000 и 2000");
+                    throw new ArgumentException("Административният номер трябва да е между 1000 и 2000");
                 }
                 
                 this.adminNumber = value;
