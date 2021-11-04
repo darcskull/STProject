@@ -71,11 +71,10 @@ namespace STProject.Core
             var cmd = new SqlCommand(sql, conn);
             SqlDataReader rdr = cmd.ExecuteReader();
             var student = new Student();
+            student = null;
             while (rdr.Read())
             {
-                string emailTEST = rdr.GetValue(3).ToString();
-                string passTEST = rdr.GetValue(6).ToString();
-                ;
+               
                 if (rdr.GetValue(3).ToString() == email && rdr.GetValue(6).ToString() == password)
                 {
                     student.FirstName = rdr.GetValue(1).ToString();
