@@ -71,10 +71,8 @@ namespace STProject.Core
             var cmd = new SqlCommand(sql, conn);
             SqlDataReader rdr = cmd.ExecuteReader();
             var student = new Student();
-            student = null;
             while (rdr.Read())
             {
-               
                 if (rdr.GetValue(3).ToString() == email && rdr.GetValue(6).ToString() == password)
                 {
                     student.FirstName = rdr.GetValue(1).ToString();
@@ -85,13 +83,13 @@ namespace STProject.Core
                     student.Password = rdr.GetValue(6).ToString();
                     student.FacultyNumber = int.Parse(rdr.GetValue(7).ToString());
                     student.PhoneNumber = rdr.GetValue(8).ToString();
-
-                    break;
+                    conn.Close();
+                    return student;
                 }
             }
 
             conn.Close();
-            return student;
+            return null;
         }
     }
 }

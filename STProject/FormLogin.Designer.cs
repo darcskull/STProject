@@ -50,11 +50,13 @@ namespace STProject
             // 
             // textBoxPassword
             // 
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.Location = new System.Drawing.Point(61, 275);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(229, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(229, 24);
             this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // radioButtonTeacher
             // 
@@ -102,10 +104,10 @@ namespace STProject
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(60, 371);
+            this.buttonLogin.Location = new System.Drawing.Point(61, 349);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(100, 28);
+            this.buttonLogin.Size = new System.Drawing.Size(121, 28);
             this.buttonLogin.TabIndex = 6;
             this.buttonLogin.Text = "Влизане";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -113,10 +115,10 @@ namespace STProject
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(190, 371);
+            this.buttonCreate.Location = new System.Drawing.Point(190, 349);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(100, 28);
+            this.buttonCreate.Size = new System.Drawing.Size(125, 28);
             this.buttonCreate.TabIndex = 7;
             this.buttonCreate.Text = "Регистрация";
             this.buttonCreate.UseVisualStyleBackColor = true;
@@ -127,7 +129,7 @@ namespace STProject
             this.lblInformation.AutoSize = true;
             this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformation.ForeColor = System.Drawing.Color.Maroon;
-            this.lblInformation.Location = new System.Drawing.Point(99, 96);
+            this.lblInformation.Location = new System.Drawing.Point(57, 100);
             this.lblInformation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInformation.Name = "lblInformation";
             this.lblInformation.Size = new System.Drawing.Size(0, 20);

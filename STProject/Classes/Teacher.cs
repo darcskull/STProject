@@ -19,6 +19,7 @@ namespace STProject.Core
             }
             set
             {
+               
                 if (value < ConstFackNumberbettwenFirst || value > ConstFackNumberbettwenSecond)
                 {
                     throw new ArgumentException("Факултетният номер трябва да е между 1000 и 2000");
@@ -40,17 +41,13 @@ namespace STProject.Core
         {
             conn.Open();
             string sql = "SELECT * FROM Teacher";
-
             var cmd = new SqlCommand(sql, conn);
             SqlDataReader rdr = cmd.ExecuteReader();
-            var teacher = new Teacher();
-            teacher = null;
             while (rdr.Read())
             {
-               
-                
                 if (rdr.GetValue(1).ToString() == email && rdr.GetValue(2).ToString() == password)
-                {
+                { 
+                    var teacher = new Teacher();
                     teacher.FirstName = rdr.GetValue(3).ToString();
                     teacher.LastName = rdr.GetValue(4).ToString();
                     teacher.Email = rdr.GetValue(1).ToString();
@@ -58,12 +55,12 @@ namespace STProject.Core
                     teacher.Password = rdr.GetValue(2).ToString();
                     teacher.AdminNumber = int.Parse(rdr.GetValue(7).ToString());
                     teacher.PhoneNumber = rdr.GetValue(6).ToString();
-                    break;
+                    conn.Close();
+                    return teacher;
                 }
             }
-
             conn.Close();
-            return teacher;
+            return null;
         }
     }
 }

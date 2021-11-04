@@ -54,7 +54,7 @@ namespace STProject
             // radioButtonTeacher
             // 
             this.radioButtonTeacher.AutoSize = true;
-            this.radioButtonTeacher.Location = new System.Drawing.Point(207, 59);
+            this.radioButtonTeacher.Location = new System.Drawing.Point(27, 30);
             this.radioButtonTeacher.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonTeacher.Name = "radioButtonTeacher";
             this.radioButtonTeacher.Size = new System.Drawing.Size(129, 21);
@@ -62,12 +62,11 @@ namespace STProject
             this.radioButtonTeacher.TabStop = true;
             this.radioButtonTeacher.Text = " Преподавател";
             this.radioButtonTeacher.UseVisualStyleBackColor = true;
-            this.radioButtonTeacher.CheckedChanged += new System.EventHandler(this.radioButtonTeacher_CheckedChanged);
             // 
             // radioButtonStudent
             // 
             this.radioButtonStudent.AutoSize = true;
-            this.radioButtonStudent.Location = new System.Drawing.Point(349, 59);
+            this.radioButtonStudent.Location = new System.Drawing.Point(169, 30);
             this.radioButtonStudent.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonStudent.Name = "radioButtonStudent";
             this.radioButtonStudent.Size = new System.Drawing.Size(83, 21);
@@ -78,7 +77,7 @@ namespace STProject
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(207, 149);
+            this.textBoxEmail.Location = new System.Drawing.Point(27, 120);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(261, 22);
@@ -86,15 +85,16 @@ namespace STProject
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(207, 220);
+            this.textBoxName.Location = new System.Drawing.Point(27, 191);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(261, 22);
             this.textBoxName.TabIndex = 3;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(16, 511);
+            this.buttonBack.Location = new System.Drawing.Point(26, 419);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(100, 28);
@@ -105,7 +105,7 @@ namespace STProject
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(381, 511);
+            this.buttonRegister.Location = new System.Drawing.Point(431, 419);
             this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(128, 28);
@@ -116,7 +116,7 @@ namespace STProject
             // 
             // textBoxNumber
             // 
-            this.textBoxNumber.Location = new System.Drawing.Point(207, 374);
+            this.textBoxNumber.Location = new System.Drawing.Point(27, 345);
             this.textBoxNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNumber.Name = "textBoxNumber";
             this.textBoxNumber.Size = new System.Drawing.Size(261, 22);
@@ -124,40 +124,46 @@ namespace STProject
             // 
             // textBoxSecondName
             // 
-            this.textBoxSecondName.Location = new System.Drawing.Point(207, 302);
+            this.textBoxSecondName.Location = new System.Drawing.Point(27, 273);
             this.textBoxSecondName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSecondName.Name = "textBoxSecondName";
             this.textBoxSecondName.Size = new System.Drawing.Size(261, 22);
             this.textBoxSecondName.TabIndex = 7;
+            this.textBoxSecondName.TextChanged += new System.EventHandler(this.textBoxSecondName_TextChanged);
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(521, 149);
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(341, 120);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(253, 22);
             this.textBoxPassword.TabIndex = 8;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // textBoxTelNumber
             // 
-            this.textBoxTelNumber.Location = new System.Drawing.Point(521, 302);
+            this.textBoxTelNumber.Location = new System.Drawing.Point(341, 273);
             this.textBoxTelNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTelNumber.Name = "textBoxTelNumber";
             this.textBoxTelNumber.Size = new System.Drawing.Size(253, 22);
             this.textBoxTelNumber.TabIndex = 9;
+            this.textBoxTelNumber.TextChanged += new System.EventHandler(this.textBoxTelNumber_TextChanged);
             // 
             // textBoxVerifyPass
             // 
-            this.textBoxVerifyPass.Location = new System.Drawing.Point(521, 220);
+            this.textBoxVerifyPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxVerifyPass.Location = new System.Drawing.Point(341, 191);
             this.textBoxVerifyPass.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVerifyPass.Name = "textBoxVerifyPass";
-            this.textBoxVerifyPass.Size = new System.Drawing.Size(253, 22);
+            this.textBoxVerifyPass.Size = new System.Drawing.Size(253, 24);
             this.textBoxVerifyPass.TabIndex = 10;
+            this.textBoxVerifyPass.TextChanged += new System.EventHandler(this.textBoxVerifyPass_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(203, 129);
+            this.label1.Location = new System.Drawing.Point(23, 100);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 17);
@@ -167,7 +173,7 @@ namespace STProject
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(203, 201);
+            this.label2.Location = new System.Drawing.Point(23, 172);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 17);
@@ -177,7 +183,7 @@ namespace STProject
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(203, 282);
+            this.label3.Location = new System.Drawing.Point(23, 253);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 17);
@@ -187,7 +193,7 @@ namespace STProject
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(203, 354);
+            this.label4.Location = new System.Drawing.Point(23, 325);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(256, 17);
@@ -197,7 +203,7 @@ namespace STProject
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(517, 129);
+            this.label5.Location = new System.Drawing.Point(337, 100);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 17);
@@ -207,7 +213,7 @@ namespace STProject
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(517, 201);
+            this.label6.Location = new System.Drawing.Point(337, 172);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(193, 17);
@@ -217,7 +223,7 @@ namespace STProject
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(517, 282);
+            this.label7.Location = new System.Drawing.Point(337, 253);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 17);
@@ -227,7 +233,7 @@ namespace STProject
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(517, 354);
+            this.label8.Location = new System.Drawing.Point(337, 325);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 17);
@@ -239,18 +245,17 @@ namespace STProject
             this.comboBox1.AllowDrop = true;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(521, 374);
+            this.comboBox1.Location = new System.Drawing.Point(341, 345);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(253, 24);
             this.comboBox1.TabIndex = 20;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(654, 487);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -273,6 +278,7 @@ namespace STProject
             this.Controls.Add(this.radioButtonTeacher);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация на потребител";
             this.Load += new System.EventHandler(this.FormRegister_Load);
             this.ResumeLayout(false);
