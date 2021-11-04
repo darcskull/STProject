@@ -40,6 +40,7 @@ namespace STProject.Core
         {
             conn.Open();
             string sql = "SELECT * FROM Teacher";
+
             var cmd = new SqlCommand(sql, conn);
             SqlDataReader rdr = cmd.ExecuteReader();
             var teacher = new Teacher();
