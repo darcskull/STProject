@@ -65,7 +65,6 @@ namespace STProject.Core
 
         public bool checkForQuestion(string q, string st)
         {
-            Questions question = new Questions();
             bool bol = true;
             try
             {
@@ -77,13 +76,6 @@ namespace STProject.Core
                 {
                     if (rdr.GetValue(1).ToString() == q && st == rdr.GetValue(7).ToString())
                     {
-                        question.Question = rdr.GetValue(1).ToString();
-                        question.Answer1 = rdr.GetValue(2).ToString();
-                        question.Answer2 = rdr.GetValue(3).ToString();
-                        question.Answer3 = rdr.GetValue(4).ToString();
-                        question.Answer4 = rdr.GetValue(5).ToString();
-                        question.AnswerTrue = rdr.GetValue(6).ToString();
-                        question.Subject = rdr.GetValue(7).ToString();
                         bol = false;
                     }
                 }
