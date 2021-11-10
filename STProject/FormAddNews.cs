@@ -9,14 +9,16 @@ namespace STProject
 
     public partial class FormAddNews : Form
     {
-        public FormAddNews()
+        Teacher user = new Teacher();
+        public FormAddNews(Teacher u)
         {
             InitializeComponent();
+            user = u;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            FormMainPageTeacher formUser = new FormMainPageTeacher();
+            FormMainPageTeacher formUser = new FormMainPageTeacher(user);
             this.Hide();
             formUser.ShowDialog();
             this.Close();

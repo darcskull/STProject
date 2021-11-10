@@ -132,6 +132,7 @@ namespace STProject
             this.Controls.Add(this.buttonAddTest);
             this.Name = "FormMainPageTeacher";
             this.Text = "Начало";
+            this.Load += new System.EventHandler(this.FormMainPageTeacher_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

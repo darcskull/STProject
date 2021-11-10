@@ -41,14 +41,14 @@ namespace STProject
            
             if (radioButtonStudent.Checked && VerifyLoginAsStudent()!=null)
             {              
-                FormMainPageStudent formStudent = new FormMainPageStudent();
+                FormMainPageStudent formStudent = new FormMainPageStudent(VerifyLoginAsStudent());
                 this.Hide();
                 formStudent.ShowDialog();
                 this.Close();
             }
             else if (radioButtonTeacher.Checked && VerifyLoginAsTeacher()!=null)
             {
-                FormMainPageTeacher formTeacher = new FormMainPageTeacher();
+                FormMainPageTeacher formTeacher = new FormMainPageTeacher(VerifyLoginAsTeacher());
                 this.Hide();
                 formTeacher.ShowDialog();
                 this.Close();

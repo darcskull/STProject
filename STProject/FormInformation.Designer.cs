@@ -83,6 +83,7 @@ namespace STProject
             this.Controls.Add(this.buttonBack);
             this.Name = "FormInformation";
             this.Text = "Информация";
+            this.Load += new System.EventHandler(this.FormInformation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

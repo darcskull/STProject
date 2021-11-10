@@ -1,4 +1,5 @@
 ﻿using STProject.Classes;
+using STProject.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,11 @@ namespace STProject
     {
         DropDownValues vvalues = new DropDownValues();
         List<string> dropValyes = new List<string>();
-        public FormTest()
+        Student student = new Student();
+        public FormTest(Student st)
         {
             InitializeComponent();
+            student = st;
             vvalues.getSubjects(dropValyes);
             foreach (string value in dropValyes)
             {
@@ -28,7 +31,7 @@ namespace STProject
         private void buttonBack_Click(object sender, EventArgs e)
         {
             //Todo забраняване при стартиран тест
-            FormMainPageStudent formStudent = new FormMainPageStudent();
+            FormMainPageStudent formStudent = new FormMainPageStudent(student);
             this.Hide();
             formStudent.ShowDialog();
             this.Close();

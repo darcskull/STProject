@@ -1,4 +1,6 @@
-﻿using System;
+﻿using STProject.Classes;
+using STProject.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +14,26 @@ namespace STProject
 {
     public partial class FormMaterials : Form
     {
-        public FormMaterials()
+        //TODO проверка за преподавател
+        User user;
+        public FormMaterials(User u)
         {
             InitializeComponent();
+            user = u;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
             // TODO преверка за ролята на потребителя и връщане към FormMainTeacher
-            FormMainPageStudent formStudent = new FormMainPageStudent();
+            FormMainPageStudent formStudent = new FormMainPageStudent((Student)user);
             this.Hide();
             formStudent.ShowDialog();
             this.Close();
+        }
+
+        private void FormMaterials_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
