@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STProject.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace STProject
 {
     public partial class FormMainPageTeacher : Form
     {
-        public FormMainPageTeacher()
+        Teacher teacher = new Teacher();
+        public FormMainPageTeacher(Teacher t)
         {
             InitializeComponent();
+            teacher = t;
         }
 
         private void buttonLogOut_Click(object sender, EventArgs e)
@@ -28,7 +31,7 @@ namespace STProject
         private void buttonMaterials_Click(object sender, EventArgs e)
         {
             //TODO Падаване на данни за потребител
-            FormMaterials formMaterials = new FormMaterials();
+            FormMaterials formMaterials = new FormMaterials(teacher);
             this.Hide();
             formMaterials.ShowDialog();
             this.Close();
@@ -37,7 +40,7 @@ namespace STProject
         private void buttonAddMaterials_Click(object sender, EventArgs e)
         {
             //TODO Падаване на данни за потребител
-            FormAddMaterials formMaterials = new FormAddMaterials();
+            FormAddMaterials formMaterials = new FormAddMaterials(teacher);
             this.Hide();
             formMaterials.ShowDialog();
             this.Close();
@@ -46,7 +49,7 @@ namespace STProject
         private void buttonAddNews_Click(object sender, EventArgs e)
         {
             //TODO Падаване на данни за потребител
-            FormAddNews formNews = new FormAddNews();
+            FormAddNews formNews = new FormAddNews(teacher);
             this.Hide();
             formNews.ShowDialog();
             this.Close();
@@ -55,7 +58,7 @@ namespace STProject
         private void buttonAddTest_Click(object sender, EventArgs e)
         {
             //TODO Падаване на данни за потребител
-            FormAddTest formTest = new FormAddTest();
+            FormAddTest formTest = new FormAddTest(teacher);
             this.Hide();
             formTest.ShowDialog();
             this.Close();
@@ -64,10 +67,15 @@ namespace STProject
         private void buttonInformation_Click(object sender, EventArgs e)
         {
             //TODO Падаване на данни за потребител
-            FormInformation information = new FormInformation();
+            FormInformation information = new FormInformation(teacher);
             this.Hide();
             information.ShowDialog();
             this.Close();
+        }
+
+        private void FormMainPageTeacher_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

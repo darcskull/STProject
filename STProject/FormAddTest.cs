@@ -16,9 +16,11 @@ namespace STProject
     {
         DropDownValues vvalues = new DropDownValues();
         List<string> dropValyes = new List<string>();
-        public FormAddTest()
+        Teacher user = new Teacher();
+        public FormAddTest(Teacher t)
         {
             InitializeComponent();
+            user = t;
             vvalues.getSubjects(dropValyes);
             foreach (string value in dropValyes)
             {
@@ -28,7 +30,7 @@ namespace STProject
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            FormMainPageTeacher formUser = new FormMainPageTeacher();
+            FormMainPageTeacher formUser = new FormMainPageTeacher(user);
             this.Hide();
             formUser.ShowDialog();
             this.Close();
