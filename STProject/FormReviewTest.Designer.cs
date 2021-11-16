@@ -30,7 +30,6 @@ namespace STProject
         private void InitializeComponent()
         {
             this.buttonBack = new System.Windows.Forms.Button();
-            this.listBoxQuestion = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@ namespace STProject
             this.buttonGenerate = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxSubject = new System.Windows.Forms.ComboBox();
+            this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -52,14 +52,6 @@ namespace STProject
             this.buttonBack.Text = "Назад";
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
-            // listBoxQuestion
-            // 
-            this.listBoxQuestion.FormattingEnabled = true;
-            this.listBoxQuestion.Location = new System.Drawing.Point(213, 77);
-            this.listBoxQuestion.Name = "listBoxQuestion";
-            this.listBoxQuestion.Size = new System.Drawing.Size(319, 95);
-            this.listBoxQuestion.TabIndex = 4;
             // 
             // label1
             // 
@@ -110,6 +102,7 @@ namespace STProject
             this.buttonNext.TabIndex = 10;
             this.buttonNext.Text = "Следващ";
             this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonPrevious
             // 
@@ -119,6 +112,7 @@ namespace STProject
             this.buttonPrevious.TabIndex = 11;
             this.buttonPrevious.Text = "Предишен";
             this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // buttonGenerate
             // 
@@ -128,6 +122,7 @@ namespace STProject
             this.buttonGenerate.TabIndex = 12;
             this.buttonGenerate.Text = "Генериране";
             this.buttonGenerate.UseVisualStyleBackColor = true;
+            this.buttonGenerate.Click += new System.EventHandler(this.buttonGenerate_Click);
             // 
             // label4
             // 
@@ -147,11 +142,20 @@ namespace STProject
             this.comboBoxSubject.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSubject.TabIndex = 14;
             // 
+            // textBoxQuestion
+            // 
+            this.textBoxQuestion.Location = new System.Drawing.Point(213, 77);
+            this.textBoxQuestion.Multiline = true;
+            this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.Size = new System.Drawing.Size(319, 106);
+            this.textBoxQuestion.TabIndex = 15;
+            // 
             // FormReviewTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonGenerate);
@@ -162,7 +166,6 @@ namespace STProject
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxAnswer);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBoxQuestion);
             this.Controls.Add(this.buttonBack);
             this.Name = "FormReviewTest";
             this.Text = "Преглед на теста";
@@ -175,7 +178,6 @@ namespace STProject
         #endregion
 
         private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.ListBox listBoxQuestion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxAnswer;
         private System.Windows.Forms.Label label2;
@@ -186,5 +188,6 @@ namespace STProject
         private System.Windows.Forms.Button buttonGenerate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxSubject;
+        private System.Windows.Forms.TextBox textBoxQuestion;
     }
 }

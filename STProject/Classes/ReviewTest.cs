@@ -25,16 +25,6 @@ namespace STProject.Classes
         public Questions [] ReviewQuestions { get { return questions;  } set { questions = value; } }
         public string [] GivenAnswers { get { return givenAnswers; } set { givenAnswers = value; } }
 
-        public ReviewTest ( int g, int p, string e, string s, Questions[] q, string[] a)
-        {
-            Grade = g;
-            Points = p;
-            Email = e;
-            Subject = s;
-            ReviewQuestions = q;
-            GivenAnswers = a;
-        }
-
         public int GradeTest(Questions [] questions, string [] answers)
         {
             int result = 0;
@@ -58,6 +48,40 @@ namespace STProject.Classes
             SqlCommand cmd = new SqlCommand($"insert into Test values('{review.Email}','{review.Grade}','{review.Subject}','{review.Points}','{x}');", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+
+        public ReviewTest readForReview(string email, string subject)
+        {
+            ReviewTest review = new ReviewTest();
+            try
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Test";
+                var cmd = new SqlCommand(sql, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    if (rdr.GetValue(1).ToString() == email && subject == rdr.GetValue(3).ToString())
+                    {
+                        review.Email = rdr.GetValue(1).ToString();
+                        review.Grade = int.Parse(rdr.GetValue(2).ToString());
+                        review.Subject = rdr.GetValue(3).ToString();
+                        review.Points = int.Parse(rdr.GetValue(4).ToString());
+                        for(int i=5; i<30; i += 3)
+                        {
+                            review.questions[i].Question = rdr.GetValue(i).ToString();
+                            review.questions[i].AnswerTrue = rdr.GetValue(i + 1).ToString();
+                            review.givenAnswers[i] = rdr.GetValue(i+2).ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Грешка при търсене на тест: " + exc.Message);
+            }
+
+            return review;
         }
     }
 }
