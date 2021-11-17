@@ -41,5 +41,14 @@ namespace STProject
         {
 
         }
+
+        private void buttonGenerate_Click(object sender, EventArgs e)
+        {
+            //TODO Генериране на въпроси за теста
+            FormActiveTest active = new FormActiveTest(student, null);
+            this.Hide();
+            active.ShowDialog();
+            this.Close();
+        }
     }
 }
