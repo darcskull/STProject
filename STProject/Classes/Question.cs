@@ -88,5 +88,39 @@ namespace STProject.Core
             conn.Close();
             return bol;
         }
+
+        public List<Questions> readQuestions(string subject)
+        {
+            List<Questions> questions = new List<Questions>();
+            try
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Question";
+                var cmd = new SqlCommand(sql, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    if (subject==rdr.GetValue(7).ToString())
+                    {
+                        Questions q = new Questions();
+                        q.Question = rdr.GetValue(1).ToString();
+                        q.Answer1 = rdr.GetValue(2).ToString();
+                        q.Answer2 = rdr.GetValue(3).ToString();
+                        q.Answer3 = rdr.GetValue(4).ToString();
+                        q.Answer4 = rdr.GetValue(5).ToString();
+                        q.AnswerTrue = rdr.GetValue(6).ToString();
+                        q.Subject = rdr.GetValue(7).ToString();
+                        questions.Add(q);
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Грешка при търсене на въпрос: " + exc.Message);
+            }
+
+            conn.Close();
+            return questions;
+        }
     }
 }
