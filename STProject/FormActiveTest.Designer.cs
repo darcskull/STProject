@@ -58,6 +58,7 @@ namespace STProject
             // 
             // textBoxAnswerA
             // 
+            this.textBoxAnswerA.Enabled = false;
             this.textBoxAnswerA.Location = new System.Drawing.Point(136, 235);
             this.textBoxAnswerA.Name = "textBoxAnswerA";
             this.textBoxAnswerA.Size = new System.Drawing.Size(364, 20);
@@ -65,6 +66,7 @@ namespace STProject
             // 
             // textBoxAnswerB
             // 
+            this.textBoxAnswerB.Enabled = false;
             this.textBoxAnswerB.Location = new System.Drawing.Point(136, 272);
             this.textBoxAnswerB.Name = "textBoxAnswerB";
             this.textBoxAnswerB.Size = new System.Drawing.Size(364, 20);
@@ -72,6 +74,7 @@ namespace STProject
             // 
             // textBoxAnswerV
             // 
+            this.textBoxAnswerV.Enabled = false;
             this.textBoxAnswerV.Location = new System.Drawing.Point(136, 309);
             this.textBoxAnswerV.Name = "textBoxAnswerV";
             this.textBoxAnswerV.Size = new System.Drawing.Size(364, 20);
@@ -79,6 +82,7 @@ namespace STProject
             // 
             // textBoxAnswearG
             // 
+            this.textBoxAnswearG.Enabled = false;
             this.textBoxAnswearG.Location = new System.Drawing.Point(136, 352);
             this.textBoxAnswearG.Name = "textBoxAnswearG";
             this.textBoxAnswearG.Size = new System.Drawing.Size(364, 20);
@@ -176,6 +180,7 @@ namespace STProject
             // 
             // textBoxQuestion
             // 
+            this.textBoxQuestion.Enabled = false;
             this.textBoxQuestion.Location = new System.Drawing.Point(136, 92);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
@@ -184,6 +189,7 @@ namespace STProject
             // 
             // textBoxNumberQuestion
             // 
+            this.textBoxNumberQuestion.Enabled = false;
             this.textBoxNumberQuestion.Location = new System.Drawing.Point(98, 92);
             this.textBoxNumberQuestion.Name = "textBoxNumberQuestion";
             this.textBoxNumberQuestion.Size = new System.Drawing.Size(27, 20);
