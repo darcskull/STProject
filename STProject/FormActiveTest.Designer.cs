@@ -140,6 +140,7 @@ namespace STProject
             this.buttonPrevious.TabIndex = 20;
             this.buttonPrevious.Text = "Предишен";
             this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // buttonNext
             // 
@@ -149,6 +150,7 @@ namespace STProject
             this.buttonNext.TabIndex = 21;
             this.buttonNext.Text = "Следващ";
             this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonEndTest
             // 

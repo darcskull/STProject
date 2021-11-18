@@ -53,10 +53,7 @@ namespace STProject
                 try
                 {
                     reviewTest = reviewTest.readForReview(student.Email, comboBoxSubject.SelectedItem.ToString());
-                    textBoxAnswer.Text = reviewTest.GivenAnswers[counter];
-                    textBoxGivenAnswer.Text = reviewTest.ReviewQuestions[counter].AnswerTrue;
-                    textBoxQuestion.Text = reviewTest.ReviewQuestions[counter].Question;
-                    textBoxQuestionNumber.Text = (counter + 1).ToString();
+                    setQuestion(counter);
                     textBoxGrade.Text = reviewTest.Grade.ToString();
                     textBoxPoints.Text = reviewTest.Points.ToString();
                     checkCorrect();
@@ -79,10 +76,8 @@ namespace STProject
                 if (counter < 0)
                     counter = 9;
 
-                textBoxAnswer.Text = reviewTest.GivenAnswers[counter];
-                textBoxGivenAnswer.Text = reviewTest.ReviewQuestions[counter].AnswerTrue;
-                textBoxQuestion.Text = reviewTest.ReviewQuestions[counter].Question;
-                textBoxQuestionNumber.Text = (counter + 1).ToString();
+
+                setQuestion(counter);
                 checkCorrect();
             }
             else
@@ -98,10 +93,7 @@ namespace STProject
                 if (counter > 9)
                     counter = 0;
 
-                textBoxAnswer.Text = reviewTest.GivenAnswers[counter];
-                textBoxGivenAnswer.Text = reviewTest.ReviewQuestions[counter].AnswerTrue;
-                textBoxQuestion.Text = reviewTest.ReviewQuestions[counter].Question;
-                textBoxQuestionNumber.Text = (counter + 1).ToString();
+                setQuestion(counter);
                 checkCorrect();
             }
             else
@@ -114,6 +106,14 @@ namespace STProject
                 textBoxCorrect.Text = "Верен отговор";
             else
                 textBoxCorrect.Text = "Грешен отговор"; 
+        }
+
+        private void setQuestion(int br)
+        {
+            textBoxAnswer.Text = reviewTest.GivenAnswers[br];
+            textBoxGivenAnswer.Text = reviewTest.ReviewQuestions[br].AnswerTrue;
+            textBoxQuestion.Text = reviewTest.ReviewQuestions[br].Question;
+            textBoxQuestionNumber.Text = (br + 1).ToString();
         }
     }
 }
