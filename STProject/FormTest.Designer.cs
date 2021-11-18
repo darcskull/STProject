@@ -37,7 +37,7 @@ namespace STProject
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(279, 216);
+            this.buttonBack.Location = new System.Drawing.Point(12, 398);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(75, 23);
             this.buttonBack.TabIndex = 4;
@@ -47,7 +47,7 @@ namespace STProject
             // 
             // buttonGenerate
             // 
-            this.buttonGenerate.Location = new System.Drawing.Point(312, 140);
+            this.buttonGenerate.Location = new System.Drawing.Point(156, 398);
             this.buttonGenerate.Name = "buttonGenerate";
             this.buttonGenerate.Size = new System.Drawing.Size(75, 23);
             this.buttonGenerate.TabIndex = 17;
@@ -58,7 +58,7 @@ namespace STProject
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(263, 85);
+            this.label2.Location = new System.Drawing.Point(65, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 18;
@@ -68,7 +68,7 @@ namespace STProject
             // 
             this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSubject.FormattingEnabled = true;
-            this.comboBoxSubject.Location = new System.Drawing.Point(266, 104);
+            this.comboBoxSubject.Location = new System.Drawing.Point(68, 110);
             this.comboBoxSubject.Name = "comboBoxSubject";
             this.comboBoxSubject.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSubject.TabIndex = 23;
@@ -77,7 +77,7 @@ namespace STProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(290, 450);
             this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonGenerate);
