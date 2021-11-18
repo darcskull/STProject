@@ -41,6 +41,12 @@ namespace STProject
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxSubject = new System.Windows.Forms.ComboBox();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
+            this.textBoxQuestionNumber = new System.Windows.Forms.TextBox();
+            this.textBoxGrade = new System.Windows.Forms.TextBox();
+            this.textBoxPoints = new System.Windows.Forms.TextBox();
+            this.textBoxCorrect = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -56,7 +62,7 @@ namespace STProject
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(210, 61);
+            this.label1.Location = new System.Drawing.Point(143, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 5;
@@ -64,7 +70,8 @@ namespace STProject
             // 
             // textBoxAnswer
             // 
-            this.textBoxAnswer.Location = new System.Drawing.Point(213, 214);
+            this.textBoxAnswer.Enabled = false;
+            this.textBoxAnswer.Location = new System.Drawing.Point(146, 214);
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(319, 20);
             this.textBoxAnswer.TabIndex = 6;
@@ -72,7 +79,7 @@ namespace STProject
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(210, 198);
+            this.label2.Location = new System.Drawing.Point(143, 198);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 7;
@@ -81,7 +88,7 @@ namespace STProject
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(210, 246);
+            this.label3.Location = new System.Drawing.Point(143, 246);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 8;
@@ -89,14 +96,15 @@ namespace STProject
             // 
             // textBoxGivenAnswer
             // 
-            this.textBoxGivenAnswer.Location = new System.Drawing.Point(213, 271);
+            this.textBoxGivenAnswer.Enabled = false;
+            this.textBoxGivenAnswer.Location = new System.Drawing.Point(146, 262);
             this.textBoxGivenAnswer.Name = "textBoxGivenAnswer";
             this.textBoxGivenAnswer.Size = new System.Drawing.Size(319, 20);
             this.textBoxGivenAnswer.TabIndex = 9;
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(457, 329);
+            this.buttonNext.Location = new System.Drawing.Point(390, 316);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 10;
@@ -106,7 +114,7 @@ namespace STProject
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(213, 329);
+            this.buttonPrevious.Location = new System.Drawing.Point(146, 316);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
             this.buttonPrevious.TabIndex = 11;
@@ -144,17 +152,74 @@ namespace STProject
             // 
             // textBoxQuestion
             // 
-            this.textBoxQuestion.Location = new System.Drawing.Point(213, 77);
+            this.textBoxQuestion.Enabled = false;
+            this.textBoxQuestion.Location = new System.Drawing.Point(146, 77);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.Size = new System.Drawing.Size(319, 106);
             this.textBoxQuestion.TabIndex = 15;
+            // 
+            // textBoxQuestionNumber
+            // 
+            this.textBoxQuestionNumber.Enabled = false;
+            this.textBoxQuestionNumber.Location = new System.Drawing.Point(115, 77);
+            this.textBoxQuestionNumber.Name = "textBoxQuestionNumber";
+            this.textBoxQuestionNumber.Size = new System.Drawing.Size(25, 20);
+            this.textBoxQuestionNumber.TabIndex = 16;
+            // 
+            // textBoxGrade
+            // 
+            this.textBoxGrade.Enabled = false;
+            this.textBoxGrade.Location = new System.Drawing.Point(659, 297);
+            this.textBoxGrade.Name = "textBoxGrade";
+            this.textBoxGrade.Size = new System.Drawing.Size(91, 20);
+            this.textBoxGrade.TabIndex = 17;
+            // 
+            // textBoxPoints
+            // 
+            this.textBoxPoints.Enabled = false;
+            this.textBoxPoints.Location = new System.Drawing.Point(659, 246);
+            this.textBoxPoints.Name = "textBoxPoints";
+            this.textBoxPoints.Size = new System.Drawing.Size(91, 20);
+            this.textBoxPoints.TabIndex = 18;
+            // 
+            // textBoxCorrect
+            // 
+            this.textBoxCorrect.Enabled = false;
+            this.textBoxCorrect.Location = new System.Drawing.Point(490, 77);
+            this.textBoxCorrect.Name = "textBoxCorrect";
+            this.textBoxCorrect.Size = new System.Drawing.Size(91, 20);
+            this.textBoxCorrect.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(656, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Брой точки";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(656, 281);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Оценка";
             // 
             // FormReviewTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBoxCorrect);
+            this.Controls.Add(this.textBoxPoints);
+            this.Controls.Add(this.textBoxGrade);
+            this.Controls.Add(this.textBoxQuestionNumber);
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.label4);
@@ -189,5 +254,11 @@ namespace STProject
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxSubject;
         private System.Windows.Forms.TextBox textBoxQuestion;
+        private System.Windows.Forms.TextBox textBoxQuestionNumber;
+        private System.Windows.Forms.TextBox textBoxGrade;
+        private System.Windows.Forms.TextBox textBoxPoints;
+        private System.Windows.Forms.TextBox textBoxCorrect;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

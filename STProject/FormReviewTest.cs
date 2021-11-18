@@ -56,6 +56,10 @@ namespace STProject
                     textBoxAnswer.Text = reviewTest.GivenAnswers[counter];
                     textBoxGivenAnswer.Text = reviewTest.ReviewQuestions[counter].AnswerTrue;
                     textBoxQuestion.Text = reviewTest.ReviewQuestions[counter].Question;
+                    textBoxQuestionNumber.Text = (counter + 1).ToString();
+                    textBoxGrade.Text = reviewTest.Grade.ToString();
+                    textBoxPoints.Text = reviewTest.Points.ToString();
+                    checkCorrect();
                 }
                 catch (Exception exc)
                 {
@@ -78,6 +82,8 @@ namespace STProject
                 textBoxAnswer.Text = reviewTest.GivenAnswers[counter];
                 textBoxGivenAnswer.Text = reviewTest.ReviewQuestions[counter].AnswerTrue;
                 textBoxQuestion.Text = reviewTest.ReviewQuestions[counter].Question;
+                textBoxQuestionNumber.Text = (counter + 1).ToString();
+                checkCorrect();
             }
             else
                 MessageBox.Show("Моля генерирайте тест за преглед");
@@ -95,9 +101,19 @@ namespace STProject
                 textBoxAnswer.Text = reviewTest.GivenAnswers[counter];
                 textBoxGivenAnswer.Text = reviewTest.ReviewQuestions[counter].AnswerTrue;
                 textBoxQuestion.Text = reviewTest.ReviewQuestions[counter].Question;
+                textBoxQuestionNumber.Text = (counter + 1).ToString();
+                checkCorrect();
             }
             else
                 MessageBox.Show("Моля генерирайте тест за преглед");
+        }
+
+        private void checkCorrect()
+        {
+            if (textBoxAnswer.Text == textBoxGivenAnswer.Text)
+                textBoxCorrect.Text = "Верен отговор";
+            else
+                textBoxCorrect.Text = "Грешен отговор"; 
         }
     }
 }
