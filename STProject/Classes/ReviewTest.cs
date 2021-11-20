@@ -37,15 +37,16 @@ namespace STProject.Classes
             return result;
         }
 
+        //TODO check if exist + update older results
         public void InsertTest(ReviewTest review)
         {
             conn.Open();
             string x = "";
             for (int i=0; i<review.questions.Length;++i)
             {
-              x += $"'{review.questions[i].Question}','{review.questions[i].AnswerTrue}','{review.GivenAnswers[i]}',";
+              x += $"N'{review.questions[i].Question}',N'{review.questions[i].AnswerTrue}',N'{review.GivenAnswers[i]}',";
             }
-            SqlCommand cmd = new SqlCommand($"insert into Test values('{review.Email}','{review.Grade}','{review.Subject}','{review.Points}','{x}');", conn);
+            SqlCommand cmd = new SqlCommand($"insert into Test values(N'{review.Email}',N'{review.Grade}',N'{review.Subject}',N'{review.Points}','{x}');", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }

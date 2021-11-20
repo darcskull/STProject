@@ -33,6 +33,8 @@ namespace STProject
             this.buttonGenerate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxSubject = new System.Windows.Forms.ComboBox();
+            this.textBoxGrade = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -73,11 +75,30 @@ namespace STProject
             this.comboBoxSubject.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSubject.TabIndex = 23;
             // 
+            // textBoxGrade
+            // 
+            this.textBoxGrade.Enabled = false;
+            this.textBoxGrade.Location = new System.Drawing.Point(68, 305);
+            this.textBoxGrade.Name = "textBoxGrade";
+            this.textBoxGrade.Size = new System.Drawing.Size(121, 20);
+            this.textBoxGrade.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(65, 280);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Общ среден успех";
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxGrade);
             this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonGenerate);
@@ -95,5 +116,7 @@ namespace STProject
         private System.Windows.Forms.Button buttonGenerate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxSubject;
+        private System.Windows.Forms.TextBox textBoxGrade;
+        private System.Windows.Forms.Label label1;
     }
 }
