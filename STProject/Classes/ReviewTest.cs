@@ -54,11 +54,12 @@ namespace STProject.Classes
         public ReviewTest readForReview(string email, string subject)
         {
             ReviewTest review = new ReviewTest();
+            var cmd = new SqlCommand("SELECT * FROM Test WHERE Email = @email, Predmet = @sub", conn);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@sub", subject);
             try
             {
                 conn.Open();
-                string sql = "SELECT * FROM Test";
-                var cmd = new SqlCommand(sql, conn);
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
@@ -82,6 +83,7 @@ namespace STProject.Classes
                 Console.WriteLine("Грешка при търсене на тест: " + exc.Message);
             }
 
+            conn.Close();
             return review;
         }
     }
