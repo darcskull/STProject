@@ -53,6 +53,7 @@ namespace STProject
             this.buttonFile.TabIndex = 3;
             this.buttonFile.Text = "Запази файл";
             this.buttonFile.UseVisualStyleBackColor = true;
+            this.buttonFile.Click += new System.EventHandler(this.buttonFile_Click);
             // 
             // label1
             // 
