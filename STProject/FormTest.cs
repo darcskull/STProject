@@ -18,7 +18,7 @@ namespace STProject
         List<string> dropValyes = new List<string>();
         Student student = new Student();
         Questions qq = new Questions();
-        public FormTest(Student st)
+        public FormTest(Student st, int grade)
         {
             InitializeComponent();
             student = st;
@@ -27,6 +27,11 @@ namespace STProject
             {
                 comboBoxSubject.Items.Add(value);
             }
+
+            textBoxGrade.Text = student.Evaluation.ToString();
+
+            if (grade != 0)
+                MessageBox.Show("Оценката на теста е " + grade);
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

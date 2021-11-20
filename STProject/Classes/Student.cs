@@ -62,7 +62,15 @@ namespace STProject.Core
             conn.Close();
         }
 
-        
+        public void UpdateStudent(int evaluation, string email)
+        { 
+            SqlCommand cmd = new SqlCommand("UPDATE Students SET Evaluation = @evaluation Where Email = @email", conn);
+            cmd.Parameters.AddWithValue("@evaluation", evaluation);
+            cmd.Parameters.AddWithValue("@email", email);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public Student ReadFromData(string email, string password)
         {

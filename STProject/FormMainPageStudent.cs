@@ -43,7 +43,7 @@ namespace STProject
 
         private void buttonTest_Click(object sender, EventArgs e)
         {
-            FormTest formTest = new FormTest(studentt);
+            FormTest formTest = new FormTest(studentt, 0);
             this.Hide();
             formTest.ShowDialog();
             this.Close();
