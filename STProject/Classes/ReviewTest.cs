@@ -42,13 +42,30 @@ namespace STProject.Classes
         {
             conn.Open();
             string x = "";
-            for (int i=0; i<review.questions.Length;++i)
+            /*   for (int i = 0; i < review.questions.Length; ++i)
+               {
+                   x += $"N'{review.questions[i].Question}',N'{review.questions[i].AnswerTrue}',N'{review.GivenAnswers[i]}',";
+               }
+               x = x.TrimEnd(',');*/
+            if (review.questions != null)
             {
-              x += $"N'{review.questions[i].Question}',N'{review.questions[i].AnswerTrue}',N'{review.GivenAnswers[i]}',";
+                SqlCommand cmd = new SqlCommand($"insert into Test values(N'{review.Email}',N'{review.Grade}',N'{review.Subject}',N'{review.Points}'," +
+                $"N'{review.questions[0].Question}',N'{review.questions[0].AnswerTrue}',N'{review.GivenAnswers[0]}'," +
+                $"N'{review.questions[1].Question}',N'{review.questions[1].AnswerTrue}',N'{review.GivenAnswers[1]}'," +
+                $"N'{review.questions[2].Question}',N'{review.questions[2].AnswerTrue}',N'{review.GivenAnswers[2]}'," +
+                $"N'{review.questions[3].Question}',N'{review.questions[3].AnswerTrue}',N'{review.GivenAnswers[3]}'," +
+                $"N'{review.questions[4].Question}',N'{review.questions[4].AnswerTrue}',N'{review.GivenAnswers[4]}'," +
+                $"N'{review.questions[5].Question}',N'{review.questions[5].AnswerTrue}',N'{review.GivenAnswers[5]}'," +
+                $"N'{review.questions[6].Question}',N'{review.questions[6].AnswerTrue}',N'{review.GivenAnswers[6]}'," +
+                $"N'{review.questions[7].Question}',N'{review.questions[7].AnswerTrue}',N'{review.GivenAnswers[7]}'," +
+                $"N'{review.questions[8].Question}',N'{review.questions[8].AnswerTrue}',N'{review.GivenAnswers[8]}'," +
+                $"N'{review.questions[9].Question}',N'{review.questions[9].AnswerTrue}',N'{review.GivenAnswers[9]}');", conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
-            SqlCommand cmd = new SqlCommand($"insert into Test values(N'{review.Email}',N'{review.Grade}',N'{review.Subject}',N'{review.Points}','{x}');", conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            
+          
+          
         }
 
         public ReviewTest readForReview(string email, string subject)

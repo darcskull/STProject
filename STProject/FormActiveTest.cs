@@ -44,12 +44,13 @@ namespace STProject
         {
             setAnswer();
             test.ReviewQuestions = questions;
+            
             test.GivenAnswers = givenaswers;
             test.Email = user.Email;
             test.Subject = questions[0].Subject;
             test.Points = countPoints();
             test.Grade = gradeTest(test.Points);
-
+            test.InsertTest(test);
             
             //TODO запис в базата на теста + проверка за съществуването му и ъпдеит ако съществува
             // test.InsertTest(test); - fix querry 
