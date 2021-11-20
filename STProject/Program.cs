@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STProject.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace STProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            ReviewTest rev = new ReviewTest();
+            rev.InsertTest(rev);
         }
     }
 }
