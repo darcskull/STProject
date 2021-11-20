@@ -14,21 +14,31 @@ namespace STProject
 {
     public partial class FormMaterials : Form
     {
-        //TODO проверка за преподавател
         User user;
-        public FormMaterials(User u)
+        bool isStudent;
+        public FormMaterials(User u, bool student)
         {
             InitializeComponent();
             user = u;
+            isStudent = student;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            // TODO преверка за ролята на потребителя и връщане към FormMainTeacher
-            FormMainPageStudent formStudent = new FormMainPageStudent((Student)user);
-            this.Hide();
-            formStudent.ShowDialog();
-            this.Close();
+            if (isStudent)
+            {
+                FormMainPageStudent formStudent = new FormMainPageStudent((Student)user);
+                this.Hide();
+                formStudent.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                FormMainPageTeacher formTeacher = new FormMainPageTeacher((Teacher)user);
+                this.Hide();
+                formTeacher.ShowDialog();
+                this.Close();
+            }
         }
 
         private void FormMaterials_Load(object sender, EventArgs e)

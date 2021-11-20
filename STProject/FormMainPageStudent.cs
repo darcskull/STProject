@@ -16,10 +16,12 @@ namespace STProject
     public partial class FormMainPageStudent : Form
     {
         Student studentt = new Student();
+        bool isStudent = true;
         public FormMainPageStudent(Student student)
         {
             InitializeComponent();
             studentt = student;
+            //TODO прочитането на всички новини от базата и визуализирането им
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -32,8 +34,7 @@ namespace STProject
 
         private void buttonMaterials_Click(object sender, EventArgs e)
         {
-            //TODO Падаване на данни за потребител
-            FormMaterials formMaterials = new FormMaterials(studentt);
+            FormMaterials formMaterials = new FormMaterials(studentt, isStudent);
             this.Hide();
             formMaterials.ShowDialog();
             this.Close();
@@ -42,7 +43,6 @@ namespace STProject
 
         private void buttonTest_Click(object sender, EventArgs e)
         {
-            //TODO Падаване на данни за потребител
             FormTest formTest = new FormTest(studentt);
             this.Hide();
             formTest.ShowDialog();
@@ -51,7 +51,6 @@ namespace STProject
 
         private void buttonReviewTest_Click(object sender, EventArgs e)
         {
-            //TODO Падаване на данни за потребител
             FormReviewTest formRTest = new FormReviewTest(studentt);
             this.Hide();
             formRTest.ShowDialog();
@@ -60,8 +59,7 @@ namespace STProject
 
         private void buttonInformation_Click(object sender, EventArgs e)
         {
-            //TODO Падаване на данни за потребител
-            FormInformation information = new FormInformation(studentt);
+            FormInformation information = new FormInformation(studentt, isStudent);
             this.Hide();
             information.ShowDialog();
             this.Close();
