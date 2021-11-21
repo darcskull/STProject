@@ -25,28 +25,9 @@ namespace STProject.Classes
         public Questions [] ReviewQuestions { get { return questions;  } set { questions = value; } }
         public string [] GivenAnswers { get { return givenAnswers; } set { givenAnswers = value; } }
 
-        public int GradeTest(Questions [] questions, string [] answers)
-        {
-            int result = 0;
-            for (int i = 0; i<answers.Length; ++i)
-            {
-                if (questions[i].AnswerTrue == answers[i])
-                    result++;
-            }
-
-            return result;
-        }
-
-        //TODO check if exist + update older results
         public void InsertTest(ReviewTest review)
         {
             conn.Open();
-            string x = "";
-            /*   for (int i = 0; i < review.questions.Length; ++i)
-               {
-                   x += $"N'{review.questions[i].Question}',N'{review.questions[i].AnswerTrue}',N'{review.GivenAnswers[i]}',";
-               }
-               x = x.TrimEnd(',');*/
             if (review.questions != null)
             {
                 SqlCommand cmd = new SqlCommand($"insert into Test values(N'{review.Email}',N'{review.Grade}',N'{review.Subject}',N'{review.Points}'," +
@@ -68,32 +49,41 @@ namespace STProject.Classes
           
         }
 
-        public ReviewTest readForReview(string email, string subject)
+        public List<ReviewTest> readForReview(string email, string subject)
         {
-            ReviewTest review = new ReviewTest();
-            var cmd = new SqlCommand("SELECT * FROM Test WHERE Email = @email, Predmet = @sub", conn);
-            cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@sub", subject);
+            List<ReviewTest> reviewTest = new List<ReviewTest>();
+            int counter = 5;
             try
             {
                 conn.Open();
+                string sql = "SELECT * FROM Test";
+                var cmd = new SqlCommand(sql, conn);
                 SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
+               while (rdr.Read())
+               {
                     if (rdr.GetValue(1).ToString() == email && subject == rdr.GetValue(3).ToString())
                     {
-                        review.Email = rdr.GetValue(1).ToString();
-                        review.Grade = int.Parse(rdr.GetValue(2).ToString());
-                        review.Subject = rdr.GetValue(3).ToString();
-                        review.Points = int.Parse(rdr.GetValue(4).ToString());
-                        for(int i=5; i<30; i += 3)
+                        ReviewTest reviewobj = new ReviewTest();
+                        reviewobj.Email = rdr.GetValue(1).ToString();
+                        reviewobj.Grade = int.Parse(rdr.GetValue(2).ToString());
+                        reviewobj.Subject = rdr.GetValue(3).ToString();
+                        reviewobj.Points = int.Parse(rdr.GetValue(4).ToString());
+                        string[] answers = new string[10];
+                        Questions[] quests = new Questions[10];
+                        for(int i = 0; i < 10; ++i)
                         {
-                            review.questions[i].Question = rdr.GetValue(i).ToString();
-                            review.questions[i].AnswerTrue = rdr.GetValue(i + 1).ToString();
-                            review.givenAnswers[i] = rdr.GetValue(i+2).ToString();
+                            Questions qquest = new Questions();
+                            qquest.Question = rdr.GetValue(counter).ToString();
+                            qquest.AnswerTrue = rdr.GetValue(counter + 1).ToString();
+                            quests[i] = qquest;
+                            answers[i] = rdr.GetValue(counter+2).ToString();
+                            counter += 3;
                         }
-                    }
-                }
+                        reviewobj.ReviewQuestions = quests;
+                        reviewobj.GivenAnswers = answers;
+                        reviewTest.Add(reviewobj);
+                    }        
+               }
             }
             catch (Exception exc)
             {
@@ -101,7 +91,7 @@ namespace STProject.Classes
             }
 
             conn.Close();
-            return review;
+            return reviewTest;
         }
     }
 }

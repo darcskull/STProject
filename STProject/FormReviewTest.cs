@@ -19,6 +19,7 @@ namespace STProject
         Student student = new Student();
         ReviewTest reviewTest = new ReviewTest();
         int counter = 0;
+        bool haveTest = false;
         public FormReviewTest(Student st)
         {
             InitializeComponent();
@@ -52,17 +53,25 @@ namespace STProject
             {
                 try
                 {
-                    reviewTest = reviewTest.readForReview(student.Email, comboBoxSubject.SelectedItem.ToString());
-                    setQuestion(counter);
-                    textBoxGrade.Text = reviewTest.Grade.ToString();
-                    textBoxPoints.Text = reviewTest.Points.ToString();
-                    checkCorrect();
+                     List<ReviewTest> reviewList = reviewTest.readForReview(student.Email, comboBoxSubject.SelectedItem.ToString());
+                    if (reviewList.Count() > 0)
+                    {
+                        reviewTest = reviewList.ElementAt(reviewList.Count()-1);
+                        setQuestion(counter);
+                        textBoxGrade.Text = reviewTest.Grade.ToString();
+                        textBoxPoints.Text = reviewTest.Points.ToString();
+                        checkCorrect();
+                        haveTest = true;
+                    }
+                    else
+                    {
+                        resetTest();
+                        MessageBox.Show("Моля направете тест по предмета, за да може да бъде прегледан!");
+                    }
                 }
                 catch (Exception exc)
                 {
-                    textBoxAnswer.Text = "";
-                    textBoxGivenAnswer.Text = "";
-                    textBoxQuestion.Text = "";
+                    resetTest();
                     MessageBox.Show(exc.Message);
                 }
             }
@@ -71,7 +80,7 @@ namespace STProject
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
             counter--;
-            if (reviewTest != null)
+            if (haveTest)
             {
                 if (counter < 0)
                     counter = 9;
@@ -88,7 +97,7 @@ namespace STProject
         private void buttonNext_Click(object sender, EventArgs e)
         {
             counter++;
-            if (reviewTest != null)
+            if (haveTest)
             {
                 if (counter > 9)
                     counter = 0;
@@ -110,10 +119,22 @@ namespace STProject
 
         private void setQuestion(int br)
         {
-            textBoxAnswer.Text = reviewTest.GivenAnswers[br];
-            textBoxGivenAnswer.Text = reviewTest.ReviewQuestions[br].AnswerTrue;
+            textBoxAnswer.Text = reviewTest.ReviewQuestions[br].AnswerTrue;
+            textBoxGivenAnswer.Text = reviewTest.GivenAnswers[br];
             textBoxQuestion.Text = reviewTest.ReviewQuestions[br].Question;
             textBoxQuestionNumber.Text = (br + 1).ToString();
+        }
+
+        private void resetTest()
+        {
+            textBoxAnswer.Text = "";
+            textBoxCorrect.Text = "";
+            textBoxGivenAnswer.Text = "";
+            textBoxGrade.Text = "";
+            textBoxPoints.Text = "";
+            textBoxQuestion.Text = "";
+            textBoxQuestionNumber.Text = "";
+            haveTest = false;
         }
     }
 }
