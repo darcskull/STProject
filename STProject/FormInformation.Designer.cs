@@ -37,39 +37,43 @@ namespace STProject
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(16, 511);
-            this.buttonBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBack.BackColor = System.Drawing.Color.LemonChiffon;
+            this.buttonBack.Location = new System.Drawing.Point(13, 484);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(100, 28);
+            this.buttonBack.Size = new System.Drawing.Size(100, 40);
             this.buttonBack.TabIndex = 2;
             this.buttonBack.Text = "Назад";
-            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonFile
             // 
-            this.buttonFile.Location = new System.Drawing.Point(125, 513);
-            this.buttonFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFile.BackColor = System.Drawing.Color.LemonChiffon;
+            this.buttonFile.Location = new System.Drawing.Point(431, 484);
+            this.buttonFile.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFile.Name = "buttonFile";
-            this.buttonFile.Size = new System.Drawing.Size(157, 28);
+            this.buttonFile.Size = new System.Drawing.Size(157, 40);
             this.buttonFile.TabIndex = 3;
             this.buttonFile.Text = "Запази файл";
-            this.buttonFile.UseVisualStyleBackColor = true;
+            this.buttonFile.UseVisualStyleBackColor = false;
             this.buttonFile.Click += new System.EventHandler(this.buttonFile_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(149, 39);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(140, 36);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 17);
+            this.label1.Size = new System.Drawing.Size(335, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Сипсък със туденти/преподаватели";
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.LemonChiffon;
             this.panel1.Location = new System.Drawing.Point(12, 83);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(577, 365);
@@ -79,13 +83,16 @@ namespace STProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(601, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonFile);
             this.Controls.Add(this.buttonBack);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormInformation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация";
             this.Load += new System.EventHandler(this.FormInformation_Load);
             this.ResumeLayout(false);

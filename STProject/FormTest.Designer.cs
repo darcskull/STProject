@@ -39,71 +39,87 @@ namespace STProject
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(12, 398);
+            this.buttonBack.BackColor = System.Drawing.Color.LemonChiffon;
+            this.buttonBack.Location = new System.Drawing.Point(13, 219);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 23);
+            this.buttonBack.Size = new System.Drawing.Size(100, 46);
             this.buttonBack.TabIndex = 4;
             this.buttonBack.Text = "Назад";
-            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonGenerate
             // 
-            this.buttonGenerate.Location = new System.Drawing.Point(156, 398);
+            this.buttonGenerate.BackColor = System.Drawing.Color.LemonChiffon;
+            this.buttonGenerate.Location = new System.Drawing.Point(183, 219);
+            this.buttonGenerate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonGenerate.Name = "buttonGenerate";
-            this.buttonGenerate.Size = new System.Drawing.Size(75, 23);
+            this.buttonGenerate.Size = new System.Drawing.Size(131, 46);
             this.buttonGenerate.TabIndex = 17;
             this.buttonGenerate.Text = "Генериране на тест";
-            this.buttonGenerate.UseVisualStyleBackColor = true;
+            this.buttonGenerate.UseVisualStyleBackColor = false;
             this.buttonGenerate.Click += new System.EventHandler(this.buttonGenerate_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 78);
+            this.label2.Location = new System.Drawing.Point(27, 43);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(117, 17);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Предмет";
+            this.label2.Text = "Избери предмет";
             // 
             // comboBoxSubject
             // 
+            this.comboBoxSubject.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSubject.FormattingEnabled = true;
-            this.comboBoxSubject.Location = new System.Drawing.Point(68, 110);
+            this.comboBoxSubject.Location = new System.Drawing.Point(30, 64);
+            this.comboBoxSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxSubject.Name = "comboBoxSubject";
-            this.comboBoxSubject.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSubject.Size = new System.Drawing.Size(258, 24);
             this.comboBoxSubject.TabIndex = 23;
             // 
             // textBoxGrade
             // 
+            this.textBoxGrade.BackColor = System.Drawing.Color.RosyBrown;
             this.textBoxGrade.Enabled = false;
-            this.textBoxGrade.Location = new System.Drawing.Point(68, 305);
+            this.textBoxGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxGrade.Location = new System.Drawing.Point(30, 136);
+            this.textBoxGrade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxGrade.Multiline = true;
             this.textBoxGrade.Name = "textBoxGrade";
-            this.textBoxGrade.Size = new System.Drawing.Size(121, 20);
+            this.textBoxGrade.Size = new System.Drawing.Size(126, 66);
             this.textBoxGrade.TabIndex = 24;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 280);
+            this.label1.Location = new System.Drawing.Point(27, 115);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(129, 17);
             this.label1.TabIndex = 25;
             this.label1.Text = "Общ среден успех";
             // 
             // FormTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(358, 300);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxGrade);
             this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonGenerate);
             this.Controls.Add(this.buttonBack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

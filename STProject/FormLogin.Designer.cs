@@ -38,30 +38,36 @@ namespace STProject
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.lblInformation = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(61, 174);
+            this.textBoxEmail.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(83, 173);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(229, 22);
+            this.textBoxEmail.Size = new System.Drawing.Size(229, 33);
             this.textBoxEmail.TabIndex = 0;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(61, 275);
+            this.textBoxPassword.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(83, 261);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(229, 24);
+            this.textBoxPassword.Size = new System.Drawing.Size(229, 33);
             this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // radioButtonTeacher
             // 
             this.radioButtonTeacher.AutoSize = true;
-            this.radioButtonTeacher.Location = new System.Drawing.Point(61, 71);
+            this.radioButtonTeacher.Location = new System.Drawing.Point(80, 117);
             this.radioButtonTeacher.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonTeacher.Name = "radioButtonTeacher";
             this.radioButtonTeacher.Size = new System.Drawing.Size(125, 21);
@@ -73,7 +79,7 @@ namespace STProject
             // radioButtonStudent
             // 
             this.radioButtonStudent.AutoSize = true;
-            this.radioButtonStudent.Location = new System.Drawing.Point(207, 71);
+            this.radioButtonStudent.Location = new System.Drawing.Point(242, 117);
             this.radioButtonStudent.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonStudent.Name = "radioButtonStudent";
             this.radioButtonStudent.Size = new System.Drawing.Size(83, 21);
@@ -85,7 +91,7 @@ namespace STProject
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 132);
+            this.label1.Location = new System.Drawing.Point(80, 149);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 17);
@@ -95,7 +101,7 @@ namespace STProject
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 233);
+            this.label2.Location = new System.Drawing.Point(80, 240);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
@@ -104,10 +110,10 @@ namespace STProject
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(61, 349);
+            this.buttonLogin.Location = new System.Drawing.Point(71, 328);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(121, 28);
+            this.buttonLogin.Size = new System.Drawing.Size(121, 37);
             this.buttonLogin.TabIndex = 6;
             this.buttonLogin.Text = "Влизане";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -115,10 +121,10 @@ namespace STProject
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(190, 349);
+            this.buttonCreate.Location = new System.Drawing.Point(200, 328);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(125, 28);
+            this.buttonCreate.Size = new System.Drawing.Size(125, 37);
             this.buttonCreate.TabIndex = 7;
             this.buttonCreate.Text = "Регистрация";
             this.buttonCreate.UseVisualStyleBackColor = true;
@@ -129,17 +135,31 @@ namespace STProject
             this.lblInformation.AutoSize = true;
             this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformation.ForeColor = System.Drawing.Color.Maroon;
-            this.lblInformation.Location = new System.Drawing.Point(57, 100);
+            this.lblInformation.Location = new System.Drawing.Point(79, 81);
             this.lblInformation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInformation.Name = "lblInformation";
-            this.lblInformation.Size = new System.Drawing.Size(0, 20);
+            this.lblInformation.Size = new System.Drawing.Size(96, 20);
             this.lblInformation.TabIndex = 9;
+            this.lblInformation.Text = "Error: None";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(45, 33);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(276, 24);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Система за онлайн обучение";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 459);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(402, 403);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblInformation);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.buttonLogin);
@@ -149,6 +169,7 @@ namespace STProject
             this.Controls.Add(this.radioButtonTeacher);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -170,6 +191,7 @@ namespace STProject
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Label lblInformation;
+        private System.Windows.Forms.Label label3;
     }
 }
 

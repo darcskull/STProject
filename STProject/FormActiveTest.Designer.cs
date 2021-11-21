@@ -48,12 +48,13 @@ namespace STProject
             this.textBoxNumberQuestion = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(177, 81);
+            this.label1.Location = new System.Drawing.Point(98, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 17);
@@ -62,45 +63,53 @@ namespace STProject
             // 
             // textBoxAnswerA
             // 
+            this.textBoxAnswerA.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAnswerA.Enabled = false;
-            this.textBoxAnswerA.Location = new System.Drawing.Point(181, 289);
-            this.textBoxAnswerA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAnswerA.Location = new System.Drawing.Point(92, 211);
+            this.textBoxAnswerA.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAnswerA.Multiline = true;
             this.textBoxAnswerA.Name = "textBoxAnswerA";
-            this.textBoxAnswerA.Size = new System.Drawing.Size(484, 22);
+            this.textBoxAnswerA.Size = new System.Drawing.Size(484, 35);
             this.textBoxAnswerA.TabIndex = 8;
             // 
             // textBoxAnswerB
             // 
+            this.textBoxAnswerB.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAnswerB.Enabled = false;
-            this.textBoxAnswerB.Location = new System.Drawing.Point(181, 335);
-            this.textBoxAnswerB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAnswerB.Location = new System.Drawing.Point(92, 263);
+            this.textBoxAnswerB.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAnswerB.Multiline = true;
             this.textBoxAnswerB.Name = "textBoxAnswerB";
-            this.textBoxAnswerB.Size = new System.Drawing.Size(484, 22);
+            this.textBoxAnswerB.Size = new System.Drawing.Size(484, 35);
             this.textBoxAnswerB.TabIndex = 13;
             // 
             // textBoxAnswerV
             // 
+            this.textBoxAnswerV.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAnswerV.Enabled = false;
-            this.textBoxAnswerV.Location = new System.Drawing.Point(181, 380);
-            this.textBoxAnswerV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAnswerV.Location = new System.Drawing.Point(92, 313);
+            this.textBoxAnswerV.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAnswerV.Multiline = true;
             this.textBoxAnswerV.Name = "textBoxAnswerV";
-            this.textBoxAnswerV.Size = new System.Drawing.Size(484, 22);
+            this.textBoxAnswerV.Size = new System.Drawing.Size(484, 34);
             this.textBoxAnswerV.TabIndex = 14;
             // 
             // textBoxAnswearG
             // 
+            this.textBoxAnswearG.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAnswearG.Enabled = false;
-            this.textBoxAnswearG.Location = new System.Drawing.Point(181, 433);
-            this.textBoxAnswearG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAnswearG.Location = new System.Drawing.Point(92, 366);
+            this.textBoxAnswearG.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAnswearG.Multiline = true;
             this.textBoxAnswearG.Name = "textBoxAnswearG";
-            this.textBoxAnswearG.Size = new System.Drawing.Size(484, 22);
+            this.textBoxAnswearG.Size = new System.Drawing.Size(484, 34);
             this.textBoxAnswearG.TabIndex = 15;
             // 
             // radioButtonA
             // 
             this.radioButtonA.AutoSize = true;
-            this.radioButtonA.Location = new System.Drawing.Point(131, 289);
-            this.radioButtonA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonA.Location = new System.Drawing.Point(42, 218);
+            this.radioButtonA.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonA.Name = "radioButtonA";
             this.radioButtonA.Size = new System.Drawing.Size(38, 21);
             this.radioButtonA.TabIndex = 16;
@@ -111,8 +120,8 @@ namespace STProject
             // radioButtonB
             // 
             this.radioButtonB.AutoSize = true;
-            this.radioButtonB.Location = new System.Drawing.Point(131, 335);
-            this.radioButtonB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonB.Location = new System.Drawing.Point(42, 264);
+            this.radioButtonB.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonB.Name = "radioButtonB";
             this.radioButtonB.Size = new System.Drawing.Size(38, 21);
             this.radioButtonB.TabIndex = 17;
@@ -123,8 +132,8 @@ namespace STProject
             // radioButtonV
             // 
             this.radioButtonV.AutoSize = true;
-            this.radioButtonV.Location = new System.Drawing.Point(131, 384);
-            this.radioButtonV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonV.Location = new System.Drawing.Point(42, 313);
+            this.radioButtonV.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonV.Name = "radioButtonV";
             this.radioButtonV.Size = new System.Drawing.Size(38, 21);
             this.radioButtonV.TabIndex = 18;
@@ -135,8 +144,8 @@ namespace STProject
             // radioButtonG
             // 
             this.radioButtonG.AutoSize = true;
-            this.radioButtonG.Location = new System.Drawing.Point(132, 437);
-            this.radioButtonG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonG.Location = new System.Drawing.Point(43, 366);
+            this.radioButtonG.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonG.Name = "radioButtonG";
             this.radioButtonG.Size = new System.Drawing.Size(37, 21);
             this.radioButtonG.TabIndex = 19;
@@ -146,41 +155,44 @@ namespace STProject
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(181, 479);
-            this.buttonPrevious.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPrevious.BackColor = System.Drawing.Color.LemonChiffon;
+            this.buttonPrevious.Location = new System.Drawing.Point(24, 434);
+            this.buttonPrevious.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(100, 28);
+            this.buttonPrevious.Size = new System.Drawing.Size(100, 43);
             this.buttonPrevious.TabIndex = 20;
             this.buttonPrevious.Text = "Предишен";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.UseVisualStyleBackColor = false;
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(555, 479);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonNext.BackColor = System.Drawing.Color.LemonChiffon;
+            this.buttonNext.Location = new System.Drawing.Point(476, 418);
+            this.buttonNext.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(100, 28);
+            this.buttonNext.Size = new System.Drawing.Size(100, 43);
             this.buttonNext.TabIndex = 21;
             this.buttonNext.Text = "Следващ";
-            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.UseVisualStyleBackColor = false;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonEndTest
             // 
-            this.buttonEndTest.Location = new System.Drawing.Point(777, 479);
-            this.buttonEndTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEndTest.BackColor = System.Drawing.Color.LemonChiffon;
+            this.buttonEndTest.Location = new System.Drawing.Point(598, 89);
+            this.buttonEndTest.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEndTest.Name = "buttonEndTest";
-            this.buttonEndTest.Size = new System.Drawing.Size(200, 28);
+            this.buttonEndTest.Size = new System.Drawing.Size(200, 43);
             this.buttonEndTest.TabIndex = 23;
             this.buttonEndTest.Text = "Предаване на теста";
-            this.buttonEndTest.UseVisualStyleBackColor = true;
+            this.buttonEndTest.UseVisualStyleBackColor = false;
             this.buttonEndTest.Click += new System.EventHandler(this.buttonEndTest_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(824, 196);
+            this.label4.Location = new System.Drawing.Point(641, 39);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 17);
@@ -190,18 +202,20 @@ namespace STProject
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(745, 229);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(584, 56);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 17);
+            this.label5.Size = new System.Drawing.Size(180, 20);
             this.label5.TabIndex = 25;
             this.label5.Text = "Оставащо Време: ";
             // 
             // textBoxQuestion
             // 
+            this.textBoxQuestion.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxQuestion.Enabled = false;
-            this.textBoxQuestion.Location = new System.Drawing.Point(181, 113);
-            this.textBoxQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxQuestion.Location = new System.Drawing.Point(92, 42);
+            this.textBoxQuestion.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.Size = new System.Drawing.Size(484, 133);
@@ -209,9 +223,10 @@ namespace STProject
             // 
             // textBoxNumberQuestion
             // 
+            this.textBoxNumberQuestion.BackColor = System.Drawing.Color.RosyBrown;
             this.textBoxNumberQuestion.Enabled = false;
-            this.textBoxNumberQuestion.Location = new System.Drawing.Point(131, 113);
-            this.textBoxNumberQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNumberQuestion.Location = new System.Drawing.Point(42, 42);
+            this.textBoxNumberQuestion.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNumberQuestion.Name = "textBoxNumberQuestion";
             this.textBoxNumberQuestion.Size = new System.Drawing.Size(35, 22);
             this.textBoxNumberQuestion.TabIndex = 27;
@@ -229,11 +244,23 @@ namespace STProject
             this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 28;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 21);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(22, 17);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "№";
+            // 
             // FormActiveTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(868, 554);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNumberQuestion);
             this.Controls.Add(this.textBoxQuestion);
@@ -251,8 +278,10 @@ namespace STProject
             this.Controls.Add(this.textBoxAnswerB);
             this.Controls.Add(this.textBoxAnswerA);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormActiveTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тест";
             this.Load += new System.EventHandler(this.FormActiveTest_Load);
             this.ResumeLayout(false);
@@ -280,5 +309,6 @@ namespace STProject
         private System.Windows.Forms.TextBox textBoxNumberQuestion;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

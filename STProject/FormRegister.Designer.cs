@@ -54,7 +54,7 @@ namespace STProject
             // radioButtonTeacher
             // 
             this.radioButtonTeacher.AutoSize = true;
-            this.radioButtonTeacher.Location = new System.Drawing.Point(27, 30);
+            this.radioButtonTeacher.Location = new System.Drawing.Point(185, 47);
             this.radioButtonTeacher.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonTeacher.Name = "radioButtonTeacher";
             this.radioButtonTeacher.Size = new System.Drawing.Size(129, 21);
@@ -66,7 +66,7 @@ namespace STProject
             // radioButtonStudent
             // 
             this.radioButtonStudent.AutoSize = true;
-            this.radioButtonStudent.Location = new System.Drawing.Point(169, 30);
+            this.radioButtonStudent.Location = new System.Drawing.Point(327, 47);
             this.radioButtonStudent.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonStudent.Name = "radioButtonStudent";
             this.radioButtonStudent.Size = new System.Drawing.Size(83, 21);
@@ -77,86 +77,107 @@ namespace STProject
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.Location = new System.Drawing.Point(27, 120);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(261, 22);
+            this.textBoxEmail.Size = new System.Drawing.Size(261, 33);
             this.textBoxEmail.TabIndex = 2;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(27, 191);
+            this.textBoxName.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxName.Location = new System.Drawing.Point(27, 193);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxName.Multiline = true;
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(261, 22);
+            this.textBoxName.Size = new System.Drawing.Size(261, 33);
             this.textBoxName.TabIndex = 3;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(26, 419);
+            this.buttonBack.BackColor = System.Drawing.Color.Khaki;
+            this.buttonBack.Location = new System.Drawing.Point(13, 396);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(100, 28);
+            this.buttonBack.Size = new System.Drawing.Size(100, 37);
             this.buttonBack.TabIndex = 4;
             this.buttonBack.Text = "Назад";
-            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(431, 419);
+            this.buttonRegister.BackColor = System.Drawing.Color.Khaki;
+            this.buttonRegister.Location = new System.Drawing.Point(481, 396);
             this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(128, 28);
+            this.buttonRegister.Size = new System.Drawing.Size(128, 37);
             this.buttonRegister.TabIndex = 5;
             this.buttonRegister.Text = "Регистриране";
-            this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // textBoxNumber
             // 
-            this.textBoxNumber.Location = new System.Drawing.Point(27, 345);
+            this.textBoxNumber.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumber.Location = new System.Drawing.Point(27, 346);
             this.textBoxNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNumber.Multiline = true;
             this.textBoxNumber.Name = "textBoxNumber";
-            this.textBoxNumber.Size = new System.Drawing.Size(261, 22);
+            this.textBoxNumber.Size = new System.Drawing.Size(261, 32);
             this.textBoxNumber.TabIndex = 6;
             // 
             // textBoxSecondName
             // 
+            this.textBoxSecondName.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxSecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSecondName.Location = new System.Drawing.Point(27, 273);
             this.textBoxSecondName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSecondName.Multiline = true;
             this.textBoxSecondName.Name = "textBoxSecondName";
-            this.textBoxSecondName.Size = new System.Drawing.Size(261, 22);
+            this.textBoxSecondName.Size = new System.Drawing.Size(261, 33);
             this.textBoxSecondName.TabIndex = 7;
             this.textBoxSecondName.TextChanged += new System.EventHandler(this.textBoxSecondName_TextChanged);
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(341, 120);
+            this.textBoxPassword.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(341, 121);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(253, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(253, 33);
             this.textBoxPassword.TabIndex = 8;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // textBoxTelNumber
             // 
-            this.textBoxTelNumber.Location = new System.Drawing.Point(341, 273);
+            this.textBoxTelNumber.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxTelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTelNumber.Location = new System.Drawing.Point(340, 273);
             this.textBoxTelNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxTelNumber.Multiline = true;
             this.textBoxTelNumber.Name = "textBoxTelNumber";
-            this.textBoxTelNumber.Size = new System.Drawing.Size(253, 22);
+            this.textBoxTelNumber.Size = new System.Drawing.Size(253, 33);
             this.textBoxTelNumber.TabIndex = 9;
             this.textBoxTelNumber.TextChanged += new System.EventHandler(this.textBoxTelNumber_TextChanged);
             // 
             // textBoxVerifyPass
             // 
-            this.textBoxVerifyPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxVerifyPass.Location = new System.Drawing.Point(341, 191);
+            this.textBoxVerifyPass.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxVerifyPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxVerifyPass.Location = new System.Drawing.Point(341, 193);
             this.textBoxVerifyPass.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxVerifyPass.Multiline = true;
             this.textBoxVerifyPass.Name = "textBoxVerifyPass";
-            this.textBoxVerifyPass.Size = new System.Drawing.Size(253, 24);
+            this.textBoxVerifyPass.Size = new System.Drawing.Size(253, 33);
             this.textBoxVerifyPass.TabIndex = 10;
             this.textBoxVerifyPass.TextChanged += new System.EventHandler(this.textBoxVerifyPass_TextChanged);
             // 
@@ -243,9 +264,11 @@ namespace STProject
             // comboBox1
             // 
             this.comboBox1.AllowDrop = true;
+            this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(341, 345);
+            this.comboBox1.ItemHeight = 16;
+            this.comboBox1.Location = new System.Drawing.Point(341, 346);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(253, 24);
@@ -255,7 +278,8 @@ namespace STProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 487);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(623, 487);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -276,6 +300,7 @@ namespace STProject
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.radioButtonStudent);
             this.Controls.Add(this.radioButtonTeacher);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

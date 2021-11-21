@@ -39,10 +39,10 @@ namespace STProject
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(13, 404);
+            this.buttonBack.Location = new System.Drawing.Point(13, 389);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(100, 28);
+            this.buttonBack.Size = new System.Drawing.Size(100, 43);
             this.buttonBack.TabIndex = 0;
             this.buttonBack.Text = "Назад";
             this.buttonBack.UseVisualStyleBackColor = true;
@@ -60,18 +60,21 @@ namespace STProject
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(68, 72);
+            this.textBoxName.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxName.Location = new System.Drawing.Point(67, 61);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxName.Multiline = true;
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(211, 22);
+            this.textBoxName.Size = new System.Drawing.Size(211, 33);
             this.textBoxName.TabIndex = 2;
             // 
             // buttonAddNews
             // 
-            this.buttonAddNews.Location = new System.Drawing.Point(158, 404);
+            this.buttonAddNews.Location = new System.Drawing.Point(147, 389);
             this.buttonAddNews.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddNews.Name = "buttonAddNews";
-            this.buttonAddNews.Size = new System.Drawing.Size(176, 28);
+            this.buttonAddNews.Size = new System.Drawing.Size(176, 43);
             this.buttonAddNews.TabIndex = 3;
             this.buttonAddNews.Text = "Добавяне на новина";
             this.buttonAddNews.UseVisualStyleBackColor = true;
@@ -80,15 +83,16 @@ namespace STProject
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 114);
+            this.label2.Location = new System.Drawing.Point(108, 124);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Новина";
+            this.label2.Text = "Новина Описание";
             // 
             // txtNews
             // 
+            this.txtNews.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtNews.Location = new System.Drawing.Point(48, 145);
             this.txtNews.Margin = new System.Windows.Forms.Padding(4);
             this.txtNews.Multiline = true;
@@ -100,6 +104,7 @@ namespace STProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(347, 458);
             this.Controls.Add(this.txtNews);
             this.Controls.Add(this.label2);
@@ -107,6 +112,7 @@ namespace STProject
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonBack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAddNews";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
