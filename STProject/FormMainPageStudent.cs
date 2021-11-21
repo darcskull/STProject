@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using STProject.Classes;
 using STProject.Core;
+using STProject.Interfaces;
 
 namespace STProject
 {
-    
+
     public partial class FormMainPageStudent : Form
     {
         Student studentt = new Student();
@@ -21,7 +22,7 @@ namespace STProject
         {
             InitializeComponent();
             studentt = student;
-            //TODO прочитането на всички новини от базата и визуализирането им
+            label1.Text = "Здравейте: " + studentt.FirstName + " " + studentt.LastName + " " + "№" + studentt.FacultyNumber;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -67,12 +68,16 @@ namespace STProject
 
         private void FormMainPageStudent_Load(object sender, EventArgs e)
         {
-         
+            AddNewsInPanel();
         }
-
-        private void lblIInformation_Click(object sender, EventArgs e)
+        private void AddNewsInPanel()
         {
-
+            INews news = new News();
+            foreach (var item in news.DrawNews())
+            {
+                panel2.Controls.Add(item);
+            }
         }
+
     }
 }

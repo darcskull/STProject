@@ -1,6 +1,8 @@
 ﻿using STProject.Classes;
 using STProject.Interfaces;
+using STProject.Messages;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
@@ -24,7 +26,7 @@ namespace STProject.Core
             {
                 if (value < 2)
                 {
-                    throw new ArgumentException("Оценката трябва да е по голяма или равна на 2!");
+                    throw new ArgumentException(ExceptionMessages.InvalidEvaluation);
                 }
                 this.evaluation = value;
             }
@@ -41,7 +43,7 @@ namespace STProject.Core
                
                 if (value < ConstFackNumberbettwenFirst || value > ConstFackNumberbettwenSecond)
                 {
-                    throw new ArgumentException("Факултетният номер трябва да е между 470000 и 480000");
+                    throw new ArgumentException(ExceptionMessages.InvalidFacultyNumber);
                 }
                 this.facultyNumber = value;
             }
@@ -56,7 +58,7 @@ namespace STProject.Core
         }
         public void InsertStudent(Student student)
           {
-              conn.Open();
+            conn.Open();
             SqlCommand cmd = new SqlCommand($"insert into Students values(N'{student.FirstName}',N'{student.LastName}',N'{student.Email}',N'{student.Departament}',N'{student.Evaluation}',N'{student.Password}',N'{student.FacultyNumber}',N'{student.PhoneNumber}');", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -95,9 +97,32 @@ namespace STProject.Core
                     return student;
                 }
             }
-
             conn.Close();
             return null;
+        }
+        public List<Student> StudentsCollection()
+        {
+            conn.Open();
+            string sql = "SELECT * FROM Students";
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            var student = new Student();
+            var list = new List<Student>();
+            while (rdr.Read())
+            {
+                student.FirstName = rdr.GetValue(1).ToString();
+                student.LastName = rdr.GetValue(2).ToString();
+                student.Email = rdr.GetValue(3).ToString();
+                student.Departament = rdr.GetValue(4).ToString();
+                student.Evaluation = int.Parse(rdr.GetValue(5).ToString());
+                student.Password = rdr.GetValue(6).ToString();
+                student.FacultyNumber = int.Parse(rdr.GetValue(7).ToString());
+                student.PhoneNumber = rdr.GetValue(8).ToString();
+                list.Add(student);
+
+            }
+            conn.Close();
+            return list;
         }
     }
 }

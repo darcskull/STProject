@@ -1,6 +1,8 @@
 ﻿using STProject.Classes;
 using STProject.Interfaces;
+using STProject.Messages;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace STProject.Core
@@ -19,16 +21,14 @@ namespace STProject.Core
             }
             set
             {
-               
                 if (value < ConstFackNumberbettwenFirst || value > ConstFackNumberbettwenSecond)
                 {
-                    throw new ArgumentException("Административният номер трябва да е между 1000 и 2000");
+                    throw new ArgumentException(ExceptionMessages.InvalidAdminNumbers);
                 }
                 
                 this.adminNumber = value;
             }
         }
-
         public void InsertTeacher(Teacher teacher)
            {
                conn.Open();
@@ -61,6 +61,28 @@ namespace STProject.Core
             }
             conn.Close();
             return null;
+        }
+        public List<Teacher> TeachersCollection()
+        {
+            conn.Open();
+            string sql = "SELECT * FROM Teacher";
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            var listOfTeachers = new List<Teacher>();
+            while (rdr.Read())
+            {
+                var teacher = new Teacher();
+                teacher.FirstName = rdr.GetValue(3).ToString();
+                teacher.LastName = rdr.GetValue(4).ToString();
+                teacher.Email = rdr.GetValue(1).ToString();
+                teacher.Departament = rdr.GetValue(5).ToString();
+                teacher.Password = rdr.GetValue(2).ToString();
+                teacher.AdminNumber = int.Parse(rdr.GetValue(7).ToString());
+                teacher.PhoneNumber = rdr.GetValue(6).ToString();
+                listOfTeachers.Add(teacher);
+            }
+            conn.Close();
+            return listOfTeachers; 
         }
     }
 }

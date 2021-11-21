@@ -1,8 +1,13 @@
 ﻿using STProject.Classes;
 using STProject.Interfaces;
+using STProject.Messages;
 using System;
+using System.Collections.Generic;
+using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace STProject.Core
 {
@@ -10,14 +15,24 @@ namespace STProject.Core
     {
         private string name;
         private string information;
-        private Image image;
-        public News(  string name, string information,Image image)
+        private const int spaceBetweenBoxs = 110;
+        private int XCordinateStart=10;
+        private int sizeBoxWeight = 200;
+        private int sizeBoxHeight = 100;
+        private const int YcordinatePoint = 10;
+        private const int textSize = 14;
+
+        public News(  string name, string information)
         {
             Name = name;
             Information = information;
-            Image = image;
+      
         }
-
+        public News()
+        {
+                
+        }
+        
         public string Information
         {
             get
@@ -26,19 +41,14 @@ namespace STProject.Core
             }
             private set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Информацията не може да бъде празна!");
+                    throw new ArgumentException(ExceptionMessages.InvalidInformationNews);
                 }
                 information = value;
             }
         }
-        public Image Image
-        {
-            get => image;
-            private set => image = value;
-        }
-
+       
         public string Name
         {
             get
@@ -47,9 +57,9 @@ namespace STProject.Core
             }
            private set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Заглавието не може да бъде празно!");
+                    throw new ArgumentException(ExceptionMessages.InvalidTitleNews);
                 }
                 name = value;
             }
@@ -58,10 +68,48 @@ namespace STProject.Core
         public void InsertNews(News news)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand($"insert into News values(N'{news.Name}',N'{news.Information}','{news.Image}');", conn);
+            SqlCommand cmd = new SqlCommand($"insert into News values(N'{news.Name}',N'{news.Information}');", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+
+        public List<News> ReadNews()
+        {
+            string sql = "SELECT * FROM News";
+            conn.Open();
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            var news = new List<News>();
+            while (rdr.Read())
+            {
+                var currentNews = new News(rdr.GetValue(1).ToString(),rdr.GetValue(2).ToString());
+                news.Add(currentNews);
+            }
+            conn.Close();
+            return news;
+        }
+        public List<TextBox> DrawNews()
+        {
+            var listOfNews = ReadNews();
+            var listOfTextBoxs = new List<TextBox>();
+            for (int i = 0; i < listOfNews.Count; i++)
+            {
+                var txtBox = new TextBox
+                {
+                    Multiline = true,
+                    Size = new Size(sizeBoxWeight, sizeBoxHeight),
+                    Location = new Point(YcordinatePoint, XCordinateStart),
+                    Text = listOfNews[i].Name.ToString() + Environment.NewLine + listOfNews[i].Information.ToString(),
+                    Enabled = false,
+                };
+                txtBox.Font = new Font(txtBox.Font.FontFamily, textSize);
+                listOfTextBoxs.Add(txtBox);
+                XCordinateStart += spaceBetweenBoxs;
+
+            }
+            return listOfTextBoxs;
+        }
+
     }
 
 }
