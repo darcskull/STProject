@@ -106,10 +106,11 @@ namespace STProject.Core
             string sql = "SELECT * FROM Students";
             var cmd = new SqlCommand(sql, conn);
             SqlDataReader rdr = cmd.ExecuteReader();
-            var student = new Student();
+            
             var list = new List<Student>();
             while (rdr.Read())
             {
+                var student = new Student();
                 student.FirstName = rdr.GetValue(1).ToString();
                 student.LastName = rdr.GetValue(2).ToString();
                 student.Email = rdr.GetValue(3).ToString();

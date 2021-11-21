@@ -54,7 +54,7 @@ namespace STProject
                 var listOfStudents = student.StudentsCollection();
                 int locationChange = 10;
                 sb = new StringBuilder();
-                foreach (var item in listOfStudents.OrderBy(n => n.FacultyNumber).ThenBy(n=>n.FirstName))
+                foreach (var item in listOfStudents)
                 {
                     var txtBox = new TextBox
                     {

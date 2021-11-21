@@ -89,10 +89,9 @@ namespace STProject
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonFile);
             this.Controls.Add(this.buttonBack);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormInformation";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация";
             this.Load += new System.EventHandler(this.FormInformation_Load);
             this.ResumeLayout(false);
