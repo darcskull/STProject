@@ -41,7 +41,7 @@ namespace STProject
             // buttonAddTest
             // 
             this.buttonAddTest.Location = new System.Drawing.Point(472, 360);
-            this.buttonAddTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddTest.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddTest.Name = "buttonAddTest";
             this.buttonAddTest.Size = new System.Drawing.Size(244, 28);
             this.buttonAddTest.TabIndex = 0;
@@ -51,8 +51,8 @@ namespace STProject
             // 
             // buttonAddNews
             // 
-            this.buttonAddNews.Location = new System.Drawing.Point(472, 258);
-            this.buttonAddNews.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddNews.Location = new System.Drawing.Point(472, 244);
+            this.buttonAddNews.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddNews.Name = "buttonAddNews";
             this.buttonAddNews.Size = new System.Drawing.Size(244, 28);
             this.buttonAddNews.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace STProject
             // buttonAddMaterials
             // 
             this.buttonAddMaterials.Location = new System.Drawing.Point(472, 150);
-            this.buttonAddMaterials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddMaterials.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddMaterials.Name = "buttonAddMaterials";
             this.buttonAddMaterials.Size = new System.Drawing.Size(244, 28);
             this.buttonAddMaterials.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace STProject
             // buttonMaterials
             // 
             this.buttonMaterials.Location = new System.Drawing.Point(472, 73);
-            this.buttonMaterials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMaterials.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMaterials.Name = "buttonMaterials";
             this.buttonMaterials.Size = new System.Drawing.Size(244, 28);
             this.buttonMaterials.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace STProject
             // buttonLogOut
             // 
             this.buttonLogOut.Location = new System.Drawing.Point(1, 15);
-            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(205, 28);
             this.buttonLogOut.TabIndex = 4;
@@ -96,7 +96,7 @@ namespace STProject
             // buttonInformation
             // 
             this.buttonInformation.Location = new System.Drawing.Point(472, 463);
-            this.buttonInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonInformation.Margin = new System.Windows.Forms.Padding(4);
             this.buttonInformation.Name = "buttonInformation";
             this.buttonInformation.Size = new System.Drawing.Size(244, 28);
             this.buttonInformation.TabIndex = 5;
@@ -111,7 +111,6 @@ namespace STProject
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(444, 454);
             this.panel2.TabIndex = 10;
-        
             // 
             // FormMainPageTeacher
             // 
@@ -125,7 +124,7 @@ namespace STProject
             this.Controls.Add(this.buttonAddMaterials);
             this.Controls.Add(this.buttonAddNews);
             this.Controls.Add(this.buttonAddTest);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMainPageTeacher";
             this.Text = "Начало";
             this.Load += new System.EventHandler(this.FormMainPageTeacher_Load);
