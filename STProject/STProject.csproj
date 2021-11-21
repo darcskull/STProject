@@ -51,7 +51,6 @@
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -153,6 +152,7 @@
     <Compile Include="Interfaces\IStudent.cs" />
     <Compile Include="Interfaces\ITeacher.cs" />
     <Compile Include="Interfaces\ITest.cs" />
+    <Compile Include="Messages\ExceptionMessages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormActiveTest.resx">

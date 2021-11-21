@@ -1,12 +1,6 @@
 ﻿using STProject.Core;
+using STProject.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace STProject
@@ -19,9 +13,7 @@ namespace STProject
         {
             InitializeComponent();
             teacher = t;
-            //TODO прочитане на всички новини от базата и визуализирането им
         }
-
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
             Form1 formlogin = new Form1();
@@ -72,7 +64,15 @@ namespace STProject
 
         private void FormMainPageTeacher_Load(object sender, EventArgs e)
         {
-
+            AddNewsInPanel();
+        }
+        private void AddNewsInPanel()
+        {
+            INews news = new News();
+            foreach (var item in news.DrawNews())
+            {
+                panel2.Controls.Add(item);
+            }
         }
     }
 }

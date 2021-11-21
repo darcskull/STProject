@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STProject.Messages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -29,7 +30,7 @@ namespace STProject.Classes
 
                 if (this.Password.ToString() != value)
                 {
-                    throw new ArgumentException("Парололите не съвпадат");
+                    throw new ArgumentException(ExceptionMessages.NoMatchPassword);
                 }
                 this.verifyPassword = value;
             }
@@ -42,13 +43,13 @@ namespace STProject.Classes
             }
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Паролата не може да бъде null или празно!");
+                    throw new ArgumentException(ExceptionMessages.InvalidPassword);
                 }
                 if (value.Length < ConstMin_SymbolsForPassword)
                 {
-                    throw new ArgumentException("Паролата не може да бъде по малка от 6 символа!");
+                    throw new ArgumentException(ExceptionMessages.InvalidPasswordLenght) ;
                 }
 
 
@@ -66,7 +67,7 @@ namespace STProject.Classes
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Фамилното име не може да бъде null или празно!");
+                    throw new ArgumentException(ExceptionMessages.InvalidFamileName);
                 }
                 this.lastname = value;
             }
@@ -82,7 +83,7 @@ namespace STProject.Classes
             {
                 if (!Regex.Match(value, @"[0-9]{10}").Success)
                 {
-                    throw new ArgumentException("Телефонният номер е невалиден");
+                    throw new ArgumentException(ExceptionMessages.InvalidPhoneNumber);
                 }
                 this.phoneNumber = value;
             }
@@ -98,7 +99,7 @@ namespace STProject.Classes
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Името не може да бъде null или празно!");
+                    throw new ArgumentException(ExceptionMessages.InvalidFirstName);
                 }
                 this.firstName = value;
             }
@@ -115,7 +116,7 @@ namespace STProject.Classes
             {
                 if (value.Trim().EndsWith("."))
                 {
-                    throw new ArgumentException("E-mail не може да завършва на точка!");
+                    throw new ArgumentException(ExceptionMessages.InvalidEmeilDotsFinal);
                 }
                 try
                 {
@@ -124,7 +125,7 @@ namespace STProject.Classes
                 catch
                 {
 
-                    throw new ArgumentException("Невалиден Email");
+                    throw new ArgumentException(ExceptionMessages.InvalidEmail);
                 }
 
                 this.email = value;

@@ -32,14 +32,15 @@ namespace STProject
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonFile = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(12, 415);
+            this.buttonBack.Location = new System.Drawing.Point(16, 511);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 23);
+            this.buttonBack.Size = new System.Drawing.Size(100, 28);
             this.buttonBack.TabIndex = 2;
             this.buttonBack.Text = "Назад";
             this.buttonBack.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@ namespace STProject
             // 
             // buttonFile
             // 
-            this.buttonFile.Location = new System.Drawing.Point(390, 380);
+            this.buttonFile.Location = new System.Drawing.Point(125, 513);
+            this.buttonFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonFile.Name = "buttonFile";
-            this.buttonFile.Size = new System.Drawing.Size(118, 23);
+            this.buttonFile.Size = new System.Drawing.Size(157, 28);
             this.buttonFile.TabIndex = 3;
             this.buttonFile.Text = "Запази файл";
             this.buttonFile.UseVisualStyleBackColor = true;
@@ -58,30 +60,31 @@ namespace STProject
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(305, 114);
+            this.label1.Location = new System.Drawing.Point(149, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 13);
+            this.label1.Size = new System.Drawing.Size(246, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Сипсък със туденти/преподаватели";
             // 
-            // label2
+            // panel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 219);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "TODO";
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(12, 83);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(577, 365);
+            this.panel1.TabIndex = 6;
             // 
             // FormInformation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(601, 554);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonFile);
             this.Controls.Add(this.buttonBack);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormInformation";
             this.Text = "Информация";
             this.Load += new System.EventHandler(this.FormInformation_Load);
@@ -95,6 +98,6 @@ namespace STProject
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonFile;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

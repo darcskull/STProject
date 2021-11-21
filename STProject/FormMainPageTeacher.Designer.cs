@@ -35,15 +35,15 @@ namespace STProject
             this.buttonMaterials = new System.Windows.Forms.Button();
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.buttonInformation = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // buttonAddTest
             // 
-            this.buttonAddTest.Location = new System.Drawing.Point(605, 259);
+            this.buttonAddTest.Location = new System.Drawing.Point(472, 360);
+            this.buttonAddTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAddTest.Name = "buttonAddTest";
-            this.buttonAddTest.Size = new System.Drawing.Size(183, 23);
+            this.buttonAddTest.Size = new System.Drawing.Size(244, 28);
             this.buttonAddTest.TabIndex = 0;
             this.buttonAddTest.Text = "Добавяне на тестови въпрос";
             this.buttonAddTest.UseVisualStyleBackColor = true;
@@ -51,9 +51,10 @@ namespace STProject
             // 
             // buttonAddNews
             // 
-            this.buttonAddNews.Location = new System.Drawing.Point(605, 176);
+            this.buttonAddNews.Location = new System.Drawing.Point(472, 258);
+            this.buttonAddNews.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAddNews.Name = "buttonAddNews";
-            this.buttonAddNews.Size = new System.Drawing.Size(183, 23);
+            this.buttonAddNews.Size = new System.Drawing.Size(244, 28);
             this.buttonAddNews.TabIndex = 1;
             this.buttonAddNews.Text = "Добавяне на новини";
             this.buttonAddNews.UseVisualStyleBackColor = true;
@@ -61,9 +62,10 @@ namespace STProject
             // 
             // buttonAddMaterials
             // 
-            this.buttonAddMaterials.Location = new System.Drawing.Point(605, 100);
+            this.buttonAddMaterials.Location = new System.Drawing.Point(472, 150);
+            this.buttonAddMaterials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAddMaterials.Name = "buttonAddMaterials";
-            this.buttonAddMaterials.Size = new System.Drawing.Size(183, 23);
+            this.buttonAddMaterials.Size = new System.Drawing.Size(244, 28);
             this.buttonAddMaterials.TabIndex = 2;
             this.buttonAddMaterials.Text = "Създаване на материали";
             this.buttonAddMaterials.UseVisualStyleBackColor = true;
@@ -71,9 +73,10 @@ namespace STProject
             // 
             // buttonMaterials
             // 
-            this.buttonMaterials.Location = new System.Drawing.Point(605, 26);
+            this.buttonMaterials.Location = new System.Drawing.Point(472, 73);
+            this.buttonMaterials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMaterials.Name = "buttonMaterials";
-            this.buttonMaterials.Size = new System.Drawing.Size(183, 23);
+            this.buttonMaterials.Size = new System.Drawing.Size(244, 28);
             this.buttonMaterials.TabIndex = 3;
             this.buttonMaterials.Text = "Материали";
             this.buttonMaterials.UseVisualStyleBackColor = true;
@@ -81,9 +84,10 @@ namespace STProject
             // 
             // buttonLogOut
             // 
-            this.buttonLogOut.Location = new System.Drawing.Point(1, 12);
+            this.buttonLogOut.Location = new System.Drawing.Point(1, 15);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(154, 23);
+            this.buttonLogOut.Size = new System.Drawing.Size(205, 28);
             this.buttonLogOut.TabIndex = 4;
             this.buttonLogOut.Text = "Излизане от профила";
             this.buttonLogOut.UseVisualStyleBackColor = true;
@@ -91,50 +95,41 @@ namespace STProject
             // 
             // buttonInformation
             // 
-            this.buttonInformation.Location = new System.Drawing.Point(605, 343);
+            this.buttonInformation.Location = new System.Drawing.Point(472, 463);
+            this.buttonInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonInformation.Name = "buttonInformation";
-            this.buttonInformation.Size = new System.Drawing.Size(183, 23);
+            this.buttonInformation.Size = new System.Drawing.Size(244, 28);
             this.buttonInformation.TabIndex = 5;
             this.buttonInformation.Text = "Списък със студенти";
             this.buttonInformation.UseVisualStyleBackColor = true;
             this.buttonInformation.Click += new System.EventHandler(this.buttonInformation_Click);
             // 
-            // label1
+            // panel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Новини";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "TODO";
+            this.panel2.AutoScroll = true;
+            this.panel2.Location = new System.Drawing.Point(1, 61);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(444, 454);
+            this.panel2.TabIndex = 10;
+        
             // 
             // FormMainPageTeacher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(745, 554);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.buttonInformation);
             this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.buttonMaterials);
             this.Controls.Add(this.buttonAddMaterials);
             this.Controls.Add(this.buttonAddNews);
             this.Controls.Add(this.buttonAddTest);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMainPageTeacher";
             this.Text = "Начало";
             this.Load += new System.EventHandler(this.FormMainPageTeacher_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -146,7 +141,6 @@ namespace STProject
         private System.Windows.Forms.Button buttonMaterials;
         private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.Button buttonInformation;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
     }
 }
