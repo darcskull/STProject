@@ -186,7 +186,7 @@ namespace STProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(675, 450);
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.comboBoxSubjects);
             this.Controls.Add(this.textBoxTrue);
@@ -204,6 +204,7 @@ namespace STProject
             this.Controls.Add(this.buttonAddTest);
             this.Controls.Add(this.buttonBack);
             this.Name = "FormAddTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавяне на въпрос";
             this.Load += new System.EventHandler(this.FormAddTest_Load);
             this.ResumeLayout(false);

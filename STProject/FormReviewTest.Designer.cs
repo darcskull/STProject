@@ -233,6 +233,7 @@ namespace STProject
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonBack);
             this.Name = "FormReviewTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Преглед на теста";
             this.Load += new System.EventHandler(this.FormReviewTest_Load);
             this.ResumeLayout(false);

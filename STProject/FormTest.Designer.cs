@@ -104,6 +104,7 @@ namespace STProject
             this.Controls.Add(this.buttonGenerate);
             this.Controls.Add(this.buttonBack);
             this.Name = "FormTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

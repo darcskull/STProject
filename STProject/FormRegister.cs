@@ -10,7 +10,7 @@ namespace STProject
     {
         DropDownValues vvalues = new DropDownValues();
         List<string> dropValyes = new List<string>();
-        const int Const_defautEvaluation = 2;
+        const int Const_defautEvaluation = 0;
         const int Const_defautSelectItemInComboBox = -1;
         const byte Const_MaxLenghtPhoneNumber = 10;
         const byte Const_MaxLenghtFirstAndLastName = 50;

@@ -114,6 +114,7 @@ namespace STProject
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonBack);
             this.Name = "FormAddMaterials";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавяне на материали";
             this.Load += new System.EventHandler(this.FormAddMaterials_Load);
             this.ResumeLayout(false);

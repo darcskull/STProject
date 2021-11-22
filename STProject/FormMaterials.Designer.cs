@@ -71,6 +71,7 @@ namespace STProject
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "FormMaterials";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Материали";
             this.Load += new System.EventHandler(this.FormMaterials_Load);
             this.ResumeLayout(false);
