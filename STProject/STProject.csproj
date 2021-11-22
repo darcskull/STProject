@@ -235,7 +235,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DBOnlineTrainingSystem.mdf</DependentUpon>
     </Content>
-    <Content Include="Materials\Система за управление на задачите..txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UnitTest\" />
