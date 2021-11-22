@@ -38,10 +38,9 @@ namespace STProject
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.Color.LemonChiffon;
-            this.buttonBack.Location = new System.Drawing.Point(13, 484);
-            this.buttonBack.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBack.Location = new System.Drawing.Point(10, 393);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(100, 40);
+            this.buttonBack.Size = new System.Drawing.Size(75, 32);
             this.buttonBack.TabIndex = 2;
             this.buttonBack.Text = "Назад";
             this.buttonBack.UseVisualStyleBackColor = false;
@@ -50,10 +49,9 @@ namespace STProject
             // buttonFile
             // 
             this.buttonFile.BackColor = System.Drawing.Color.LemonChiffon;
-            this.buttonFile.Location = new System.Drawing.Point(431, 484);
-            this.buttonFile.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFile.Location = new System.Drawing.Point(323, 393);
             this.buttonFile.Name = "buttonFile";
-            this.buttonFile.Size = new System.Drawing.Size(157, 40);
+            this.buttonFile.Size = new System.Drawing.Size(118, 32);
             this.buttonFile.TabIndex = 3;
             this.buttonFile.Text = "Запази файл";
             this.buttonFile.UseVisualStyleBackColor = false;
@@ -63,35 +61,35 @@ namespace STProject
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(140, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(154, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 24);
+            this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Сипсък със туденти/преподаватели";
+            this.label1.Text = "Информация";
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.panel1.Location = new System.Drawing.Point(12, 83);
+            this.panel1.Location = new System.Drawing.Point(9, 67);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(577, 365);
+            this.panel1.Size = new System.Drawing.Size(433, 297);
             this.panel1.TabIndex = 6;
             // 
             // FormInformation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(601, 554);
+            this.ClientSize = new System.Drawing.Size(451, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonFile);
             this.Controls.Add(this.buttonBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormInformation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация";
             this.Load += new System.EventHandler(this.FormInformation_Load);
             this.ResumeLayout(false);
