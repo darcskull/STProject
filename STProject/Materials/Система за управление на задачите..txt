@@ -1,2 +1,0 @@
-Cистема за управление на задачите - Jira
-https://advancedanalytics2.atlassian.net/jira/software/projects/AA/boards/1

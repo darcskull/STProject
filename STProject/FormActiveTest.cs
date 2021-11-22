@@ -37,8 +37,6 @@ namespace STProject
 
 
         }
-
-        //TODO активиране на бутона след изтичане на времето
        
         private void buttonEndTest_Click(object sender, EventArgs e)
         {
@@ -51,9 +49,6 @@ namespace STProject
             test.Points = countPoints();
             test.Grade = gradeTest(test.Points);
             test.InsertTest(test);
-            
-            //TODO запис в базата на теста + проверка за съществуването му и ъпдеит ако съществува
-            // test.InsertTest(test); - fix querry 
 
             user.Evaluate(test.Grade);
             user.UpdateStudent(user.Evaluation, user.Email);
