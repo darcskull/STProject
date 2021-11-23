@@ -51,10 +51,11 @@ namespace STProject.Core
 
         public void Evaluate(int grade)
         {
-            if (Evaluation == 0)
+            int gradee = Evaluation + grade;
+            if (Evaluation == 2)
                 Evaluation = grade;
             else
-                Evaluation = (Evaluation + grade) / 2;
+                Evaluation = gradee / 2 + gradee % 2;
         }
         public void InsertStudent(Student student)
           {
