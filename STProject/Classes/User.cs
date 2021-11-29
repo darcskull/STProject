@@ -19,6 +19,7 @@ namespace STProject.Classes
         private string phoneNumber;
         private string email;
         private string departament;
+       
         public string VerifyPassword
         {
             get
