@@ -53,6 +53,8 @@
     <Compile Include="NewsTest\UnitTestNews.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionsTest\UnitTestQuestions.cs" />
+    <Compile Include="StudentTest\UnitTestStudent.cs" />
+    <Compile Include="TeacherTest\UnitTestTeacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
