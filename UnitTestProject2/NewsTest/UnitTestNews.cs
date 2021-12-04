@@ -7,21 +7,22 @@ namespace UnitTestProgram
     [TestClass]
     public class UnitTestNews
     {
+        
         private News validNew = new News("name", "information");
 
-        [TestMethod]
-        public void News_Exception_InitialisationsNameNull()
+        //Името и информацията не може да бъде null или white Space 
+        [DataTestMethod]
+        [DataRow(" ", "information")]
+        [DataRow(null, "information")]
+        [DataRow("name", " ")]
+        [DataRow("name", null)]
+        public void News_Exception_InitialisationsNameNull(string name,string information)
         {
-            Assert.ThrowsException<ArgumentException>(()=>new News(null,"Information"));//Името не може да бъде null
-        }
-        [TestMethod]
-        public void News_Exception_InitialisationsNameSpace()
-        {
-            Assert.ThrowsException<ArgumentException>(() => new News(" ", "Information"));//Името не може да бъде празен интервал
+            Assert.ThrowsException<ArgumentException>(()=>new News(name,information));
         }
        
         [TestMethod]
-        public void News_Complete()
+        public void News_Complete()//ctor
         {
             News news = new News(validNew.Name, validNew.Information);
             Assert.AreEqual(news.Name,validNew.Name);
