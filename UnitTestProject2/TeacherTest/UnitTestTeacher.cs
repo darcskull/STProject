@@ -10,7 +10,7 @@ namespace UnitTestProgram
     {
         Teacher teachers = new Teacher();
         [TestMethod]
-        public void Student_Exception_Initialisations()
+        public void Teacher_Exception_Initialisations()
         {
             Teacher teacher = new Teacher();
             Assert.ThrowsException<ArgumentException>(() => teacher.AdminNumber = -1);//Административния номер не може да бъде по-малък от 1000

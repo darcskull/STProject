@@ -55,6 +55,7 @@
     <Compile Include="QuestionsTest\UnitTestQuestions.cs" />
     <Compile Include="StudentTest\UnitTestStudent.cs" />
     <Compile Include="TeacherTest\UnitTestTeacher.cs" />
+    <Compile Include="TestReviewTest\UnitTestReviewTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

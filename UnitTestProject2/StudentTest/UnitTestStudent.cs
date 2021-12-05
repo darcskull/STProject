@@ -64,5 +64,21 @@ namespace UnitTestProgram
             List<Student> listSt = students.StudentsCollection();
             Assert.IsTrue(listSt.Count > 0);
         }
+
+
+        public Student StudentData()
+        {
+            return students.ReadFromData("testonly@abv.bg", "12test");
+        }
+
+        [TestMethod]
+        public void Student_Update_Grade()
+        {
+            Student testStudent = StudentData();
+            testStudent.Evaluate(6);
+            students.UpdateStudent(testStudent.Evaluation, testStudent.Email);
+            testStudent = StudentData();
+            Assert.AreEqual(testStudent.Evaluation, 6);
+        }
     }
 }
