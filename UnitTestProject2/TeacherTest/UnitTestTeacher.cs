@@ -17,7 +17,7 @@ namespace UnitTestProgram
             Assert.ThrowsException<ArgumentException>(() => teacher.AdminNumber = 50000);// Административния номер не може да бъде по-голям от 2000
             Assert.ThrowsException<ArgumentException>(() => teacher.Password = "");//Паролата не може да бъде празна
             teacher.Password = "1234t56";
-            Assert.ThrowsException<ArgumentException>(() => teacher.VerifyPassword= "3456788");//Паролата трябва да бъде еднаква
+            Assert.ThrowsException<ArgumentException>(() => teacher.VerifyPassword = "3456788");//Паролата трябва да бъде еднаква
             Assert.ThrowsException<ArgumentException>(() => teacher.FirstName = "");//Името не може да бъде празно
             Assert.ThrowsException<ArgumentException>(() => teacher.LastName = "");//Фамилията не може да бъде празна
             Assert.ThrowsException<ArgumentException>(() => teacher.Email = "");//Email-a не може да бъде празeн
@@ -40,6 +40,18 @@ namespace UnitTestProgram
         {
             List<Teacher> listTc = teachers.TeachersCollection();
             Assert.IsTrue(listTc.Count > 0);
+        }
+
+        [TestMethod]
+        public void Teacher_CheckForExistingTeacher()
+        {
+            Assert.IsTrue(teachers.CheckForTeacher("imel@abv.bg"));
+        }
+
+        [TestMethod]
+        public void Teacher_CheckForNonExistingTeacher()
+        {
+            Assert.IsFalse(teachers.CheckForTeacher("nesushtestvuvashEmail@abv.com"));
         }
     }
 }

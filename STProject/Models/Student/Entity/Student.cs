@@ -101,6 +101,24 @@ namespace STProject.Core
             conn.Close();
             return null;
         }
+        public bool CheckForStudent(string email)
+        {
+            bool bol = false;
+            conn.Open();
+            string sql = "SELECT * FROM Students";
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if (rdr.GetValue(3).ToString() == email)
+                {
+                    bol = true;
+                }
+            }
+            conn.Close();
+            return bol;
+        }
+
         public List<Student> StudentsCollection()
         {
             conn.Open();

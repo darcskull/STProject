@@ -80,5 +80,16 @@ namespace UnitTestProgram
             testStudent = StudentData();
             Assert.AreEqual(testStudent.Evaluation, 6);
         }
+        [TestMethod]
+        public void Student_CheckForExistingStudent()
+        {
+            Assert.IsTrue(students.CheckForStudent("ime@abv.bg"));
+        }
+
+        [TestMethod]
+        public void Student_CheckForNonExistingStudent()
+        {
+            Assert.IsFalse(students.CheckForStudent("nesushtestvuvashEmail@abv.com"));
+        }
     }
 }

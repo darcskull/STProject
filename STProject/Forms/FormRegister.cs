@@ -10,6 +10,8 @@ namespace STProject
     {
         DropDownValues vvalues = new DropDownValues();
         List<string> dropValyes = new List<string>();
+        Student studentHelper = new Student();
+        Teacher teacherHelper = new Teacher();
         const int Const_defautEvaluation = 2;
         const int Const_defautSelectItemInComboBox = -1;
         const byte Const_MaxLenghtPhoneNumber = 10;
@@ -85,27 +87,38 @@ namespace STProject
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            try
+            if (textBoxEmail.Text != "")
             {
-                if (radioButtonStudent.Checked)
+                if (!studentHelper.CheckForStudent(textBoxEmail.Text) && !teacherHelper.CheckForTeacher(textBoxEmail.Text))
                 {
-                    RegistrationStudent();
+                    try
+                    {
+                        if (comboBox1.SelectedItem != null)
+                        {
+                            if (radioButtonStudent.Checked)
+                            {
+                                RegistrationStudent();
+                            }
+                            else if (radioButtonTeacher.Checked)
+                            {
+                                RegistrationTeacher();
+                            }
+                            MessageBox.Show("Регистрацията ви беше успешна");
+                            ClearFields();
+                        }
+                        else
+                            MessageBox.Show("Моля изберете факултет");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                else if (radioButtonTeacher.Checked)
-                {
-                    RegistrationTeacher();
-                }
-                MessageBox.Show("Регистрацията ви беше успешна");
-                ClearFields();
+                else
+                    MessageBox.Show("Подаденият Email вече е регистриран!");
             }
-            catch (ArgumentException ae)
-            {
-                MessageBox.Show(ae.Message, "Error");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Не обработена грешка");
-            }
+            else
+                MessageBox.Show("Моля попълнете полето за Email");
         }
 
         
