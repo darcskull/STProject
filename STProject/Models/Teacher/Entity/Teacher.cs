@@ -62,6 +62,25 @@ namespace STProject.Core
             conn.Close();
             return null;
         }
+
+        public bool CheckForTeacher(string email)
+        {
+            bool bol = false;
+            conn.Open();
+            string sql = "SELECT * FROM Teacher";
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if(rdr.GetValue(1).ToString() == email)
+                {
+                    bol = true;
+                }
+            }
+            conn.Close();
+            return bol;
+        }
+
         public List<Teacher> TeachersCollection()
         {
             conn.Open();
