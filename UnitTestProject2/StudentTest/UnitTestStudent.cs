@@ -91,5 +91,29 @@ namespace UnitTestProgram
         {
             Assert.IsFalse(students.CheckForStudent("nesushtestvuvashEmail@abv.com"));
         }
+
+        [TestMethod]
+        public void Student_CheckForNonExistingStudentPhoneNumber()
+        {
+            Assert.IsFalse(students.CheckForStudentPhoneNumber("123tel"));
+        }
+
+        [TestMethod]
+        public void Student_CheckForExistingStudentPhoneNumber()
+        {
+            Assert.IsTrue(students.CheckForStudentPhoneNumber("0893924342"));
+        }
+
+        [TestMethod]
+        public void Student_CheckForNonExistingStudentFacultyNumber()
+        {
+            Assert.IsFalse(students.CheckForStudentFacultyNumber(123));
+        }
+
+        [TestMethod]
+        public void Student_CheckForExistingStudentFacultyNumber()
+        {
+            Assert.IsTrue(students.CheckForStudentFacultyNumber(471234));
+        }
     }
 }

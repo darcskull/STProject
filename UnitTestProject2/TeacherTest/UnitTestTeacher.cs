@@ -53,5 +53,29 @@ namespace UnitTestProgram
         {
             Assert.IsFalse(teachers.CheckForTeacher("nesushtestvuvashEmail@abv.com"));
         }
+
+        [TestMethod]
+        public void Teacher_CheckForNonExistingTeacherAdminNumber()
+        {
+            Assert.IsFalse(teachers.CheckForTeacherAdminNumber(456789));
+        }
+
+        [TestMethod]
+        public void Teacher_CheckForExistingTeacherAdminNumber()
+        {
+            Assert.IsTrue(teachers.CheckForTeacherAdminNumber(1234));
+        }
+
+        [TestMethod]
+        public void Teacher_CheckForNonExistingTeacherPhoneNumber()
+        {
+            Assert.IsFalse(teachers.CheckForTeacherPhoneNumber("123tel"));
+        }
+
+        [TestMethod]
+        public void Teacher_CheckForExistingTeacherPhoneNumber()
+        {
+            Assert.IsTrue(teachers.CheckForTeacherPhoneNumber("0899999999"));
+        }
     }
 }

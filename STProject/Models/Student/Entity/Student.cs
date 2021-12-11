@@ -119,6 +119,42 @@ namespace STProject.Core
             return bol;
         }
 
+        public bool CheckForStudentFacultyNumber(int fn)
+        {
+            bool bol = false;
+            conn.Open();
+            string sql = "SELECT * FROM Students";
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if (rdr.GetValue(7).ToString() == fn.ToString())
+                {
+                    bol = true;
+                }
+            }
+            conn.Close();
+            return bol;
+        }
+
+        public bool CheckForStudentPhoneNumber(string pn)
+        {
+            bool bol = false;
+            conn.Open();
+            string sql = "SELECT * FROM Students";
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if (rdr.GetValue(8).ToString() == pn)
+                {
+                    bol = true;
+                }
+            }
+            conn.Close();
+            return bol;
+        }
+
         public List<Student> StudentsCollection()
         {
             conn.Open();

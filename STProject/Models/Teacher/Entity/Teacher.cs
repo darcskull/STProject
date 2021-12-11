@@ -81,6 +81,42 @@ namespace STProject.Core
             return bol;
         }
 
+        public bool CheckForTeacherAdminNumber(int admin)
+        {
+            bool bol = false;
+            conn.Open();
+            string sql = "SELECT * FROM Teacher";
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if (rdr.GetValue(7).ToString() == admin.ToString())
+                {
+                    bol = true;
+                }
+            }
+            conn.Close();
+            return bol;
+        }
+
+        public bool CheckForTeacherPhoneNumber(string pn)
+        {
+            bool bol = false;
+            conn.Open();
+            string sql = "SELECT * FROM Teacher";
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if (rdr.GetValue(6).ToString() == pn)
+                {
+                    bol = true;
+                }
+            }
+            conn.Close();
+            return bol;
+        }
+
         public List<Teacher> TeachersCollection()
         {
             conn.Open();
