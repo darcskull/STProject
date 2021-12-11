@@ -1,4 +1,5 @@
-﻿using STProject.Core;
+﻿using STProject.Classes;
+using STProject.Core;
 using System;
 using System.Windows.Forms;
 
@@ -37,25 +38,38 @@ namespace STProject
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-
-           
-            if (radioButtonStudent.Checked && VerifyLoginAsStudent()!=null)
-            {              
-                FormMainPageStudent formStudent = new FormMainPageStudent(VerifyLoginAsStudent());
-                this.Hide();
-                formStudent.ShowDialog();
-                this.Close();
-            }
-            else if (radioButtonTeacher.Checked && VerifyLoginAsTeacher()!=null)
+            User userInformation = new User();
+            if (radioButtonStudent.Checked)
             {
-                FormMainPageTeacher formTeacher = new FormMainPageTeacher(VerifyLoginAsTeacher());
-                this.Hide();
-                formTeacher.ShowDialog();
-                this.Close();
+                lblInformation.Text = "";
+                userInformation = VerifyLoginAsStudent();
+                if (userInformation != null)
+                {
+                    FormMainPageStudent formStudent = new FormMainPageStudent((Student)userInformation);
+                    this.Hide();
+                    formStudent.ShowDialog();
+                    this.Close();
+                }
+                else
+                   MessageBox.Show("Не беше намерен студент, отговарящ на подадените име и парола!");
+            }
+            else if (radioButtonTeacher.Checked)
+            {
+                lblInformation.Text = "";
+                userInformation = VerifyLoginAsTeacher();
+                if (userInformation != null)
+                {
+                    FormMainPageTeacher formTeacher = new FormMainPageTeacher((Teacher)userInformation);
+                    this.Hide();
+                    formTeacher.ShowDialog();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Не беше намерен преподавател, отговарящ на подадените име и парола!");
             }
             else
             {
-                lblInformation.Text = "Въвели сте грешни данни!";
+                lblInformation.Text = "Моля изберете роля!";
             }
         }
 
