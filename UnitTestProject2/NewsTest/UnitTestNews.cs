@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using STProject.Core;
 
@@ -22,7 +23,7 @@ namespace UnitTestProgram
         }
        
         [TestMethod]
-        public void News_Complete()//ctor
+        public void News_Complete()
         {
             News news = new News(validNew.Name, validNew.Information);
             Assert.AreEqual(news.Name,validNew.Name);
@@ -39,8 +40,9 @@ namespace UnitTestProgram
         [TestMethod]
         public void News_ReadNews()
         {
-            var textNews = validNew.ReadNews();
+            List<News> textNews = validNew.ReadNews();
             Assert.IsNotNull(textNews);
+            Assert.IsTrue(textNews.Count > 0);
         }
     }
 }
