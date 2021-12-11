@@ -40,8 +40,19 @@ namespace STProject
             student.Email = textBoxEmail.Text;
             student.FirstName = textBoxName.Text;
             student.LastName = textBoxSecondName.Text;
-            student.FacultyNumber = TryToParseNumberToInt();
-            student.PhoneNumber = textBoxTelNumber.Text;
+
+            int facultyNumber = TryToParseNumberToInt();
+            if (!student.CheckForStudentFacultyNumber(facultyNumber))
+                student.FacultyNumber = facultyNumber;
+            else
+                throw new ArgumentException("Факултетният номер вече съществува!");
+
+            string phoneNumber = textBoxTelNumber.Text;
+            if (!student.CheckForStudentPhoneNumber(phoneNumber))
+                student.PhoneNumber = phoneNumber;
+            else
+                throw new ArgumentException("Телефонният номер вече съществува!");
+
             student.Password = textBoxPassword.Text;
             student.Evaluation = Const_defautEvaluation;
             student.VerifyPassword = textBoxVerifyPass.Text;
@@ -66,8 +77,19 @@ namespace STProject
             teacher.Email = textBoxEmail.Text;
             teacher.FirstName = textBoxName.Text;
             teacher.LastName = textBoxSecondName.Text;
-            teacher.AdminNumber = TryToParseNumberToInt();
-            teacher.PhoneNumber = textBoxTelNumber.Text;
+
+            int adminNumber = TryToParseNumberToInt();
+            if (!teacher.CheckForTeacherAdminNumber(adminNumber))
+                teacher.AdminNumber = adminNumber;
+            else
+                throw new ArgumentException("Административният номер вече съществува!");
+
+            string Phone = textBoxTelNumber.Text;
+            if (!teacher.CheckForTeacherPhoneNumber(Phone))
+                teacher.PhoneNumber = Phone;
+            else
+                throw new ArgumentException("Телефонния номер вече съществува!");
+
             teacher.Password = textBoxPassword.Text;
             teacher.VerifyPassword = textBoxVerifyPass.Text;
             teacher.Departament = comboBox1.GetItemText(this.comboBox1.SelectedItem).ToString();
