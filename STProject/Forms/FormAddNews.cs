@@ -32,19 +32,21 @@ namespace STProject
         {
             try
             {
-                CreateNews().InsertNews(CreateNews());
-                MessageBox.Show("Новината беше записана успешно");
+                News newAdd = CreateNews();
+                if (!newAdd.checkForNews(newAdd))
+                {
+                    CreateNews().InsertNews(CreateNews());
+                    MessageBox.Show("Новината беше записана успешно");
+                    textBoxName.Text = string.Empty;
+                    txtNews.Text = string.Empty;
+                }
+                else
+                    MessageBox.Show("Новината вече съществува!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
-            }
-            finally
-            {
-                textBoxName.Text = string.Empty;
-                txtNews.Text = string.Empty;
-            }
-            
+            }   
         }
 
         private void FormAddNews_Load(object sender, EventArgs e)

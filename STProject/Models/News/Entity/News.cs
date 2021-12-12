@@ -73,6 +73,24 @@ namespace STProject.Core
             conn.Close();
         }
 
+        public bool checkForNews(News checkNew)
+        {
+            string sql = "SELECT * FROM News";
+            conn.Open();
+            var cmd = new SqlCommand(sql, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            bool news = false;
+            while (rdr.Read())
+            {
+                if (checkNew.Name == rdr.GetValue(1).ToString() || checkNew.Information == rdr.GetValue(2).ToString())
+                {
+                    news = true;
+                }
+            }
+            conn.Close();
+            return news;
+        }
+
         public List<News> ReadNews()
         {
             string sql = "SELECT * FROM News";
@@ -91,6 +109,7 @@ namespace STProject.Core
         public List<TextBox> DrawNews()
         {
             var listOfNews = ReadNews();
+            listOfNews = reverseNews(listOfNews);
             var listOfTextBoxs = new List<TextBox>();
             for (int i = 0; i < listOfNews.Count; i++)
             {
@@ -108,6 +127,16 @@ namespace STProject.Core
 
             }
             return listOfTextBoxs;
+        }
+
+        public List<News> reverseNews(List<News> newsList)
+        {
+            List<News> reverse = new List<News>();
+            for(int i = newsList.Count-1; i >= 0; i--)
+            {
+                reverse.Add(newsList[i]);
+            }
+            return reverse;
         }
 
     }
