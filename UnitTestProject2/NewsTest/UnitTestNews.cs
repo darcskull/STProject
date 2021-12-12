@@ -44,5 +44,56 @@ namespace UnitTestProgram
             Assert.IsNotNull(textNews);
             Assert.IsTrue(textNews.Count > 0);
         }
+
+        [TestMethod]
+        public void News_CheckForNonExistingNew()
+        {
+            Assert.IsFalse(validNew.checkForNews(validNew));
+        }
+
+        private News mockExistingNew()
+        {
+            return new News("Иновация", "News add");
+        }
+
+        [TestMethod]
+        public void News_CheckForExistingNew()
+        {
+            Assert.IsTrue(validNew.checkForNews(mockExistingNew()));
+        }
+
+        [TestMethod]
+        public void News_CheckForExistingNewName()
+        {
+            News newCheck = mockExistingNew();
+            newCheck.Information = "Фалшива информация, която не съществува!?!?";
+            Assert.IsTrue(validNew.checkForNews(newCheck));
+        }
+
+        [TestMethod]
+        public void News_CheckForExistingNewInformation()
+        {
+            News newCheck = mockExistingNew();
+            newCheck.Name = "Фалшиво име, което не съществува!?!?";
+            Assert.IsTrue(validNew.checkForNews(newCheck));
+        }
+
+        [TestMethod]
+        public void News_ReverseNews()
+        {
+            List<News> reverseList = new List<News>();
+            reverseList.Add(validNew);
+            News newCheck = mockExistingNew();
+            reverseList.Add(newCheck);
+            News new3 = new News("Name3", "Information3");
+            reverseList.Add(new3);
+            reverseList = validNew.reverseNews(reverseList);
+            Assert.AreEqual(reverseList[0].Name, new3.Name);
+            Assert.AreEqual(reverseList[0].Information, new3.Information);
+            Assert.AreEqual(reverseList[1].Name, newCheck.Name);
+            Assert.AreEqual(reverseList[1].Information, newCheck.Information);
+            Assert.AreEqual(reverseList[2].Name, validNew.Name);
+            Assert.AreEqual(reverseList[2].Information, validNew.Information);
+        }
     }
 }
