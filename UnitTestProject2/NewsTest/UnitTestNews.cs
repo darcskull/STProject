@@ -11,7 +11,11 @@ namespace UnitTestProgram
         
         private News validNew = new News("name", "information");
 
-        //Името и информацията не може да бъде null или white Space 
+        /// <summary>
+        /// Метода проверява дали името и информацията дали са празни полета!
+        /// </summary>
+        /// <param name="name">Име на заглавието за новината</param>
+        /// <param name="information">Информация за новината</param>
         [DataTestMethod]
         [DataRow(" ", "information")]
         [DataRow(null, "information")]
@@ -21,7 +25,9 @@ namespace UnitTestProgram
         {
             Assert.ThrowsException<ArgumentException>(()=>new News(name,information));
         }
-       
+       /// <summary>
+       /// Метода инициализира конструктура и проверява резултатите дали съвпадат
+       /// </summary>
         [TestMethod]
         public void News_Complete()
         {
@@ -29,7 +35,9 @@ namespace UnitTestProgram
             Assert.AreEqual(news.Name,validNew.Name);
             Assert.AreEqual(news.Information, validNew.Information);
         }
-
+        /// <summary>
+        /// Метода проверява дали новината е различна от нула(т.е дали е създадена)
+        /// </summary>
         [TestMethod]
         public void News_DrawNews()
         {
@@ -37,6 +45,9 @@ namespace UnitTestProgram
             Assert.IsNotNull(textNews);
         }
 
+        /// <summary>
+        /// Метода проверява дали новината се чете коректно
+        /// </summary>
         [TestMethod]
         public void News_ReadNews()
         {
@@ -45,23 +56,30 @@ namespace UnitTestProgram
             Assert.IsTrue(textNews.Count > 0);
         }
 
+        /// <summary>
+        /// Метода проверява дали новината е null
+        /// </summary>
         [TestMethod]
         public void News_CheckForNonExistingNew()
         {
             Assert.IsFalse(validNew.checkForNews(validNew));
         }
-
+      
         private News mockExistingNew()
         {
             return new News("Иновация", "News add");
         }
-
+        /// <summary>
+        /// Метода проверява дали новината съществува
+        /// </summary>
         [TestMethod]
         public void News_CheckForExistingNew()
         {
             Assert.IsTrue(validNew.checkForNews(mockExistingNew()));
         }
-
+        /// <summary>
+        /// Метода проверява дали  съществува дадената информация
+        /// </summary>
         [TestMethod]
         public void News_CheckForExistingNewName()
         {
@@ -71,6 +89,9 @@ namespace UnitTestProgram
         }
 
         [TestMethod]
+        /// <summary>
+        /// Метода проверява дали новината съществува даденото име
+        /// </summary>
         public void News_CheckForExistingNewInformation()
         {
             News newCheck = mockExistingNew();
@@ -78,6 +99,9 @@ namespace UnitTestProgram
             Assert.IsTrue(validNew.checkForNews(newCheck));
         }
 
+        /// <summary>
+        /// Метода сортира новините във възходящ ред(Последната добавена е първа)
+        /// </summary>
         [TestMethod]
         public void News_ReverseNews()
         {

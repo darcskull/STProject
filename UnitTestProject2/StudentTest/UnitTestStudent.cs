@@ -9,7 +9,9 @@ namespace UnitTestProgram
     public class UnitTestStudent
     {
         private Student students = new Student();
-
+        /// <summary>
+        /// Метода проверява за правилно инициализиране на студента
+        /// </summary>
         [TestMethod]
         public void Student_Exception_Initialisations()
         {
@@ -26,7 +28,9 @@ namespace UnitTestProgram
             Assert.ThrowsException<ArgumentException>(() => student.PhoneNumber = "hjklfd123");// Телефония номер трябва да бъде валиден
 
         }
-
+        /// <summary>
+        /// Метода проверява за правилно инициализиране на оценката, след предварително зададена стойност 2
+        /// </summary>
         [TestMethod]
         public void Student_Evaluation_When_Default()
         {
@@ -36,7 +40,9 @@ namespace UnitTestProgram
             student.Evaluate(5);
             Assert.AreEqual(student.Evaluation, 5);
         }
-
+        /// <summary>
+        /// Метода проверява за правилната работа на изчисляване на средната оценка на даденият студент
+        /// </summary>
         [TestMethod]
         public void Student_Evaluation()
         {
@@ -46,7 +52,9 @@ namespace UnitTestProgram
             student.Evaluate(6);
             Assert.AreEqual(student.Evaluation, 5);
         }
-
+        /// <summary>
+        /// Метода проверява за правилната работа на четете на дданни от базата
+        /// </summary>
         [TestMethod]
         public void Student_ReadFromData()
         {
@@ -57,7 +65,9 @@ namespace UnitTestProgram
             Assert.AreEqual(testExc.PhoneNumber, "0999838283");
             Assert.AreEqual(testExc.Password, "123456");
         }
-
+        /// <summary>
+        /// Метода проверява дали броя на студентите е по голям от 0
+        /// </summary>
         [TestMethod]
         public void Student_ReadStudents()
         {
@@ -65,12 +75,14 @@ namespace UnitTestProgram
             Assert.IsTrue(listSt.Count > 0);
         }
 
-
+       
         public Student StudentData()
         {
             return students.ReadFromData("testonly@abv.bg", "12test");
         }
-
+        /// <summary>
+        /// Метода ъпдейтва текущата оценка в базата
+        /// </summary>
         [TestMethod]
         public void Student_Update_Grade()
         {
@@ -80,36 +92,53 @@ namespace UnitTestProgram
             testStudent = StudentData();
             Assert.AreEqual(testStudent.Evaluation, 6);
         }
+        /// <summary>
+        /// Метода проверява дали съществува студент с даденият email адрес (Съществува)
+        /// </summary>
         [TestMethod]
         public void Student_CheckForExistingStudent()
         {
             Assert.IsTrue(students.CheckForStudent("ime@abv.bg"));
         }
 
+        /// <summary>
+        /// Метода проверява дали съществува студент с даденият email адрес(Несъществува)
+        /// </summary>
         [TestMethod]
         public void Student_CheckForNonExistingStudent()
         {
             Assert.IsFalse(students.CheckForStudent("nesushtestvuvashEmail@abv.com"));
         }
 
+        /// <summary>
+        /// Метода проверява дали съществува студент с даденият телефонен номер (Несъществува)
+        /// </summary>
         [TestMethod]
         public void Student_CheckForNonExistingStudentPhoneNumber()
         {
             Assert.IsFalse(students.CheckForStudentPhoneNumber("123tel"));
         }
 
+        /// <summary>
+        /// Метода проверява дали съществува студент с даденият телефонен номер (Съществува)
+        /// </summary>
         [TestMethod]
         public void Student_CheckForExistingStudentPhoneNumber()
         {
             Assert.IsTrue(students.CheckForStudentPhoneNumber("0893924342"));
         }
 
+        /// <summary>
+        /// Метода проверява дали съществува студент с даденият Факултетен номер (Несъществува)
+        /// </summary>
         [TestMethod]
         public void Student_CheckForNonExistingStudentFacultyNumber()
         {
             Assert.IsFalse(students.CheckForStudentFacultyNumber(123));
         }
-
+        /// <summary>
+        /// Метода проверява дали съществува студент с даденият Факултетен номер (Съществува)
+        /// </summary>
         [TestMethod]
         public void Student_CheckForExistingStudentFacultyNumber()
         {

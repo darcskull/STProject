@@ -10,7 +10,9 @@ namespace UnitTestProgram
     public class UnitTestReviewTest
     {
         private ReviewTest revview = new ReviewTest();
-
+        /// <summary>
+        ///  Проверява дали броят на въпросите в базата е по-голям от 0
+        /// </summary>
         [TestMethod]
         public void Read_From_Data()
         {
