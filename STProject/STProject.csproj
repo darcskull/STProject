@@ -202,6 +202,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Materials\Проект №4 - Описание на тестовете.docx" />
     <None Include="Materials\Проект №4.docx" />
     <None Include="Materials\Проект№4-Архитектурен проект.docx" />
     <None Include="Properties\Settings.settings">
