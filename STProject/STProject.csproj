@@ -237,6 +237,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DBOnlineTrainingSystem.mdf</DependentUpon>
     </Content>
+    <Content Include="Materials\Описание на тестове.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

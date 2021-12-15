@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UnitTestProject2</name>
+    </assembly>
+    <members>
+        <member name="M:UnitTestProgram.UnitTestNews.News_Exception_InitialisationsNameNull(System.String,System.String)">
+            <summary>
+            Метода проверява дали името и информацията дали са празни полета!
+            </summary>
+            <param name="name">Име на заглавието за новината</param>
+            <param name="information">Информация за новината</param>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestNews.News_Complete">
+            <summary>
+            Метода инициализира конструктура и проверява резултатите дали съвпадат
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestNews.News_DrawNews">
+            <summary>
+            Метода проверява дали новината е различна от нула(т.е дали е създадена)
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestNews.News_ReadNews">
+            <summary>
+            Метода проверява дали новината се чете коректно
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestNews.News_CheckForNonExistingNew">
+            <summary>
+            Метода проверява дали новината е null
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestNews.News_CheckForExistingNew">
+            <summary>
+            Метода проверява дали новината съществува
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestNews.News_CheckForExistingNewName">
+            <summary>
+            Метода проверява дали  съществува дадената информация
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestNews.News_ReverseNews">
+            <summary>
+            Метода сортира новините във възходящ ред(Последната добавена е първа)
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_SetAnswerA">
+            <summary>
+            Проверява дали отговора е правилният отговор "a"
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_SetAnswerB">
+            <summary>
+            Проверява дали отговора е правилният отговор "b"
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_SetAnswerC">
+            <summary>
+            Проверява дали отговора е правилният отговор "c"
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_SetAnswerD">
+            <summary>
+            Проверява дали отговора е правилният отговор "d"
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_CheckValidQuestion">
+            <summary>
+            Проверява дали избраният отговор е правилен
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_CheckValidQuestion_False">
+            <summary>
+            Проверява дали избраният отговор е грешен
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_SetAnswer_CheckValidQuestion">
+            <summary>
+            Проверява дали избраният отговор е правилен
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_Exits_False">
+            <summary>
+            Проверява дали въпроса не съществува
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_Exits_True">
+            <summary>
+            Проверява дали въпроса съществува
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_ReadAllQuestions">
+            <summary>
+            Проверява дали списъка с въпроси  не е null (т.е дали е инициализиран правилно)
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestQueestions.Questions_ReadAllQuestions_Empty">
+            <summary>
+            Проверява дали списъка с въпроси  не е празно място
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_Exception_Initialisations">
+            <summary>
+            Метода проверява за правилно инициализиране на студента
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_Evaluation_When_Default">
+            <summary>
+            Метода проверява за правилно инициализиране на оценката, след предварително зададена стойност 2
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_Evaluation">
+            <summary>
+            Метода проверява за правилната работа на изчисляване на средната оценка на даденият студент
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_ReadFromData">
+            <summary>
+            Метода проверява за правилната работа на четете на дданни от базата
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_ReadStudents">
+            <summary>
+            Метода проверява дали броя на студентите е по голям от 0
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_Update_Grade">
+            <summary>
+            Метода ъпдейтва текущата оценка в базата
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_CheckForExistingStudent">
+            <summary>
+            Метода проверява дали съществува студент с даденият email адрес (Съществува)
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_CheckForNonExistingStudent">
+            <summary>
+            Метода проверява дали съществува студент с даденият email адрес(Несъществува)
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_CheckForNonExistingStudentPhoneNumber">
+            <summary>
+            Метода проверява дали съществува студент с даденият телефонен номер (Несъществува)
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_CheckForExistingStudentPhoneNumber">
+            <summary>
+            Метода проверява дали съществува студент с даденият телефонен номер (Съществува)
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_CheckForNonExistingStudentFacultyNumber">
+            <summary>
+            Метода проверява дали съществува студент с даденият Факултетен номер (Несъществува)
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestStudent.Student_CheckForExistingStudentFacultyNumber">
+            <summary>
+            Метода проверява дали съществува студент с даденият Факултетен номер (Съществува)
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestTeacher.Teacher_Exception_Initialisations">
+            <summary>
+            Метода проверява дали учителя се инициализира според задедните параметри
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestTeacher.Teacher_ReadFromData">
+            <summary>
+            Метода проверява дали данните са прочетени правилно от базата
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestTeacher.Teacher_ReadTeachers">
+            <summary>
+            Метода проверява дали броя на учителите е по-голям от нула
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestTeacher.Teacher_CheckForExistingTeacher">
+            <summary>
+            Метода проверява дали съществува учител с текущият еmail
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestTeacher.Teacher_CheckForNonExistingTeacher">
+            <summary>
+            Метода проверява дали НЕ съществува учител с текущият еmail
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestTeacher.Teacher_CheckForNonExistingTeacherAdminNumber">
+            <summary>
+            Метода проверява дали не съществува учител с даденият админ. номер
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestTeacher.Teacher_CheckForExistingTeacherAdminNumber">
+            <summary>
+            Метода проверява дали съществува учител с даденият админ. номер
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestTeacher.Teacher_CheckForNonExistingTeacherPhoneNumber">
+            <summary>
+            Метода проверява дали Не съществува учител с даденият Телефонен номер
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestTeacher.Teacher_CheckForExistingTeacherPhoneNumber">
+            <summary>
+            Метода проверява дали съществува учител с даденият Телефонен номер
+            </summary>
+        </member>
+        <member name="M:UnitTestProgram.UnitTestReviewTest.Read_From_Data">
+            <summary>
+             Проверява дали броят на въпросите в базата е по-голям от 0
+            </summary>
+        </member>
+    </members>
+</doc>
