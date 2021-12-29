@@ -42,7 +42,7 @@ namespace STProject
         {
             setAnswer();
             test.ReviewQuestions = questions;
-            
+            timer1.Stop();
             test.GivenAnswers = givenaswers;
             test.Email = user.Email;
             test.Subject = questions[0].Subject;
