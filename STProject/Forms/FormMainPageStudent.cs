@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace STProject
 
     public partial class FormMainPageStudent : Form
     {
-        Student studentt = new Student();
+        static Student studentt = new Student();
         bool isStudent = true;
         public FormMainPageStudent(Student student)
         {
@@ -69,6 +70,14 @@ namespace STProject
         private void FormMainPageStudent_Load(object sender, EventArgs e)
         {
             AddNewsInPanel();
+            if (checkIfTestIsActive())
+            {
+                DialogResult dialogResult = MessageBox.Show("Имате недовършен тест! Искате ли да го продължите сега?", "Тест", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    buttonTest_Click(sender, e);
+                }
+            }
         }
         private void AddNewsInPanel()
         {
@@ -76,6 +85,23 @@ namespace STProject
             foreach (var item in news.DrawNews())
             {
                 panel2.Controls.Add(item);
+            }
+        }
+
+        public static bool checkIfTestIsActive()
+        {
+            try
+            {
+                var connection = new Data().conn;
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ActiveTest WHERE student='" + studentt.Email + "';", connection);
+                SqlDataReader dr = cmd.ExecuteReader();
+                return dr.HasRows;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
             }
         }
 

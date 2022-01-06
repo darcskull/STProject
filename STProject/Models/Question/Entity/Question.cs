@@ -89,7 +89,7 @@ namespace STProject.Core
             return bol;
         }
 
-        public (List<Questions>, int, List<string>) checkActiveTest()
+        public (List<Questions>, int, List<string>) checkActiveTest(string email, string subject)
         {
             var questions = new List<Questions>();
             var givenAnswers = new List<string>();
@@ -97,7 +97,7 @@ namespace STProject.Core
             try
             {
                 conn.Open();
-                string sql = "SELECT * FROM ActiveTest";
+                string sql = "SELECT * FROM ActiveTest WHERE student= '" + email + "' AND Subject=N'" + subject + "';";
                 var cmd = new SqlCommand(sql, conn);
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -127,10 +127,10 @@ namespace STProject.Core
         }
 
 
-        public void deleteActiveTest()
+        public void deleteActiveTest(string email, string subject)
         {
             conn.Open();
-            string sql = "DELETE FROM ActiveTest;";
+            string sql = "DELETE FROM ActiveTest WHERE student= '" + email + "' AND Subject=N'" + subject + "';";
             var cmd = new SqlCommand(sql, conn);
             cmd.ExecuteReader();
             conn.Close();

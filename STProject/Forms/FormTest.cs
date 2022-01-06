@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,18 +45,23 @@ namespace STProject
 
         private void FormTest_Load(object sender, EventArgs e)
         {
-
+            if (FormMainPageStudent.checkIfTestIsActive())
+            {
+                comboBoxSubject.SelectedItem = Subject();
+                buttonGenerate_Click(sender, e);
+            }
         }
 
-        private void buttonGenerate_Click(object sender, EventArgs e)
+        public void buttonGenerate_Click(object sender, EventArgs e)
         {
             if (comboBoxSubject.SelectedIndex != -1)
             {
-                var activeTestQuestions = qq.checkActiveTest();
-                if (activeTestQuestions.Item1.Count != 0 && activeTestQuestions.Item1.ElementAt(0).Subject == comboBoxSubject.SelectedItem.ToString())
+                var activeTestQuestions = qq.checkActiveTest(student.Email, comboBoxSubject.SelectedItem.ToString());
+
+                if (activeTestQuestions.Item1.Count != 0)
                 {
-                    qq.deleteActiveTest();
-                    FormActiveTest active = new FormActiveTest(student, ConvertListToArray(activeTestQuestions.Item1), activeTestQuestions.Item3, activeTestQuestions.Item2);
+                    qq.deleteActiveTest(student.Email, comboBoxSubject.SelectedItem.ToString());
+                    FormActiveTest active = new FormActiveTest(student, activeTestQuestions.Item1.ToArray(), activeTestQuestions.Item3, activeTestQuestions.Item2);
                     this.Hide();
                     active.ShowDialog();
                     this.Close();
@@ -93,15 +99,17 @@ namespace STProject
             return testQuestions;
         }
 
-        private Questions[] ConvertListToArray(List<Questions> questions)
+        string Subject()
         {
-            Questions[] activeTestQuestions = new Questions[10];
-            for (int i = 0; i < 10; ++i)
+            var connection = new Data().conn;
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 * FROM ActiveTest WHERE student= '" + student.Email + "'", connection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
             {
-                activeTestQuestions[i] = questions.ElementAt(i);
+                return reader.GetValue(8).ToString();
             }
-
-            return activeTestQuestions;
+            return null;
         }
     }
 }

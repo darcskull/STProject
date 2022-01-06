@@ -18,6 +18,7 @@ namespace STProject
         Student user = new Student();
         ReviewTest test = new ReviewTest();
         Questions[] questions = new Questions[10];
+        string subject = default;
         string[] givenaswers = new string[10];
         int counter;
         private int totalSeconds = 5*60;
@@ -29,6 +30,7 @@ namespace STProject
             user = student;
             questions = question;
             counter = 0;
+            subject = questions[0].Subject;
             if(userTime != 0)
             {
                 totalSeconds = userTime;
@@ -50,7 +52,7 @@ namespace STProject
         {
             setAnswer();
             Questions q = new Questions();
-            q.deleteActiveTest();
+            q.deleteActiveTest(user.Email, subject);
             endTest = true;
 
             test.ReviewQuestions = questions;
@@ -184,7 +186,7 @@ namespace STProject
                 {
                     var question = questions[i];
                     SqlCommand cmd = new SqlCommand($"INSERT INTO ActiveTest VALUES(N'{i}',N'{question.Question}',N'{question.Answer1}',N'{question.Answer2}',N'{question.Answer3}'," +
-                    $"N'{question.Answer4}',N'{question.AnswerTrue}',N'{givenaswers[i]}',N'{question.Subject}' ,N'{totalSeconds}');", connection);
+                    $"N'{question.Answer4}',N'{question.AnswerTrue}',N'{givenaswers[i]}',N'{question.Subject}' ,N'{totalSeconds}' ,N'{user.Email}');", connection);
                     cmd.ExecuteNonQuery();
                 }
 
