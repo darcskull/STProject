@@ -89,6 +89,52 @@ namespace STProject.Core
             return bol;
         }
 
+        public (List<Questions>, int, List<string>) checkActiveTest()
+        {
+            var questions = new List<Questions>();
+            var givenAnswers = new List<string>();
+            var time = 0;
+            try
+            {
+                conn.Open();
+                string sql = "SELECT * FROM ActiveTest";
+                var cmd = new SqlCommand(sql, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    dynamic q = new Questions();
+                    q.Question = rdr.GetValue(1).ToString();
+                    q.Answer1 = rdr.GetValue(2).ToString();
+                    q.Answer2 = rdr.GetValue(3).ToString();
+                    q.Answer3 = rdr.GetValue(4).ToString();
+                    q.Answer4 = rdr.GetValue(5).ToString();
+                    q.AnswerTrue = rdr.GetValue(6).ToString();
+                    var userAnswer = rdr.GetValue(7).ToString();
+                    q.Subject = rdr.GetValue(8).ToString();
+                    time = int.Parse(rdr.GetValue(9).ToString());
+
+                    questions.Add(q);
+                    givenAnswers.Add(userAnswer);
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Грешка при търсене на въпрос: " + exc.Message);
+            }
+
+            conn.Close();
+            return (questions, time, givenAnswers);
+        }
+
+
+        public void deleteActiveTest()
+        {
+            conn.Open();
+            string sql = "DELETE FROM ActiveTest;";
+            var cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteReader();
+            conn.Close();
+        }
         public List<Questions> readQuestions(string subject)
         {
             List<Questions> questions = new List<Questions>();

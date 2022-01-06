@@ -51,17 +51,30 @@ namespace STProject
         {
             if (comboBoxSubject.SelectedIndex != -1)
             {
-                List<Questions> questionss = qq.readQuestions(comboBoxSubject.SelectedItem.ToString());
-                if (questionss.Count() >= 10)
+                var activeTestQuestions = qq.checkActiveTest();
+                if (activeTestQuestions.Item1.Count != 0 && activeTestQuestions.Item1.ElementAt(0).Subject == comboBoxSubject.SelectedItem.ToString())
                 {
-                    Questions[] testQq = GenerateQuestions(questionss);
-                    FormActiveTest active = new FormActiveTest(student, testQq);
+                    qq.deleteActiveTest();
+                    FormActiveTest active = new FormActiveTest(student, ConvertListToArray(activeTestQuestions.Item1), activeTestQuestions.Item3, activeTestQuestions.Item2);
                     this.Hide();
                     active.ShowDialog();
                     this.Close();
                 }
                 else
-                    MessageBox.Show("Няма достатъчен брой въпроси, от които да бъде генериран уникален тест. Моля свържете се с вашия ръководител");
+                {
+                    List<Questions> questionss = qq.readQuestions(comboBoxSubject.SelectedItem.ToString());
+                    if (questionss.Count() >= 10)
+                    {
+                        Questions[] testQq = GenerateQuestions(questionss);
+                        FormActiveTest active = new FormActiveTest(student, testQq);
+                        this.Hide();
+                        active.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Няма достатъчен брой въпроси, от които да бъде генериран уникален тест. Моля свържете се с вашия ръководител");
+                }
+                
             }
             else
                 MessageBox.Show("Моля изберете предмет на теста");
@@ -78,6 +91,17 @@ namespace STProject
             }
 
             return testQuestions;
+        }
+
+        private Questions[] ConvertListToArray(List<Questions> questions)
+        {
+            Questions[] activeTestQuestions = new Questions[10];
+            for (int i = 0; i < 10; ++i)
+            {
+                activeTestQuestions[i] = questions.ElementAt(i);
+            }
+
+            return activeTestQuestions;
         }
     }
 }

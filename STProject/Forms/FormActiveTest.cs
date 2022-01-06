@@ -3,8 +3,9 @@ using STProject.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,13 +21,22 @@ namespace STProject
         string[] givenaswers = new string[10];
         int counter;
         private int totalSeconds = 5*60;
-       
-        public FormActiveTest(Student student, Questions[] question)
+        private bool endTest = false;
+
+        public FormActiveTest(Student student, Questions[] question, List<string> userAnswers = null, int userTime = 0)
         {
             InitializeComponent();
             user = student;
             questions = question;
             counter = 0;
+            if(userTime != 0)
+            {
+                totalSeconds = userTime;
+            }
+            if(userAnswers != null)
+            {
+                givenaswers = userAnswers.ToArray();
+            }
             setQuestion(counter);
         }
 
@@ -34,13 +44,15 @@ namespace STProject
         {
             timer1.Start();
             timer1.Interval = 1000;
-
-
         }
        
         private void buttonEndTest_Click(object sender, EventArgs e)
         {
             setAnswer();
+            Questions q = new Questions();
+            q.deleteActiveTest();
+            endTest = true;
+
             test.ReviewQuestions = questions;
             timer1.Stop();
             test.GivenAnswers = givenaswers;
@@ -159,8 +171,24 @@ namespace STProject
                 timer1.Stop();
                 MessageBox.Show("Времето ви свърши!");
                 buttonEndTest_Click(sender, e);
-                
-                
+            }
+        }
+
+        private void FormActiveTest_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(endTest == false)
+            {
+                var connection = new Data().conn;
+                connection.Open();
+                for (int i = 0; i < 10; ++i)
+                {
+                    var question = questions[i];
+                    SqlCommand cmd = new SqlCommand($"INSERT INTO ActiveTest VALUES(N'{i}',N'{question.Question}',N'{question.Answer1}',N'{question.Answer2}',N'{question.Answer3}'," +
+                    $"N'{question.Answer4}',N'{question.AnswerTrue}',N'{givenaswers[i]}',N'{question.Subject}' ,N'{totalSeconds}');", connection);
+                    cmd.ExecuteNonQuery();
+                }
+
+                connection.Close();
             }
         }
     }

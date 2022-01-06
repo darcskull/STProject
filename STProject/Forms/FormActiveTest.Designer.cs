@@ -54,10 +54,9 @@ namespace STProject
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(98, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(74, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 17);
+            this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Въпрос";
             // 
@@ -65,53 +64,48 @@ namespace STProject
             // 
             this.textBoxAnswerA.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAnswerA.Enabled = false;
-            this.textBoxAnswerA.Location = new System.Drawing.Point(92, 211);
-            this.textBoxAnswerA.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAnswerA.Location = new System.Drawing.Point(69, 171);
             this.textBoxAnswerA.Multiline = true;
             this.textBoxAnswerA.Name = "textBoxAnswerA";
-            this.textBoxAnswerA.Size = new System.Drawing.Size(484, 35);
+            this.textBoxAnswerA.Size = new System.Drawing.Size(364, 29);
             this.textBoxAnswerA.TabIndex = 8;
             // 
             // textBoxAnswerB
             // 
             this.textBoxAnswerB.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAnswerB.Enabled = false;
-            this.textBoxAnswerB.Location = new System.Drawing.Point(92, 263);
-            this.textBoxAnswerB.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAnswerB.Location = new System.Drawing.Point(69, 214);
             this.textBoxAnswerB.Multiline = true;
             this.textBoxAnswerB.Name = "textBoxAnswerB";
-            this.textBoxAnswerB.Size = new System.Drawing.Size(484, 35);
+            this.textBoxAnswerB.Size = new System.Drawing.Size(364, 29);
             this.textBoxAnswerB.TabIndex = 13;
             // 
             // textBoxAnswerV
             // 
             this.textBoxAnswerV.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAnswerV.Enabled = false;
-            this.textBoxAnswerV.Location = new System.Drawing.Point(92, 313);
-            this.textBoxAnswerV.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAnswerV.Location = new System.Drawing.Point(69, 254);
             this.textBoxAnswerV.Multiline = true;
             this.textBoxAnswerV.Name = "textBoxAnswerV";
-            this.textBoxAnswerV.Size = new System.Drawing.Size(484, 34);
+            this.textBoxAnswerV.Size = new System.Drawing.Size(364, 28);
             this.textBoxAnswerV.TabIndex = 14;
             // 
             // textBoxAnswearG
             // 
             this.textBoxAnswearG.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAnswearG.Enabled = false;
-            this.textBoxAnswearG.Location = new System.Drawing.Point(92, 366);
-            this.textBoxAnswearG.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAnswearG.Location = new System.Drawing.Point(69, 297);
             this.textBoxAnswearG.Multiline = true;
             this.textBoxAnswearG.Name = "textBoxAnswearG";
-            this.textBoxAnswearG.Size = new System.Drawing.Size(484, 34);
+            this.textBoxAnswearG.Size = new System.Drawing.Size(364, 28);
             this.textBoxAnswearG.TabIndex = 15;
             // 
             // radioButtonA
             // 
             this.radioButtonA.AutoSize = true;
-            this.radioButtonA.Location = new System.Drawing.Point(42, 218);
-            this.radioButtonA.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButtonA.Location = new System.Drawing.Point(32, 177);
             this.radioButtonA.Name = "radioButtonA";
-            this.radioButtonA.Size = new System.Drawing.Size(38, 21);
+            this.radioButtonA.Size = new System.Drawing.Size(32, 17);
             this.radioButtonA.TabIndex = 16;
             this.radioButtonA.TabStop = true;
             this.radioButtonA.Text = "A";
@@ -120,10 +114,9 @@ namespace STProject
             // radioButtonB
             // 
             this.radioButtonB.AutoSize = true;
-            this.radioButtonB.Location = new System.Drawing.Point(42, 264);
-            this.radioButtonB.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButtonB.Location = new System.Drawing.Point(32, 214);
             this.radioButtonB.Name = "radioButtonB";
-            this.radioButtonB.Size = new System.Drawing.Size(38, 21);
+            this.radioButtonB.Size = new System.Drawing.Size(32, 17);
             this.radioButtonB.TabIndex = 17;
             this.radioButtonB.TabStop = true;
             this.radioButtonB.Text = "Б";
@@ -132,10 +125,9 @@ namespace STProject
             // radioButtonV
             // 
             this.radioButtonV.AutoSize = true;
-            this.radioButtonV.Location = new System.Drawing.Point(42, 313);
-            this.radioButtonV.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButtonV.Location = new System.Drawing.Point(32, 254);
             this.radioButtonV.Name = "radioButtonV";
-            this.radioButtonV.Size = new System.Drawing.Size(38, 21);
+            this.radioButtonV.Size = new System.Drawing.Size(32, 17);
             this.radioButtonV.TabIndex = 18;
             this.radioButtonV.TabStop = true;
             this.radioButtonV.Text = "В";
@@ -144,10 +136,9 @@ namespace STProject
             // radioButtonG
             // 
             this.radioButtonG.AutoSize = true;
-            this.radioButtonG.Location = new System.Drawing.Point(43, 366);
-            this.radioButtonG.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButtonG.Location = new System.Drawing.Point(32, 297);
             this.radioButtonG.Name = "radioButtonG";
-            this.radioButtonG.Size = new System.Drawing.Size(37, 21);
+            this.radioButtonG.Size = new System.Drawing.Size(31, 17);
             this.radioButtonG.TabIndex = 19;
             this.radioButtonG.TabStop = true;
             this.radioButtonG.Text = "Г";
@@ -156,10 +147,9 @@ namespace STProject
             // buttonPrevious
             // 
             this.buttonPrevious.BackColor = System.Drawing.Color.LemonChiffon;
-            this.buttonPrevious.Location = new System.Drawing.Point(24, 434);
-            this.buttonPrevious.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonPrevious.Location = new System.Drawing.Point(18, 353);
             this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(100, 43);
+            this.buttonPrevious.Size = new System.Drawing.Size(75, 35);
             this.buttonPrevious.TabIndex = 20;
             this.buttonPrevious.Text = "Предишен";
             this.buttonPrevious.UseVisualStyleBackColor = false;
@@ -168,10 +158,9 @@ namespace STProject
             // buttonNext
             // 
             this.buttonNext.BackColor = System.Drawing.Color.LemonChiffon;
-            this.buttonNext.Location = new System.Drawing.Point(476, 418);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonNext.Location = new System.Drawing.Point(357, 340);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(100, 43);
+            this.buttonNext.Size = new System.Drawing.Size(75, 35);
             this.buttonNext.TabIndex = 21;
             this.buttonNext.Text = "Следващ";
             this.buttonNext.UseVisualStyleBackColor = false;
@@ -180,10 +169,9 @@ namespace STProject
             // buttonEndTest
             // 
             this.buttonEndTest.BackColor = System.Drawing.Color.LemonChiffon;
-            this.buttonEndTest.Location = new System.Drawing.Point(598, 89);
-            this.buttonEndTest.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEndTest.Location = new System.Drawing.Point(448, 72);
             this.buttonEndTest.Name = "buttonEndTest";
-            this.buttonEndTest.Size = new System.Drawing.Size(200, 43);
+            this.buttonEndTest.Size = new System.Drawing.Size(150, 35);
             this.buttonEndTest.TabIndex = 23;
             this.buttonEndTest.Text = "Предаване на теста";
             this.buttonEndTest.UseVisualStyleBackColor = false;
@@ -192,10 +180,9 @@ namespace STProject
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(641, 39);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(481, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 17);
+            this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 24;
             this.label4.Text = "Време";
             // 
@@ -203,10 +190,9 @@ namespace STProject
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(584, 56);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(438, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 20);
+            this.label5.Size = new System.Drawing.Size(145, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Оставащо Време: ";
             // 
@@ -214,21 +200,19 @@ namespace STProject
             // 
             this.textBoxQuestion.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxQuestion.Enabled = false;
-            this.textBoxQuestion.Location = new System.Drawing.Point(92, 42);
-            this.textBoxQuestion.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxQuestion.Location = new System.Drawing.Point(69, 34);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
-            this.textBoxQuestion.Size = new System.Drawing.Size(484, 133);
+            this.textBoxQuestion.Size = new System.Drawing.Size(364, 109);
             this.textBoxQuestion.TabIndex = 26;
             // 
             // textBoxNumberQuestion
             // 
             this.textBoxNumberQuestion.BackColor = System.Drawing.Color.RosyBrown;
             this.textBoxNumberQuestion.Enabled = false;
-            this.textBoxNumberQuestion.Location = new System.Drawing.Point(42, 42);
-            this.textBoxNumberQuestion.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNumberQuestion.Location = new System.Drawing.Point(32, 34);
             this.textBoxNumberQuestion.Name = "textBoxNumberQuestion";
-            this.textBoxNumberQuestion.Size = new System.Drawing.Size(35, 22);
+            this.textBoxNumberQuestion.Size = new System.Drawing.Size(27, 20);
             this.textBoxNumberQuestion.TabIndex = 27;
             // 
             // timer1
@@ -239,28 +223,26 @@ namespace STProject
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(764, 59);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(573, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 24);
+            this.label2.Size = new System.Drawing.Size(0, 18);
             this.label2.TabIndex = 28;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 21);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(30, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 17);
+            this.label3.Size = new System.Drawing.Size(18, 13);
             this.label3.TabIndex = 29;
             this.label3.Text = "№";
             // 
             // FormActiveTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(835, 497);
+            this.ClientSize = new System.Drawing.Size(626, 404);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNumberQuestion);
@@ -280,10 +262,10 @@ namespace STProject
             this.Controls.Add(this.textBoxAnswerA);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormActiveTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тест";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormActiveTest_FormClosed);
             this.Load += new System.EventHandler(this.FormActiveTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
